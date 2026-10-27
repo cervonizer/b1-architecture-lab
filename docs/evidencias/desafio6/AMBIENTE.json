@@ -1,0 +1,13 @@
+{
+  "java_build": "Temurin 17.0.20.1",
+  "python": "3.12",
+  "spring_boot": "3.5.5",
+  "jenkins": "2.580.1",
+  "grafana": "13.2.4",
+  "repositorio": "https://github.com/cervonizer/b1-architecture-lab",
+  "validacao": "Jenkins fonte local, build 1 SUCCESS",
+  "testes": {
+    "Java": 22,
+    "Python": 6
+  }
+}

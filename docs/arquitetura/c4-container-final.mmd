@@ -1,0 +1,22 @@
+C4Container
+ title B1 arquitetura resultante dos seis desafios
+ Person(aluno, "Aluno", "Consulta cursos, Ranking e assistente")
+ System_Boundary(plataforma, "Plataforma de educação continuada") {
+  Container(core, "Core modular e interface web", "Java 17 e Spring Boot", "Usuário, Curso, Matrícula, Ranking, outbox e inbox IoT")
+  ContainerDb(db, "Banco Core", "PostgreSQL", "Dados essenciais e eventos outbox/inbox na mesma base")
+  Container(python, "Serviço Python", "FastAPI", "Contratos de recomendação e assistente; consumidor de notificação no lab")
+  ContainerDb(notificacoes, "Deduplicação do consumidor", "SQLite no laboratório", "event_id já recebido")
+  Container(mqtt, "Broker da borda IoT", "Mosquitto MQTT", "QoS 1, sessão persistente e ACL")
+  Container(gateway, "Gateway IoT", "Python e Paho", "Valida, transforma e entrega ao Core com retry")
+  ContainerDb(spool, "Spool do gateway", "SQLite", "Evento confirmado no MQTT somente após gravação")
+ }
+ Container(device, "Dispositivo simulado", "Python e fila local SQLite", "Publica presença, início e conclusão; reenvia ao reconectar")
+ Rel(aluno, core, "Usa", "HTTP no lab")
+ Rel(core, db, "Persiste estado e eventos", "JPA e JDBC")
+ Rel(core, python, "Consulta IA com timeout e fallback", "HTTP JSON")
+ Rel(core, python, "Dispatcher entrega notificação eventual", "HTTP JSON com event_id")
+ Rel(python, notificacoes, "Deduplica", "SQLite")
+ Rel(device, mqtt, "Publica tópico autorizado", "MQTT QoS 1")
+ Rel(mqtt, gateway, "Entrega tópico assinado", "MQTT QoS 1")
+ Rel(gateway, spool, "Grava antes do ACK e mantém pendência", "SQLite")
+ Rel(gateway, core, "Encaminha evento transformado", "HTTP JSON autenticado")

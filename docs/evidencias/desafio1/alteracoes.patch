@@ -1,0 +1,111 @@
+--- a/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java
++++ b/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java
+@@ -1,5 +1,7 @@
+ package com.exemplo.usuario.matricula.domain;
+ 
++import com.exemplo.usuario.usuario.domain.Usuario;
++import com.exemplo.usuario.curso.domain.Curso;
+ import jakarta.persistence.*;
+ 
+ // Camada: DOMINIO.
+--- a/src/main/java/com/exemplo/usuario/ranking/application/RankingService.java
++++ b/src/main/java/com/exemplo/usuario/ranking/application/RankingService.java
+@@ -1,19 +1,21 @@
+ package com.exemplo.usuario.ranking.application;
+ 
+ import com.exemplo.usuario.ranking.api.RankingResponseDTO;
+-import com.exemplo.usuario.ranking.internal.persistence.RankingRepository;
++import com.exemplo.usuario.usuario.api.ConsultaPontuacao;
+ import org.springframework.stereotype.Service;
+-import org.springframework.transaction.annotation.Transactional;
+ import java.util.List;
+ 
+ @Service
+ public class RankingService {
+-    private final RankingRepository repository;
+-    public RankingService(RankingRepository repository){this.repository=repository;}
+-    @Transactional(readOnly=true)
+-    public List<RankingResponseDTO> listar(){
+-        return repository.buscarRanking().stream().map(a -> new RankingResponseDTO(
+-            a.getUsuario().getId(), a.getUsuario().getNome(), a.getCursosConcluidosComSucesso(), a.getMoedas(),
+-            a.getCursosConcluidosComSucesso()*100 + a.getMoedas())).toList();
++    private final ConsultaPontuacao consulta;
++
++    public RankingService(ConsultaPontuacao consulta) {
++        this.consulta = consulta;
++    }
++
++    public List<RankingResponseDTO> listar() {
++        return consulta.listarOrdenado().stream().map(a -> new RankingResponseDTO(
++                a.usuarioId(), a.nome(), a.cursosConcluidos(), a.moedas(),
++                a.cursosConcluidos() * 100 + a.moedas())).toList();
+     }
+ }
+--- a/src/main/java/com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java
++++ b/src/main/java/com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java
+@@ -1,11 +0,0 @@
+-package com.exemplo.usuario.ranking.internal.persistence;
+-
+-import com.exemplo.usuario.usuario.domain.Assinatura;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.data.jpa.repository.Query;
+-import java.util.List;
+-
+-public interface RankingRepository extends JpaRepository<Assinatura, Long> {
+-    @Query("select a from Assinatura a join fetch a.usuario order by (a.cursosConcluidosComSucesso * 100 + a.moedas) desc")
+-    List<Assinatura> buscarRanking();
+-}
+--- a/src/main/java/com/exemplo/usuario/usuario/api/ConsultaPontuacao.java
++++ b/src/main/java/com/exemplo/usuario/usuario/api/ConsultaPontuacao.java
+@@ -0,0 +1,10 @@
++package com.exemplo.usuario.usuario.api;
++
++import java.util.List;
++
++/** Contrato de leitura entre modulos; nao expoe entidades JPA. */
++public interface ConsultaPontuacao {
++    List<PontuacaoUsuario> listarOrdenado();
++
++    record PontuacaoUsuario(Long usuarioId, String nome, Integer cursosConcluidos, Integer moedas) {}
++}
+--- a/src/main/java/com/exemplo/usuario/usuario/application/ConsultaPontuacaoService.java
++++ b/src/main/java/com/exemplo/usuario/usuario/application/ConsultaPontuacaoService.java
+@@ -0,0 +1,24 @@
++package com.exemplo.usuario.usuario.application;
++
++import com.exemplo.usuario.usuario.api.ConsultaPontuacao;
++import com.exemplo.usuario.usuario.internal.persistence.PontuacaoRepository;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Transactional;
++import java.util.List;
++
++@Service
++public class ConsultaPontuacaoService implements ConsultaPontuacao {
++    private final PontuacaoRepository repository;
++
++    public ConsultaPontuacaoService(PontuacaoRepository repository) {
++        this.repository = repository;
++    }
++
++    @Override
++    @Transactional(readOnly = true)
++    public List<PontuacaoUsuario> listarOrdenado() {
++        return repository.buscarRanking().stream().map(a -> new PontuacaoUsuario(
++                a.getUsuario().getId(), a.getUsuario().getNome(),
++                a.getCursosConcluidosComSucesso(), a.getMoedas())).toList();
++    }
++}
+--- a/src/main/java/com/exemplo/usuario/usuario/internal/persistence/PontuacaoRepository.java
++++ b/src/main/java/com/exemplo/usuario/usuario/internal/persistence/PontuacaoRepository.java
+@@ -0,0 +1,11 @@
++package com.exemplo.usuario.usuario.internal.persistence;
++
++import com.exemplo.usuario.usuario.domain.Assinatura;
++import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.data.jpa.repository.Query;
++import java.util.List;
++
++public interface PontuacaoRepository extends JpaRepository<Assinatura, Long> {
++    @Query("select a from Assinatura a join fetch a.usuario order by (a.cursosConcluidosComSucesso * 100 + a.moedas) desc")
++    List<Assinatura> buscarRanking();
++}

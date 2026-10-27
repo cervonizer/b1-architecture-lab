@@ -1,0 +1,22 @@
+flowchart LR
+ subgraph HOST[Máquina de laboratório]
+  J[Jenkins isolado 19090]
+  CORE[Core JVM 17 porta 18080 com H2 embutido]
+  PY[FastAPI porta 18081]
+  GW[Gateway Python e spool SQLite]
+  DEV[Simulador e fila local SQLite]
+  subgraph DOCKER[Docker Desktop e rede b1 lab]
+   MQ[Mosquitto porta 18883]
+   PROM[Prometheus porta 19091]
+   GRAF[Grafana porta 13001]
+  end
+ end
+ J -->|verify e pytest| CORE
+ J -->|prepara dependências e experimentos| PY
+ J -->|compose e experimento| MQ
+ CORE -->|HTTP JSON| PY
+ DEV -->|MQTT QoS 1| MQ
+ MQ -->|sessão persistente| GW
+ GW -->|HTTP JSON| CORE
+ PROM -->|scrape autenticado a cada 2s| CORE
+ GRAF -->|PromQL| PROM

@@ -1,0 +1,26 @@
+name: b1-lab
+services:
+  mqtt:
+    image: eclipse-mosquitto:2
+    ports: ["127.0.0.1:18883:1883"]
+    volumes:
+      - ./infra/mqtt:/mosquitto/config:ro
+      - mqtt_data:/mosquitto/data
+  prometheus:
+    image: prom/prometheus:latest
+    ports: ["127.0.0.1:19091:9090"]
+    volumes:
+      - ./infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  grafana:
+    image: grafana/grafana:latest
+    ports: ["127.0.0.1:13001:3000"]
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: b1-grafana-lab
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./infra/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/grafana/dashboard-b1.json:/var/lib/grafana/dashboards/b1.json:ro
+    depends_on: [prometheus]
+volumes:
+  mqtt_data:

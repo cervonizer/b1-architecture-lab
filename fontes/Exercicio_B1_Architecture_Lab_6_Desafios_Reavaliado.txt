@@ -1,0 +1,185 @@
+EXERCÍCIO B1 — ARCHITECTURE LAB
+Seis desafios de decisão arquitetural — 6,0 pontos
+1. Contexto e propósito
+Na AC1, a equipe construiu um MVP de Gamificação para Educação Continuada. No B1, esse mesmo produto passa a receber crescimento de usuários, novas capacidades de IA, eventos, IoT e exigências de operação. A equipe assume o papel de Tech Lead: antes de escolher tecnologia ou alterar o código, deverá justificar a decisão arquitetural a partir dos requisitos e das evidências do sistema.
+O objetivo não é produzir seis arquiteturas diferentes nem acumular tecnologias. O objetivo é demonstrar raciocínio arquitetural consistente e evolutivo. Cada desafio vale 1,0 ponto e deverá deixar uma decisão rastreável no repositório.
+2. Padrão obrigatório de decisão — usado nos 6 desafios
+RF = requisito funcional; RNF = requisito não funcional, classificado quando pertinente por FURPS+; ASR = requisito arquiteturalmente significativo; RPC = requisito/premissa/constraint que restringe a solução (tecnologia, legislação, equipe, legado, protocolo, infraestrutura ou integração).
+Pergunta central do Tech Lead
+Qual decisão arquitetural é necessária para atender aos RFs, proteger os RNFs que realmente dirigem a arquitetura, respeitar as RPCs e aceitar conscientemente os trade-offs?
+3. Regras do Architecture Lab
+• Toda tecnologia escolhida precisa responder a um problema do case. “É moderno”, “é mais escalável” ou “o mercado usa” não são justificativas suficientes.
+• Nem todo RNF é um ASR. A equipe deverá selecionar apenas os RNFs capazes de alterar estrutura, comunicação, dados, implantação ou operação.
+• RPC não é solução: é uma restrição ou premissa que limita o espaço de decisão. Ex.: Core deve permanecer em Java/Spring Boot; IA será implementada em Python.
+• O ADR registra a decisão, alternativas e consequências. O C4 representa a arquitetura resultante; ele não substitui o raciocínio da decisão.
+• A microsolução é evidência técnica. Ela deve testar uma hipótese arquitetural, e não apenas demonstrar que uma ferramenta funciona.
+4. Case-base
+A plataforma possui ranking, cursos, moedas, badges e recompensas. O Core existente utiliza Java/Spring Boot e banco relacional. O produto deverá evoluir para múltiplas instituições, recomendação inteligente, assistente educacional com RAG/LLM, notificações, eventos de aprendizagem e integração com dispositivos IoT, mantendo confiabilidade, testabilidade, observabilidade e evolução contínua.
+
+EXERCÍCIO B1 — COMO ENTREGAR
+Um único registro arquitetural vivo no Git
+5. O que deve existir ao final de cada desafio
+6. Registro no repositório
+Manter /docs/arquitetura/README.md como registro cumulativo. A matriz de ASRs deve evoluir ao longo dos seis desafios; os ADRs podem permanecer no README (ADR-001, ADR-002...) ou ser separados em /docs/adr/. O C4 Container é a visão mínima obrigatória; C4 Component será utilizado quando a decisão envolver a organização interna do Core.
+7. Avaliação — 6,0 pontos
+Cada desafio vale 1,0 ponto e será avaliado pelo mesmo padrão. A nota não depende de adotar a tecnologia sugerida no cenário, mas da coerência da decisão e da evidência apresentada.
+8. Entrega final do B1
+• Link do repositório e identificação da equipe.
+• README arquitetural atualizado com as seis decisões e matriz cumulativa de ASRs.
+• ADRs essenciais e C4 final coerente com as decisões.
+• Links/pastas das microsoluções e evidências.
+• Síntese final: quais decisões serão levadas para a PoC da Avaliação Final (AF).
+Regra de ouro: uma decisão forte consegue ser lida de trás para frente — o C4 é explicado pelo ADR; o ADR é sustentado pelos ASRs e RPCs; os ASRs derivam de RF/RNF; e a evidência demonstra que o raciocínio é plausível.
+
+DESAFIO 1 — DRIVERS E EVOLUÇÃO DO CORE
+Decidir a arquitetura macro antes de decompor o sistema
+Cenário / problema
+O MVP cresceu de 1.000 para um cenário de até 100.000 usuários. O ranking cresce mais que outras funcionalidades, enquanto cursos, conquistas e recompensas continuam evoluindo. A equipe precisa decidir se mantém o Monólito em Camadas, evolui para Monólito Modular ou separa capacidades em serviços.
+1. RF — o que o sistema precisa fazer
+RF01 Ranking; RF02 Conquistas; evolução das funcionalidades existentes.
+2. RNF — qualidades a analisar
+Manutenibilidade, desempenho, escalabilidade, testabilidade e complexidade operacional.
+3. ASR — seleção obrigatória
+Escolha no máximo 3 RNFs acima que realmente dirigem esta decisão. Para cada um, explique em uma frase como ele pode alterar estrutura, comunicação, dados, implantação ou operação.
+4. RPC — restrições e premissas do desafio
+Core atual em Java/Spring Boot; equipe de 6 desenvolvedores; banco relacional e legado da AC1.
+5. Decisão do Tech Lead
+Quais RNFs tornam-se ASRs neste cenário? Há necessidade comprovada de escala/deploy independente? A complexidade distribuída é justificável?
+6. Alternativas e trade-offs
+Comparar: (A) Monólito em Camadas; (B) Monólito Modular; (C) decomposição seletiva em serviço(s).
+7. Mini-lab / evidência
+Reorganizar uma funcionalidade da AC1 em uma pequena estrutura modular e comparar dependências antes/depois.
+8. ADR + C4
+Registrar ou atualizar um ADR resumido: Contexto → ASRs/RPCs → Alternativas → Decisão → Consequências/trade-offs. C4 Container. Se a decisão for apenas interna ao Core, indicar o impacto e preparar o Component para o Desafio 2.
+Entrega do desafio — 1,0 ponto
+Atualizar /docs/arquitetura/README.md e versionar a evidência. A decisão deve permitir rastrear: RF → RNF → ASR + RPC → alternativas/trade-offs → ADR → C4 → evidência.
+
+DESAFIO 2 — ORGANIZAÇÃO INTERNA DO CORE
+Proteger o domínio contra dependências técnicas
+Cenário / problema
+As regras de ranking, moedas, badges e recompensas mudam com frequência. A equipe precisa evitar que domínio, banco, framework e integrações externas fiquem fortemente acoplados.
+1. RF — o que o sistema precisa fazer
+RF01 Ranking; RF02 Conquistas e regras de gamificação.
+2. RNF — qualidades a analisar
+Manutenibilidade, testabilidade, modificabilidade e facilidade de evolução.
+3. ASR — seleção obrigatória
+Escolha no máximo 3 RNFs acima que realmente dirigem esta decisão. Para cada um, explique em uma frase como ele pode alterar estrutura, comunicação, dados, implantação ou operação.
+4. RPC — restrições e premissas do desafio
+Core continua Spring Boot; regras existentes devem ser reaproveitadas; não é permitido reescrever o produto inteiro apenas para aplicar um padrão.
+5. Decisão do Tech Lead
+Qual dependência realmente precisa ser invertida? O custo estrutural é proporcional ao problema? DDD, Hexagonal, Clean e Onion são concorrentes ou podem ser combinados?
+6. Alternativas e trade-offs
+Comparar ao menos duas estruturas: arquitetura atual versus Ports & Adapters/Hexagonal ou estrutura equivalente; justificar eventual uso de DDD/Clean/Onion.
+7. Mini-lab / evidência
+Isolar uma regra de domínio e trocar pelo menos um adapter (ex.: persistência fake/mock versus JPA), mantendo testes do domínio.
+8. ADR + C4
+Registrar ou atualizar um ADR resumido: Contexto → ASRs/RPCs → Alternativas → Decisão → Consequências/trade-offs. C4 Component do Core, mostrando responsabilidades e fronteiras relevantes.
+Entrega do desafio — 1,0 ponto
+Atualizar /docs/arquitetura/README.md e versionar a evidência. A decisão deve permitir rastrear: RF → RNF → ASR + RPC → alternativas/trade-offs → ADR → C4 → evidência.
+
+DESAFIO 3 — SERVIÇO PYTHON E IA
+Definir a fronteira arquitetural de ML e RAG/LLM
+Cenário / problema
+A plataforma incorpora recomendação inteligente e assistente educacional. Os modelos serão desenvolvidos em Python, terão ciclo de atualização próprio, carga variável e poderão ficar indisponíveis sem impedir operações essenciais do Core.
+1. RF — o que o sistema precisa fazer
+RF03 Recomendação inteligente; RF04 Assistente educacional.
+2. RNF — qualidades a analisar
+Deploy independente, escalabilidade, tolerância a falhas, interoperabilidade, desempenho e manutenibilidade.
+3. ASR — seleção obrigatória
+Escolha no máximo 3 RNFs acima que realmente dirigem esta decisão. Para cada um, explique em uma frase como ele pode alterar estrutura, comunicação, dados, implantação ou operação.
+4. RPC — restrições e premissas do desafio
+Core permanece Java/Spring Boot; ML/RAG utilizam Python; indisponibilidade da IA não pode bloquear o fluxo essencial.
+5. Decisão do Tech Lead
+Python por si só justifica um serviço? ML e RAG precisam da mesma fronteira? Quais ASRs justificam autonomia e escala? Qual comportamento degradado é aceitável?
+6. Alternativas e trade-offs
+Comparar: (A) IA embutida no Core; (B) módulo acoplado; (C) serviço Python independente; discutir se ML e RAG ficam juntos ou separados.
+7. Mini-lab / evidência
+Spring Boot consumindo FastAPI; interromper o serviço Python e observar/tratar a falha.
+8. ADR + C4
+Registrar ou atualizar um ADR resumido: Contexto → ASRs/RPCs → Alternativas → Decisão → Consequências/trade-offs. C4 Container com a fronteira da IA e protocolos de comunicação.
+Entrega do desafio — 1,0 ponto
+Atualizar /docs/arquitetura/README.md e versionar a evidência. A decisão deve permitir rastrear: RF → RNF → ASR + RPC → alternativas/trade-offs → ADR → C4 → evidência.
+
+DESAFIO 4 — COMUNICAÇÃO E EVENTOS
+Decidir onde sincronismo é necessário e onde eventos reduzem acoplamento
+Cenário / problema
+Ao concluir um curso, o sistema registra a conclusão, calcula recompensas, atualiza informações e pode disparar notificação/analytics. Uma falha de notificação não pode impedir a conclusão do curso.
+1. RF — o que o sistema precisa fazer
+RF02 Conquistas; RF05 Notificações; eventos associados à conclusão de atividades.
+2. RNF — qualidades a analisar
+Tolerância a falhas, disponibilidade, latência, consistência, desacoplamento e recuperabilidade.
+3. ASR — seleção obrigatória
+Escolha no máximo 3 RNFs acima que realmente dirigem esta decisão. Para cada um, explique em uma frase como ele pode alterar estrutura, comunicação, dados, implantação ou operação.
+4. RPC — restrições e premissas do desafio
+Operações essenciais do Core devem concluir mesmo com consumidor externo indisponível; adoção de broker exige custo operacional.
+5. Decisão do Tech Lead
+Qual resposta precisa ser imediata? Qual pode ser eventual? Que ASR justificaria mensageria? RabbitMQ/Kafka resolvem um problema real do fluxo?
+6. Alternativas e trade-offs
+Comparar REST síncrono com comunicação assíncrona; se houver broker, comparar RabbitMQ/Kafka pelo problema do case, não por popularidade.
+7. Mini-lab / evidência
+Implementar uma interação síncrona e uma assíncrona simples; simular consumidor indisponível e registrar o efeito.
+8. ADR + C4
+Registrar ou atualizar um ADR resumido: Contexto → ASRs/RPCs → Alternativas → Decisão → Consequências/trade-offs. C4 Container + sequência simplificada do fluxo crítico, se necessária para demonstrar a decisão.
+Entrega do desafio — 1,0 ponto
+Atualizar /docs/arquitetura/README.md e versionar a evidência. A decisão deve permitir rastrear: RF → RNF → ASR + RPC → alternativas/trade-offs → ADR → C4 → evidência.
+
+DESAFIO 5 — IoT E MQTT
+Integrar dispositivos com recursos limitados e conectividade intermitente
+Cenário / problema
+Laboratórios passam a produzir eventos de presença, início e conclusão de atividades por dispositivos com recursos limitados e conexão instável. Esses eventos devem entrar na plataforma sem transformar o Core em um acoplamento direto com cada dispositivo.
+1. RF — o que o sistema precisa fazer
+RF06 Receber eventos IoT e encaminhá-los ao ecossistema da plataforma.
+2. RNF — qualidades a analisar
+Interoperabilidade, eficiência de comunicação, disponibilidade, tolerância à conectividade intermitente, escalabilidade e segurança de integração.
+3. ASR — seleção obrigatória
+Escolha no máximo 3 RNFs acima que realmente dirigem esta decisão. Para cada um, explique em uma frase como ele pode alterar estrutura, comunicação, dados, implantação ou operação.
+4. RPC — restrições e premissas do desafio
+Dispositivos podem ter baixo poder computacional; conectividade pode ser intermitente; protocolo e broker adicionam componentes operacionais.
+5. Decisão do Tech Lead
+REST é suficiente? O que MQTT resolve especificamente? Após MQTT, existe motivo arquitetural para outro broker? Como impedir duplicidade ou perda relevante de eventos?
+6. Alternativas e trade-offs
+Comparar: (A) REST direto; (B) MQTT + consumidor; (C) MQTT + integração posterior com mensageria interna, somente se houver ASR que justifique.
+7. Mini-lab / evidência
+Simulador publica evento em broker MQTT; consumidor recebe e transforma o evento para uso da aplicação.
+8. ADR + C4
+Registrar ou atualizar um ADR resumido: Contexto → ASRs/RPCs → Alternativas → Decisão → Consequências/trade-offs. C4 Container mostrando dispositivos, broker, consumidor/gateway e Core; fluxo do evento quando útil.
+Entrega do desafio — 1,0 ponto
+Atualizar /docs/arquitetura/README.md e versionar a evidência. A decisão deve permitir rastrear: RF → RNF → ASR + RPC → alternativas/trade-offs → ADR → C4 → evidência.
+
+DESAFIO 6 — CI/CD E OBSERVABILIDADE
+Provar que a arquitetura pode ser construída, implantada e observada
+Cenário / problema
+Após as decisões anteriores, a solução pode conter Core Java, serviço(s) Python, broker e componentes de integração. A arquitetura só é sustentável se a equipe conseguir testar, implantar e observar suas partes com segurança.
+1. RF — o que o sistema precisa fazer
+Todos os RFs impactados pelos componentes construídos; operação e evolução da solução.
+2. RNF — qualidades a analisar
+Observabilidade, deploy independente, confiabilidade, testabilidade, recuperabilidade e desempenho.
+3. ASR — seleção obrigatória
+Escolha no máximo 3 RNFs acima que realmente dirigem esta decisão. Para cada um, explique em uma frase como ele pode alterar estrutura, comunicação, dados, implantação ou operação.
+4. RPC — restrições e premissas do desafio
+Jenkins é a base da esteira; Prometheus/Grafana são as ferramentas do laboratório; artefatos e configurações devem ser versionados.
+5. Decisão do Tech Lead
+Serviços independentes exigem pipelines independentes? O que deve bloquear deploy? Quais métricas validam ASRs anteriores? Como distinguir métrica técnica de evidência arquitetural?
+6. Alternativas e trade-offs
+Comparar pipeline único versus pipelines por componente; selecionar métricas que comprovem decisões (latência, erros, disponibilidade, throughput etc.).
+7. Mini-lab / evidência
+Evoluir Jenkinsfile e instrumentar ao menos uma métrica; provocar uma condição observável e registrar evidência no Grafana/Prometheus.
+8. ADR + C4
+Registrar ou atualizar um ADR resumido: Contexto → ASRs/RPCs → Alternativas → Decisão → Consequências/trade-offs. C4 Deployment (ou Container com elementos de operação) + atualização final do C4 arquitetural.
+Entrega do desafio — 1,0 ponto
+Atualizar /docs/arquitetura/README.md e versionar a evidência. A decisão deve permitir rastrear: RF → RNF → ASR + RPC → alternativas/trade-offs → ADR → C4 → evidência.
+1. RF | 2. RNF | 3. ASR | 4. RPC | 5. Alternativas | 6. ADR | 7. C4 | 8. Evidência
+Registro | Conteúdo mínimo | Pergunta de validação
+RF/RNF | RFs afetados + RNFs relevantes/FURPS+ | Qual necessidade ou qualidade está em jogo?
+ASR | Máx. 3 ASRs prioritários no desafio | O que realmente pode mudar a arquitetura?
+RPC | Restrições/premissas aplicáveis | O que não pode ser ignorado na decisão?
+Alternativas | Mín. 2 alternativas + trade-offs | Que opções reais foram comparadas?
+ADR | Contexto, decisão e consequências | Por que esta alternativa foi escolhida?
+C4 | Atualizar somente o nível afetado | O desenho mostra a decisão tomada?
+Evidência | Mini-lab, teste, métrica, falha simulada etc. | Que evidência sustenta a decisão?
+Critério por desafio | Valor
+RF/RNF + seleção de ASR | 0,25
+RPC + alternativas/trade-offs | 0,20
+ADR e justificativa da decisão | 0,20
+C4 coerente com a decisão | 0,15
+Microsolução/evidência + Git | 0,20

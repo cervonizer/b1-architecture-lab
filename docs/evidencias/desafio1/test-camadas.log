@@ -1,0 +1,243 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.exemplo:b1-monolito-camadas >-------------------
+[INFO] Building b1-monolito-camadas 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ b1-monolito-camadas ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ b1-monolito-camadas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ b1-monolito-camadas ---
+[INFO] skip non existing resourceDirectory /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Camadas/B1_Desafio1_Monolito_Camadas/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ b1-monolito-camadas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ b1-monolito-camadas ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.exemplo.usuario.RankingIntegrationTest
+20:05:04.234 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.exemplo.usuario.RankingIntegrationTest]: RankingIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:05:04.289 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.RankingIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.5)
+
+2026-10-26T20:05:04.475-03:00  INFO 37399 --- [usuario-api-v2] [           main] c.e.usuario.RankingIntegrationTest       : Starting RankingIntegrationTest using Java 17.0.20.1 with PID 37399 (started by brunoromicervone in /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Camadas/B1_Desafio1_Monolito_Camadas)
+2026-10-26T20:05:04.476-03:00  INFO 37399 --- [usuario-api-v2] [           main] c.e.usuario.RankingIntegrationTest       : The following 1 profile is active: "h2"
+2026-10-26T20:05:04.855-03:00  INFO 37399 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-26T20:05:04.889-03:00  INFO 37399 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 5 JPA repository interfaces.
+2026-10-26T20:05:05.154-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-26T20:05:05.192-03:00  INFO 37399 --- [usuario-api-v2] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-10-26T20:05:05.215-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-26T20:05:05.348-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-26T20:05:05.361-03:00  INFO 37399 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-26T20:05:05.446-03:00  INFO 37399 --- [usuario-api-v2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usuariodb user=SA
+2026-10-26T20:05:05.447-03:00  INFO 37399 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-26T20:05:05.474-03:00  INFO 37399 --- [usuario-api-v2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-26T20:05:05.911-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    create table assinaturas (
+        id bigint generated by default as identity,
+        creditos_cursos integer not null,
+        cursos_concluidos_com_sucesso integer not null,
+        moedas integer not null,
+        plano enum ('BASICO','PREMIUM') not null,
+        usuario_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table cursos (
+        id bigint generated by default as identity,
+        descricao varchar(1000),
+        titulo varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table matriculas (
+        id bigint generated by default as identity,
+        bonus boolean not null,
+        nota_final float(53),
+        status enum ('CANCELADO','CONCLUIDO','EM_ANDAMENTO') not null,
+        curso_id bigint not null,
+        usuario_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table usuarios (
+        id bigint generated by default as identity,
+        email varchar(255) not null,
+        nome varchar(255) not null,
+        senha varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists assinaturas 
+       drop constraint if exists UK1vch30tw8efi1mvvagarlperk
+Hibernate: 
+    alter table if exists assinaturas 
+       add constraint UK1vch30tw8efi1mvvagarlperk unique (usuario_id)
+Hibernate: 
+    alter table if exists usuarios 
+       drop constraint if exists UKkfsp0s1tflm1cwlj8idhqsad0
+Hibernate: 
+    alter table if exists usuarios 
+       add constraint UKkfsp0s1tflm1cwlj8idhqsad0 unique (email)
+Hibernate: 
+    alter table if exists assinaturas 
+       add constraint FKkgmjwfa68xtip3lf7yicrtprk 
+       foreign key (usuario_id) 
+       references usuarios
+Hibernate: 
+    alter table if exists matriculas 
+       add constraint FKtgxnkauqy13npoi9q2t9n0ol5 
+       foreign key (curso_id) 
+       references cursos
+Hibernate: 
+    alter table if exists matriculas 
+       add constraint FKil5paxcpkrf9viik9jbb439qs 
+       foreign key (usuario_id) 
+       references usuarios
+2026-10-26T20:05:05.946-03:00  INFO 37399 --- [usuario-api-v2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26T20:05:06.105-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-26T20:05:06.351-03:00  WARN 37399 --- [usuario-api-v2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-26T20:05:06.457-03:00  INFO 37399 --- [usuario-api-v2] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
+2026-10-26T20:05:06.492-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-10-26T20:05:06.702-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usuariodb'
+2026-10-26T20:05:06.745-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-26T20:05:06.745-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-26T20:05:06.745-03:00  INFO 37399 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-26T20:05:06.760-03:00  INFO 37399 --- [usuario-api-v2] [           main] c.e.usuario.RankingIntegrationTest       : Started RankingIntegrationTest in 2.408 seconds (process running for 2.888)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id 
+    order by
+        ((a1_0.cursos_concluidos_com_sucesso*100)+a1_0.moedas) desc
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id 
+    order by
+        ((a1_0.cursos_concluidos_com_sucesso*100)+a1_0.moedas) desc
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id 
+    order by
+        ((a1_0.cursos_concluidos_com_sucesso*100)+a1_0.moedas) desc
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.135 s -- in com.exemplo.usuario.RankingIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.211 s
+[INFO] Finished at: 2026-10-26T20:05:07-03:00
+[INFO] ------------------------------------------------------------------------

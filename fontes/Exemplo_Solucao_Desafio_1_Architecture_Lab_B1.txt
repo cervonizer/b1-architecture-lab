@@ -1,0 +1,134 @@
+DESAFIO 1 — DRIVERS E EVOLUÇÃO DO CORE
+Exemplo de solução orientativa | Papel: Tech Lead
+Objetivo. Demonstrar como justificar a evolução da arquitetura macro do Core a partir de RFs, RNFs, ASRs, RPCs, alternativas, ADR, C4 e evidência técnica. Este material é um exemplo de raciocínio; outras decisões podem ser aceitas quando sustentadas por evidências e trade-offs coerentes.
+1. Leitura do cenário
+O MVP de gamificação evolui de aproximadamente 1.000 usuários para um cenário de até 100.000 usuários. Ranking, cursos, conquistas e recompensas permanecem no Core, mas o Ranking tende a crescer mais que as demais capacidades. A decisão arquitetural não deve partir da tecnologia desejada, e sim dos drivers que realmente justificam mudança estrutural.
+Pergunta do Tech Lead: há evidência suficiente para introduzir distribuição e deploy independente agora, ou uma modularização interna resolve o problema com menor custo operacional?
+2. RFs afetados
+
+3. RNFs e seleção dos ASRs
+Nem todo RNF é automaticamente um ASR. Neste exemplo, foram selecionados somente os atributos capazes de influenciar a estrutura, a implantação ou a operação do Core.
+
+4. RPCs — restrições e premissas
+
+5. Alternativas e trade-offs
+
+6. Decisão do Tech Lead
+DECISÃO: evoluir o Core para um MONÓLITO MODULAR.
+A arquitetura será organizada por capacidades de negócio — inicialmente Ranking, Cursos, Conquistas e Recompensas — mantendo um único Core Spring Boot. O Ranking será tratado como candidato explícito à extração futura, mas não será transformado em microsserviço apenas pela previsão de crescimento.
+Racional: a modularização atende principalmente manutenibilidade e controle da complexidade operacional, ao mesmo tempo em que cria uma fronteira adequada para observar o ASR de escalabilidade. A decomposição em serviço será reavaliada somente se métricas demonstrarem necessidade de escala ou deploy independente.
+7. ADR-001 — Evolução do Core
+
+8. C4 — visão de Container
+No Desafio 1, a decisão é macro. O C4 Container registra o Core como um único container e explicita que sua organização interna passa a ser modular. O detalhamento dos componentes internos pode ser aprofundado no Desafio 2.
+
+9. Mini-lab — evidência arquitetural
+A evidência não deve ser apenas um print da aplicação funcionando. O objetivo é testar a hipótese de que a modularização torna as fronteiras e dependências mais explícitas.
+9.1 Estrutura antes
+controller/
+  RankingController.java
+  CursoController.java
+service/
+  RankingService.java
+  CursoService.java
+repository/
+  RankingRepository.java
+  CursoRepository.java
+model/
+  Ranking.java
+  Curso.java
+9.2 Estrutura depois
+ranking/
+  api/
+    RankingController.java
+    RankingDTO.java
+  internal/
+    RankingService.java
+    RankingRepository.java
+    Ranking.java
+
+curso/
+  api/
+    CursoController.java
+    CursoDTO.java
+  internal/
+    CursoService.java
+    CursoRepository.java
+    Curso.java
+
+conquista/
+  api/
+  internal/
+
+recompensa/
+  api/
+  internal/
+9.3 O que comparar
+
+10. Evidências a versionar no Git
+README arquitetural com RF → RNF → ASR → RPC → alternativas → decisão.
+ADR-001 com decisão e trade-offs.
+C4 Container atualizado.
+Código da pequena modularização do Ranking ou de outra funcionalidade da AC1.
+Evidência antes/depois das dependências ou da estrutura.
+Testes executados após a refatoração, demonstrando preservação do comportamento.
+Breve conclusão: o que foi comprovado e o que ainda precisa ser medido antes de extrair um serviço.
+11. Exemplo de conclusão do aluno
+Conclusão. A equipe decidiu evoluir o Core para Monólito Modular. O mini-lab demonstrou que a funcionalidade selecionada pode ser reorganizada por capacidade sem introduzir comunicação distribuída e sem alterar o comportamento funcional. A solução reduz acoplamento estrutural e mantém a operação compatível com a equipe atual. A extração do Ranking para um serviço independente não foi adotada neste momento porque o cenário informa crescimento, mas não fornece ainda evidência de gargalo ou necessidade comprovada de deploy independente. Essa decisão deverá ser revisitada quando métricas de carga, latência, throughput ou frequência de deploy justificarem o custo adicional de distribuição.
+12. Rastreabilidade final
+
+Regra de leitura: RF/RNF → ASR + RPC → alternativas → ADR → C4 → evidência.
+ID | Requisito funcional | Impacto no desafio
+RF01 | Ranking | Carga tende a crescer mais; precisa permanecer evolutivo e mensurável.
+RF02 | Conquistas / gamificação | Badges, moedas e recompensas continuam evoluindo e precisam de fronteiras claras.
+RNF | ASR? | Justificativa arquitetural
+Manutenibilidade | SIM | Capacidades evoluem em ritmos diferentes. Fronteiras explícitas reduzem acoplamento e impacto de mudanças.
+Escalabilidade | SIM | O Ranking apresenta crescimento de carga diferente e pode exigir estratégia própria no futuro.
+Complexidade operacional | SIM | Uma equipe de 6 pessoas teria de absorver deploys, rede, observabilidade e falhas distribuídas caso serviços sejam introduzidos agora.
+Desempenho | NÃO, neste momento | É relevante, mas o cenário ainda não apresenta medição de latência ou throughput que prove gargalo arquitetural.
+Testabilidade | NÃO como driver macro | É importante e pode melhorar com modularização, mas não determina sozinha a decomposição do sistema.
+RPC | Consequência para a decisão
+Core atual em Java/Spring Boot | A evolução deve preservar o investimento e o legado existentes.
+Equipe de 6 desenvolvedores | A solução deve manter complexidade operacional proporcional à capacidade da equipe.
+Banco relacional existente | Não há justificativa, neste desafio, para trocar tecnologia de dados apenas por modernização.
+Legado da AC1 | A solução deve evoluir incrementalmente, sem reescrita integral.
+Alternativa | Benefícios | Custos / riscos | Avaliação
+A — Monólito em Camadas | Baixa complexidade operacional; continuidade imediata. | Organização técnica tende a aumentar acoplamento entre capacidades conforme o produto cresce. | Possível, mas pouco preparada para a evolução prevista.
+B — Monólito Modular | Fronteiras por capacidade; um único deploy; facilita testes, manutenção e futura extração seletiva. | Ainda compartilha processo de execução e, neste estágio, banco/deploy. | Melhor equilíbrio entre ASRs e RPCs.
+C — Serviços independentes | Permite escala e deploy independentes por capacidade. | Rede, contratos, observabilidade, tolerância a falhas e maior custo operacional. | Prematuro sem evidência de necessidade de independência.
+Campo | Registro
+Título | ADR-001 — Evoluir o Core de Monólito em Camadas para Monólito Modular
+Contexto | O produto cresce para até 100.000 usuários; Ranking apresenta crescimento diferente; demais capacidades continuam evoluindo.
+ASRs | Manutenibilidade; Escalabilidade; Complexidade operacional.
+RPCs | Java/Spring Boot; equipe de 6 desenvolvedores; banco relacional; legado AC1.
+Alternativas | A) Monólito em Camadas; B) Monólito Modular; C) decomposição seletiva em serviços.
+Decisão | Adotar Monólito Modular e preservar fronteira do Ranking para eventual extração futura.
+Consequências positivas | Melhor separação de responsabilidades; menor acoplamento; evolução incremental; menor custo operacional que microsserviços.
+Trade-offs | Deploy ainda conjunto; processo compartilhado; Ranking ainda não possui escala independente.
+Gatilho de revisão | Reavaliar extração do Ranking quando métricas mostrarem gargalo, necessidade de escala própria ou deploy independente.
+ | USUÁRIO | 
+ | ↓ | 
+ | FRONT-END WEB
+Interface da plataforma | 
+ | ↓ REST | 
+ | CORE GAMIFICAÇÃO
+Java / Spring Boot
+MONÓLITO MODULAR
+
+Ranking | Cursos | Conquistas | Recompensas | 
+ | ↓ JPA | 
+ | BANCO RELACIONAL | 
+Evidência | Antes | Depois / resultado esperado
+Organização | Por camada técnica. | Por capacidade de negócio.
+Dependências | Classes de capacidades distintas podem se misturar nas mesmas camadas. | Dependências entre módulos ficam explícitas e devem ocorrer por contratos definidos.
+Testes | Mudanças podem exigir navegação por várias camadas/pacotes. | Testes podem ser concentrados por módulo/capacidade.
+Evolução futura | Extração de capacidade tende a exigir maior reorganização. | Ranking possui fronteira mais clara para futura extração, se necessária.
+Elemento | Resposta resumida
+RF | Ranking e Conquistas.
+RNF | Manutenibilidade, escalabilidade, testabilidade, desempenho e complexidade operacional foram analisados.
+ASR | Manutenibilidade, escalabilidade e complexidade operacional.
+RPC | Spring Boot, 6 desenvolvedores, banco relacional e legado AC1.
+Alternativas | Monólito em Camadas × Monólito Modular × serviços independentes.
+ADR | ADR-001: adotar Monólito Modular.
+C4 | Core permanece um container; organização interna passa a ser modular.
+Evidência | Mini-lab de modularização + comparação antes/depois + testes.

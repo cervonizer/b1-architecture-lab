@@ -1,0 +1,107 @@
+[
+  {
+    "etapa": "prometheus_observa_fallback_real",
+    "instante_utc": "2026-10-27T22:34:45Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 200,
+    "resposta": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "b1_ia_calls_total",
+              "instance": "host.docker.internal:18080",
+              "job": "b1-core",
+              "outcome": "fallback"
+            },
+            "value": [
+              1793140485.518,
+              "1"
+            ]
+          },
+          {
+            "metric": {
+              "__name__": "b1_ia_calls_total",
+              "instance": "host.docker.internal:18080",
+              "job": "b1-core",
+              "outcome": "success"
+            },
+            "value": [
+              1793140485.518,
+              "2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "etapa": "alvo_prometheus_up",
+    "instante_utc": "2026-10-27T22:34:45Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 200,
+    "resposta": {
+      "status": "success",
+      "data": {
+        "activeTargets": [
+          {
+            "discoveredLabels": {
+              "__address__": "host.docker.internal:18080",
+              "__always_scrape_classic_histograms__": "false",
+              "__convert_classic_histograms_to_nhcb__": "false",
+              "__metrics_path__": "/actuator/prometheus",
+              "__scheme__": "http",
+              "__scrape_interval__": "2s",
+              "__scrape_native_histograms__": "false",
+              "__scrape_timeout__": "2s",
+              "job": "b1-core"
+            },
+            "labels": {
+              "instance": "host.docker.internal:18080",
+              "job": "b1-core"
+            },
+            "scrapePool": "b1-core",
+            "scrapeUrl": "http://host.docker.internal:18080/actuator/prometheus",
+            "globalUrl": "http://host.docker.internal:18080/actuator/prometheus",
+            "lastError": "",
+            "lastScrape": "2026-10-27T22:34:43.425085169Z",
+            "lastScrapeDuration": 0.135172959,
+            "health": "up",
+            "scrapeInterval": "2s",
+            "scrapeTimeout": "2s"
+          }
+        ],
+        "droppedTargets": [],
+        "droppedTargetCounts": {
+          "b1-core": 0
+        }
+      }
+    }
+  },
+  {
+    "etapa": "fila_pendente_observada",
+    "instante_utc": "2026-10-27T22:34:47Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "resposta": {
+      "status": "success",
+      "data": {
+        "resultType": "vector",
+        "result": [
+          {
+            "metric": {
+              "__name__": "b1_outbox_pending",
+              "instance": "host.docker.internal:18080",
+              "job": "b1-core"
+            },
+            "value": [
+              1793140487.707,
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

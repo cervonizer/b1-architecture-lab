@@ -1,0 +1,46 @@
+[
+  {
+    "etapa": "mqtt_recebido_core_inacessivel",
+    "instante_utc": "2026-10-27T22:34:41Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "pendentes_spool": 1,
+    "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-1"
+  },
+  {
+    "etapa": "replay_duravel_apos_reinicio",
+    "instante_utc": "2026-10-27T22:34:42Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "eventos_core": 1,
+    "entregues_spool": 1
+  },
+  {
+    "etapa": "duplicidade_controlada",
+    "instante_utc": "2026-10-27T22:34:42Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "resposta": {
+      "aceito": true,
+      "duplicado": true,
+      "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-1"
+    }
+  },
+  {
+    "etapa": "sessao_mqtt_entrega_evento_publicado_com_gateway_offline",
+    "instante_utc": "2026-10-27T22:34:44Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "eventos_core": 2,
+    "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-2"
+  },
+  {
+    "etapa": "dispositivo_offline_enfileira_e_reenvia",
+    "instante_utc": "2026-10-27T22:34:45Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "offline": {
+      "fila_preservada": true,
+      "erro": "[Errno 61] Connection refused"
+    },
+    "online": {
+      "confirmados": 1
+    },
+    "eventos_core": 3
+  }
+]

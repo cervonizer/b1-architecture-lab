@@ -1,0 +1,81 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.exemplo:b1-monolito-modular >-------------------
+[INFO] Building b1-monolito-modular 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ b1-monolito-modular ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ b1-monolito-modular ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 41 source files with javac [debug parameters release 17] to target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[17,13] cannot find symbol
+  symbol:   class Usuario
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[21,13] cannot find symbol
+  symbol:   class Curso
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[37,22] cannot find symbol
+  symbol:   class Usuario
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[37,39] cannot find symbol
+  symbol:   class Curso
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[48,12] cannot find symbol
+  symbol:   class Usuario
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[52,12] cannot find symbol
+  symbol:   class Curso
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[68,28] cannot find symbol
+  symbol:   class Usuario
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[72,26] cannot find symbol
+  symbol:   class Curso
+  location: class com.exemplo.usuario.matricula.domain.Matricula
+[INFO] 8 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.007 s
+[INFO] Finished at: 2026-10-26T20:04:11-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.0:compile (default-compile) on project b1-monolito-modular: Compilation failure: Compilation failure: 
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[17,13] cannot find symbol
+[ERROR]   symbol:   class Usuario
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[21,13] cannot find symbol
+[ERROR]   symbol:   class Curso
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[37,22] cannot find symbol
+[ERROR]   symbol:   class Usuario
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[37,39] cannot find symbol
+[ERROR]   symbol:   class Curso
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[48,12] cannot find symbol
+[ERROR]   symbol:   class Usuario
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[52,12] cannot find symbol
+[ERROR]   symbol:   class Curso
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[68,28] cannot find symbol
+[ERROR]   symbol:   class Usuario
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/B1_Desafio1_Monolito_Modular/B1_Desafio1_Monolito_Modular/src/main/java/com/exemplo/usuario/matricula/domain/Matricula.java:[72,26] cannot find symbol
+[ERROR]   symbol:   class Curso
+[ERROR]   location: class com.exemplo.usuario.matricula.domain.Matricula
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

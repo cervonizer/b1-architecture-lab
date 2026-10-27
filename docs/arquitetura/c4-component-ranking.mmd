@@ -1,0 +1,21 @@
+C4Component
+ title Fatia Ranking com Ports and Adapters
+ Container_Boundary(core, "Core Spring Boot") {
+  Component(http, "RankingRestController", "Spring MVC", "Adapter de entrada HTTP")
+  Component(app, "RankingService", "Aplicação", "Carrega dados pela porta e mapeia a resposta")
+  Component(domain, "Ranking e ParticipanteRanking", "Domínio Java puro", "Calcula pontos e ordena")
+  Component(port, "CarregarParticipantes", "Interface da aplicação", "Porta de saída sem JPA")
+  Component(adapter, "JpaParticipantesAdapter", "Adapter Spring", "Traduz dados públicos de Usuário")
+  Component(api, "ConsultaPontuacao", "API pública de Usuário", "Contrato de leitura sem entidades")
+  Component(service, "ConsultaPontuacaoService", "Aplicação de Usuário", "Mapeia dados na transação")
+  Component(repo, "PontuacaoRepository", "Spring Data JPA", "Consulta sem fórmula de Ranking no SQL")
+ }
+ ContainerDb(db, "Banco relacional", "PostgreSQL", "H2 no laboratório")
+ Rel(http, app, "Invoca")
+ Rel(app, domain, "Aplica regras")
+ Rel(app, port, "Depende da abstração")
+ Rel(adapter, port, "Implementa")
+ Rel(adapter, api, "Consulta contrato público")
+ Rel(service, api, "Implementa")
+ Rel(service, repo, "Consulta")
+ Rel(repo, db, "Lê", "JPA e JDBC")

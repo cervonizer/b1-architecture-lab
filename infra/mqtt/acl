@@ -1,0 +1,4 @@
+user device01
+topic write lab/instituicao-1/dispositivo-1/eventos
+user gateway
+topic read lab/+/+/eventos

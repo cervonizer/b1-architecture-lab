@@ -1,0 +1,360 @@
+{
+  "number": 1,
+  "building": false,
+  "result": "SUCCESS",
+  "duration": 45860,
+  "url": "http://127.0.0.1:19090/job/B1_Architecture_Lab/1/",
+  "timestamp": 1793140445089,
+  "artifacts": [
+    {
+      "displayPath": null,
+      "fileName": "ADR-001.md",
+      "relativePath": "docs/adr/ADR-001.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "ADR-002.md",
+      "relativePath": "docs/adr/ADR-002.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "ADR-003.md",
+      "relativePath": "docs/adr/ADR-003.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "ADR-004.md",
+      "relativePath": "docs/adr/ADR-004.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "ADR-005.md",
+      "relativePath": "docs/adr/ADR-005.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "ADR-006.md",
+      "relativePath": "docs/adr/ADR-006.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "c4-component-ranking.mmd",
+      "relativePath": "docs/arquitetura/c4-component-ranking.mmd"
+    },
+    {
+      "displayPath": null,
+      "fileName": "c4-container-final.mmd",
+      "relativePath": "docs/arquitetura/c4-container-final.mmd"
+    },
+    {
+      "displayPath": null,
+      "fileName": "deployment-laboratorio.mmd",
+      "relativePath": "docs/arquitetura/deployment-laboratorio.mmd"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/arquitetura/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "sequencia-conclusao.mmd",
+      "relativePath": "docs/arquitetura/sequencia-conclusao.mmd"
+    },
+    {
+      "displayPath": null,
+      "fileName": "alteracoes.patch",
+      "relativePath": "docs/evidencias/desafio1/alteracoes.patch"
+    },
+    {
+      "displayPath": null,
+      "fileName": "compilacao-modular-original.log",
+      "relativePath": "docs/evidencias/desafio1/compilacao-modular-original.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "dependencias.json",
+      "relativePath": "docs/evidencias/desafio1/dependencias.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "dependencias.md",
+      "relativePath": "docs/evidencias/desafio1/dependencias.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "B1_conclusao_teste.png",
+      "relativePath": "docs/evidencias/desafio1/fluxo-manual/B1_conclusao_teste.png"
+    },
+    {
+      "displayPath": null,
+      "fileName": "B1_matricula_teste.png",
+      "relativePath": "docs/evidencias/desafio1/fluxo-manual/B1_matricula_teste.png"
+    },
+    {
+      "displayPath": null,
+      "fileName": "B1_ranking_validado.json",
+      "relativePath": "docs/evidencias/desafio1/fluxo-manual/B1_ranking_validado.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "B1_usuario_teste.png",
+      "relativePath": "docs/evidencias/desafio1/fluxo-manual/B1_usuario_teste.png"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio1/fluxo-manual/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "fronteira.log",
+      "relativePath": "docs/evidencias/desafio1/fronteira.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "RankingIntegrationTest-camadas.java.txt",
+      "relativePath": "docs/evidencias/desafio1/RankingIntegrationTest-camadas.java.txt"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio1/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "test-camadas.log",
+      "relativePath": "docs/evidencias/desafio1/test-camadas.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingIntegrationTest.xml",
+      "relativePath": "docs/evidencias/desafio1/TEST-com.exemplo.usuario.RankingIntegrationTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "test-projeto.log",
+      "relativePath": "docs/evidencias/desafio1/test-projeto.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "alteracoes-d1-d2.patch",
+      "relativePath": "docs/evidencias/desafio2/alteracoes-d1-d2.patch"
+    },
+    {
+      "displayPath": null,
+      "fileName": "dependencias-atual.json",
+      "relativePath": "docs/evidencias/desafio2/dependencias-atual.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "dominio-isolado.log",
+      "relativePath": "docs/evidencias/desafio2/dominio-isolado.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "fronteira.log",
+      "relativePath": "docs/evidencias/desafio2/fronteira.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio2/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "suite-completa.log",
+      "relativePath": "docs/evidencias/desafio2/suite-completa.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingAdaptersTest.xml",
+      "relativePath": "docs/evidencias/desafio2/TEST-com.exemplo.usuario.RankingAdaptersTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingArchitectureTest.xml",
+      "relativePath": "docs/evidencias/desafio2/TEST-com.exemplo.usuario.RankingArchitectureTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingDomainTest.xml",
+      "relativePath": "docs/evidencias/desafio2/TEST-com.exemplo.usuario.RankingDomainTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingIntegrationTest.xml",
+      "relativePath": "docs/evidencias/desafio2/TEST-com.exemplo.usuario.RankingIntegrationTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "experimento.json",
+      "relativePath": "docs/evidencias/desafio3/experimento.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio3/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "experimento.json",
+      "relativePath": "docs/evidencias/desafio4/experimento.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio4/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "experimento.json",
+      "relativePath": "docs/evidencias/desafio5/experimento.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio5/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "core-execucao.log",
+      "relativePath": "docs/evidencias/desafio6/core-execucao.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "experimento.json",
+      "relativePath": "docs/evidencias/desafio6/experimento.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "gateway-execucao.log",
+      "relativePath": "docs/evidencias/desafio6/gateway-execucao.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "grafana-falhas.png",
+      "relativePath": "docs/evidencias/desafio6/grafana-falhas.png"
+    },
+    {
+      "displayPath": null,
+      "fileName": "maven-verify.log",
+      "relativePath": "docs/evidencias/desafio6/maven-verify.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "metricas.prom",
+      "relativePath": "docs/evidencias/desafio6/metricas.prom"
+    },
+    {
+      "displayPath": null,
+      "fileName": "pytest.log",
+      "relativePath": "docs/evidencias/desafio6/pytest.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "python-execucao.log",
+      "relativePath": "docs/evidencias/desafio6/python-execucao.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "README.md",
+      "relativePath": "docs/evidencias/desafio6/README.md"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.AiGatewayTest.xml",
+      "relativePath": "docs/evidencias/desafio6/TEST-com.exemplo.usuario.AiGatewayTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.EventosEIotTest.xml",
+      "relativePath": "docs/evidencias/desafio6/TEST-com.exemplo.usuario.EventosEIotTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingAdaptersTest.xml",
+      "relativePath": "docs/evidencias/desafio6/TEST-com.exemplo.usuario.RankingAdaptersTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingArchitectureTest.xml",
+      "relativePath": "docs/evidencias/desafio6/TEST-com.exemplo.usuario.RankingArchitectureTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingDomainTest.xml",
+      "relativePath": "docs/evidencias/desafio6/TEST-com.exemplo.usuario.RankingDomainTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "TEST-com.exemplo.usuario.RankingIntegrationTest.xml",
+      "relativePath": "docs/evidencias/desafio6/TEST-com.exemplo.usuario.RankingIntegrationTest.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "HISTORICO_GIT.json",
+      "relativePath": "docs/evidencias/HISTORICO_GIT.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "dashboard-b1.json",
+      "relativePath": "infra/grafana/dashboard-b1.json"
+    },
+    {
+      "displayPath": null,
+      "fileName": "dashboards.yml",
+      "relativePath": "infra/grafana/provisioning/dashboards/dashboards.yml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "datasource.yml",
+      "relativePath": "infra/grafana/provisioning/datasources/datasource.yml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "acl",
+      "relativePath": "infra/mqtt/acl"
+    },
+    {
+      "displayPath": null,
+      "fileName": "mosquitto.conf",
+      "relativePath": "infra/mqtt/mosquitto.conf"
+    },
+    {
+      "displayPath": null,
+      "fileName": "passwd",
+      "relativePath": "infra/mqtt/passwd"
+    },
+    {
+      "displayPath": null,
+      "fileName": "prometheus.yml",
+      "relativePath": "infra/prometheus/prometheus.yml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "python-tests.xml",
+      "relativePath": "python-tests.xml"
+    },
+    {
+      "displayPath": null,
+      "fileName": "core.log",
+      "relativePath": "state-lab/core.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "gateway.log",
+      "relativePath": "state-lab/gateway.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "python.log",
+      "relativePath": "state-lab/python.log"
+    },
+    {
+      "displayPath": null,
+      "fileName": "b1-monolito-modular-0.0.1-SNAPSHOT.jar",
+      "relativePath": "target/b1-monolito-modular-0.0.1-SNAPSHOT.jar"
+    }
+  ]
+}

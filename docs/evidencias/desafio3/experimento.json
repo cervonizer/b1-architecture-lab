@@ -1,0 +1,54 @@
+[
+  {
+    "etapa": "python_disponivel",
+    "instante_utc": "2026-10-27T22:34:38Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 200,
+    "resposta": {
+      "fonte": "python-simulacao",
+      "degradado": false,
+      "cursos": [
+        "Arquitetura de Software B1",
+        "Testes e qualidade"
+      ],
+      "nota": "Catalogo fixo para testar fronteira e falha; nao e modelo ML treinado."
+    },
+    "duracao_ms": 144.04
+  },
+  {
+    "etapa": "recuperacao_lexical_sem_llm",
+    "instante_utc": "2026-10-27T22:34:38Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "resposta": {
+      "fonte": "recuperacao-lexical-local",
+      "degradado": false,
+      "modo": "sem-LLM",
+      "resposta": "O Ranking soma 100 pontos por curso concluido e as moedas da assinatura.",
+      "fontes": [
+        "ranking"
+      ]
+    }
+  },
+  {
+    "etapa": "processo_python_interrompido",
+    "instante_utc": "2026-10-27T22:34:38Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 200,
+    "resposta": {
+      "resposta": "Assistente temporariamente indisponível. Consulte os cursos e materiais cadastrados.",
+      "cursos": [
+        "Catálogo geral disponível no Core"
+      ],
+      "fonte": "fallback-estatico",
+      "degradado": true
+    },
+    "duracao_ms": 110.0
+  },
+  {
+    "etapa": "core_essencial_continua",
+    "instante_utc": "2026-10-27T22:34:38Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 200,
+    "cursos": 1
+  }
+]

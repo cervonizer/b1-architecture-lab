@@ -1,0 +1,133 @@
+--- a/src/main/java/com/exemplo/usuario/ranking/application/RankingService.java
++++ b/src/main/java/com/exemplo/usuario/ranking/application/RankingService.java
+@@ -1,21 +1,21 @@
+ package com.exemplo.usuario.ranking.application;
+ 
+ import com.exemplo.usuario.ranking.api.RankingResponseDTO;
+-import com.exemplo.usuario.usuario.api.ConsultaPontuacao;
++import com.exemplo.usuario.ranking.application.port.CarregarParticipantes;
++import com.exemplo.usuario.ranking.domain.Ranking;
+ import org.springframework.stereotype.Service;
+ import java.util.List;
+ 
+ @Service
+ public class RankingService {
+-    private final ConsultaPontuacao consulta;
++    private final CarregarParticipantes participantes;
+ 
+-    public RankingService(ConsultaPontuacao consulta) {
+-        this.consulta = consulta;
++    public RankingService(CarregarParticipantes participantes) {
++        this.participantes = participantes;
+     }
+ 
+     public List<RankingResponseDTO> listar() {
+-        return consulta.listarOrdenado().stream().map(a -> new RankingResponseDTO(
+-                a.usuarioId(), a.nome(), a.cursosConcluidos(), a.moedas(),
+-                a.cursosConcluidos() * 100 + a.moedas())).toList();
++        return Ranking.ordenar(participantes.carregar()).stream().map(a -> new RankingResponseDTO(
++                a.usuarioId(), a.nome(), a.cursosConcluidos(), a.moedas(), a.pontos())).toList();
+     }
+ }
+--- a/src/main/java/com/exemplo/usuario/ranking/application/port/CarregarParticipantes.java
++++ b/src/main/java/com/exemplo/usuario/ranking/application/port/CarregarParticipantes.java
+@@ -0,0 +1,9 @@
++package com.exemplo.usuario.ranking.application.port;
++
++import com.exemplo.usuario.ranking.domain.ParticipanteRanking;
++import java.util.List;
++
++/** Porta de saida definida pelo caso de uso de Ranking. Nao exige ordem de entrada. */
++public interface CarregarParticipantes {
++    List<ParticipanteRanking> carregar();
++}
+--- a/src/main/java/com/exemplo/usuario/ranking/domain/ParticipanteRanking.java
++++ b/src/main/java/com/exemplo/usuario/ranking/domain/ParticipanteRanking.java
+@@ -0,0 +1,8 @@
++package com.exemplo.usuario.ranking.domain;
++
++/** Dados de negocio imutaveis, sem dependencias de persistencia ou framework. */
++public record ParticipanteRanking(Long usuarioId, String nome, int cursosConcluidos, int moedas) {
++    public int pontos() {
++        return cursosConcluidos * 100 + moedas;
++    }
++}
+--- a/src/main/java/com/exemplo/usuario/ranking/domain/Ranking.java
++++ b/src/main/java/com/exemplo/usuario/ranking/domain/Ranking.java
+@@ -0,0 +1,15 @@
++package com.exemplo.usuario.ranking.domain;
++
++import java.util.Comparator;
++import java.util.List;
++
++public final class Ranking {
++    private Ranking() {}
++
++    /** Preserva a ordem de entrada nos empates; nao cria um desempate de negocio. */
++    public static List<ParticipanteRanking> ordenar(List<ParticipanteRanking> participantes) {
++        return participantes.stream()
++                .sorted(Comparator.comparingInt(ParticipanteRanking::pontos).reversed())
++                .toList();
++    }
++}
+--- a/src/main/java/com/exemplo/usuario/ranking/internal/persistence/JpaParticipantesAdapter.java
++++ b/src/main/java/com/exemplo/usuario/ranking/internal/persistence/JpaParticipantesAdapter.java
+@@ -0,0 +1,23 @@
++package com.exemplo.usuario.ranking.internal.persistence;
++
++import com.exemplo.usuario.ranking.application.port.CarregarParticipantes;
++import com.exemplo.usuario.ranking.domain.ParticipanteRanking;
++import com.exemplo.usuario.usuario.api.ConsultaPontuacao;
++import org.springframework.stereotype.Component;
++import java.util.List;
++
++/** Adapter para os dados relacionais, respeitando a API publica do modulo Usuario. */
++@Component
++public class JpaParticipantesAdapter implements CarregarParticipantes {
++    private final ConsultaPontuacao consulta;
++
++    public JpaParticipantesAdapter(ConsultaPontuacao consulta) {
++        this.consulta = consulta;
++    }
++
++    @Override
++    public List<ParticipanteRanking> carregar() {
++        return consulta.listar().stream().map(a -> new ParticipanteRanking(
++                a.usuarioId(), a.nome(), a.cursosConcluidos(), a.moedas())).toList();
++    }
++}
+--- a/src/main/java/com/exemplo/usuario/usuario/api/ConsultaPontuacao.java
++++ b/src/main/java/com/exemplo/usuario/usuario/api/ConsultaPontuacao.java
+@@ -4,7 +4,7 @@
+ 
+ /** Contrato de leitura entre modulos; nao expoe entidades JPA. */
+ public interface ConsultaPontuacao {
+-    List<PontuacaoUsuario> listarOrdenado();
++    List<PontuacaoUsuario> listar();
+ 
+     record PontuacaoUsuario(Long usuarioId, String nome, Integer cursosConcluidos, Integer moedas) {}
+ }
+--- a/src/main/java/com/exemplo/usuario/usuario/application/ConsultaPontuacaoService.java
++++ b/src/main/java/com/exemplo/usuario/usuario/application/ConsultaPontuacaoService.java
+@@ -16,8 +16,8 @@
+ 
+     @Override
+     @Transactional(readOnly = true)
+-    public List<PontuacaoUsuario> listarOrdenado() {
+-        return repository.buscarRanking().stream().map(a -> new PontuacaoUsuario(
++    public List<PontuacaoUsuario> listar() {
++        return repository.buscarParticipantes().stream().map(a -> new PontuacaoUsuario(
+                 a.getUsuario().getId(), a.getUsuario().getNome(),
+                 a.getCursosConcluidosComSucesso(), a.getMoedas())).toList();
+     }
+--- a/src/main/java/com/exemplo/usuario/usuario/internal/persistence/PontuacaoRepository.java
++++ b/src/main/java/com/exemplo/usuario/usuario/internal/persistence/PontuacaoRepository.java
+@@ -6,6 +6,6 @@
+ import java.util.List;
+ 
+ public interface PontuacaoRepository extends JpaRepository<Assinatura, Long> {
+-    @Query("select a from Assinatura a join fetch a.usuario order by (a.cursosConcluidosComSucesso * 100 + a.moedas) desc")
+-    List<Assinatura> buscarRanking();
++    @Query("select a from Assinatura a join fetch a.usuario")
++    List<Assinatura> buscarParticipantes();
+ }

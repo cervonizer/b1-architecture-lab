@@ -1,0 +1,59 @@
+[
+  {
+    "etapa": "sincrono_consumidor_indisponivel",
+    "instante_utc": "2026-10-27T22:34:39Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 503,
+    "duracao_ms": 114.52
+  },
+  {
+    "etapa": "conclusao_assincrona_com_consumidor_fora",
+    "instante_utc": "2026-10-27T22:34:39Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "http": 200,
+    "resposta": {
+      "id": 1,
+      "usuarioId": 1,
+      "usuarioNome": "Aluno Laboratorio",
+      "cursoId": 1,
+      "cursoTitulo": "Arquitetura B1",
+      "status": "CONCLUIDO",
+      "notaFinal": 8.0,
+      "bonus": false
+    },
+    "duracao_ms": 139.05
+  },
+  {
+    "etapa": "repeticao_idempotente",
+    "instante_utc": "2026-10-27T22:34:39Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "usuario": {
+      "id": 1,
+      "nome": "Aluno Laboratorio",
+      "email": "lab-7f4ec76c-8303-46f9-8469-92d71e9b152b@example.com",
+      "plano": "BASICO",
+      "creditosCursos": 3,
+      "cursosConcluidosComSucesso": 1,
+      "moedas": 0
+    }
+  },
+  {
+    "etapa": "evento_retido_apos_falha",
+    "instante_utc": "2026-10-27T22:34:39Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "resposta": {
+      "pendentes": 1
+    }
+  },
+  {
+    "etapa": "recuperacao_e_entrega",
+    "instante_utc": "2026-10-27T22:34:40Z",
+    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "pendentes": {
+      "pendentes": 0
+    },
+    "consumidor": {
+      "recebidas": 1
+    }
+  }
+]

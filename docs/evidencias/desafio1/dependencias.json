@@ -1,0 +1,94 @@
+{
+  "camadas_original": {
+    "arquivos_java_producao": 37,
+    "imports_ranking": [
+      {
+        "arquivo": "com/exemplo/usuario/controller/RankingRestController.java",
+        "import": "com.exemplo.usuario.dto.RankingResponseDTO"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/controller/RankingRestController.java",
+        "import": "com.exemplo.usuario.service.RankingService"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/repository/RankingRepository.java",
+        "import": "com.exemplo.usuario.domain.Assinatura"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/service/RankingService.java",
+        "import": "com.exemplo.usuario.dto.RankingResponseDTO"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/service/RankingService.java",
+        "import": "com.exemplo.usuario.repository.RankingRepository"
+      }
+    ],
+    "imports_intermodulares_ranking": [],
+    "imports_intermodulares_nao_api_ranking": []
+  },
+  "modular_original": {
+    "arquivos_java_producao": 41,
+    "imports_ranking": [
+      {
+        "arquivo": "com/exemplo/usuario/ranking/api/RankingRestController.java",
+        "import": "com.exemplo.usuario.ranking.api.RankingResponseDTO"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/api/RankingRestController.java",
+        "import": "com.exemplo.usuario.ranking.application.RankingService"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/application/RankingService.java",
+        "import": "com.exemplo.usuario.ranking.api.RankingResponseDTO"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/application/RankingService.java",
+        "import": "com.exemplo.usuario.ranking.internal.persistence.RankingRepository"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java",
+        "import": "com.exemplo.usuario.usuario.domain.Assinatura"
+      }
+    ],
+    "imports_intermodulares_ranking": [
+      {
+        "arquivo": "com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java",
+        "import": "com.exemplo.usuario.usuario.domain.Assinatura"
+      }
+    ],
+    "imports_intermodulares_nao_api_ranking": [
+      {
+        "arquivo": "com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java",
+        "import": "com.exemplo.usuario.usuario.domain.Assinatura"
+      }
+    ]
+  },
+  "modular_evoluido": {
+    "arquivos_java_producao": 43,
+    "imports_ranking": [
+      {
+        "arquivo": "com/exemplo/usuario/ranking/api/RankingRestController.java",
+        "import": "com.exemplo.usuario.ranking.api.RankingResponseDTO"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/api/RankingRestController.java",
+        "import": "com.exemplo.usuario.ranking.application.RankingService"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/application/RankingService.java",
+        "import": "com.exemplo.usuario.ranking.api.RankingResponseDTO"
+      },
+      {
+        "arquivo": "com/exemplo/usuario/ranking/application/RankingService.java",
+        "import": "com.exemplo.usuario.usuario.api.ConsultaPontuacao"
+      }
+    ],
+    "imports_intermodulares_ranking": [
+      {
+        "arquivo": "com/exemplo/usuario/ranking/application/RankingService.java",
+        "import": "com.exemplo.usuario.usuario.api.ConsultaPontuacao"
+      }
+    ],
+    "imports_intermodulares_nao_api_ranking": []
+  }
+}

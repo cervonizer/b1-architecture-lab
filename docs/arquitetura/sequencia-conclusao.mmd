@@ -1,0 +1,21 @@
+sequenceDiagram
+ participant U as Usuário
+ participant C as Core
+ participant DB as Banco Core
+ participant D as Dispatcher
+ participant N as Consumidor Python
+ U->>C: concluir matrícula com nota
+ C->>DB: lock da matrícula e transação
+ C->>DB: estado e créditos e evento outbox
+ DB-->>C: commit
+ C-->>U: 200 conclusão confirmada
+ D->>DB: buscar pendências
+ D->>N: notificar event_id
+ alt consumidor fora
+  N-->>D: 503 ou timeout
+  D->>DB: incrementar tentativa e manter pendente
+ else consumidor recuperado
+  N->>N: deduplicar por event_id
+  N-->>D: 2xx
+  D->>DB: marcar entregue
+ end

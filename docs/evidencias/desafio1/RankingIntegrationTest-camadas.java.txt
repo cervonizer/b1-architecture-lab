@@ -1,0 +1,59 @@
+package com.exemplo.usuario;
+
+import com.exemplo.usuario.service.RankingService;
+import com.exemplo.usuario.domain.Assinatura;
+import com.exemplo.usuario.domain.Usuario;
+import com.exemplo.usuario.repository.UsuarioRepository;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
+import static org.assertj.core.api.Assertions.assertThat;
+
+@org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
+@SpringBootTest
+@ActiveProfiles("h2")
+@Transactional
+class RankingIntegrationTest {
+    @Autowired org.springframework.test.web.servlet.MockMvc http;
+    @Autowired UsuarioRepository usuarios;
+    @Autowired RankingService ranking;
+
+    private void criar(String nome, int cursos, int moedas) {
+        var usuario = new Usuario(nome, nome.toLowerCase() + "@example.com", "senha-cifrada");
+        var assinatura = new Assinatura(usuario);
+        assinatura.setCursosConcluidosComSucesso(cursos);
+        assinatura.setMoedas(moedas);
+        usuario.vincularAssinatura(assinatura);
+        usuarios.saveAndFlush(usuario);
+    }
+
+    @Test void preservaFormulaOrdenacaoEDadosNaFronteira() {
+        criar("Ana", 2, 7);
+        criar("Bia", 1, 150);
+        var resultado = ranking.listar();
+        assertThat(resultado).hasSize(2);
+        assertThat(resultado).extracting(r -> r.getNome()).containsExactly("Bia", "Ana");
+        assertThat(resultado).extracting(r -> r.getPontos()).containsExactly(250, 207);
+        assertThat(resultado.get(0).getCursosConcluidos()).isEqualTo(1);
+        assertThat(resultado.get(0).getMoedas()).isEqualTo(150);
+        assertThat(resultado.get(0).getUsuarioId()).isNotNull();
+    }
+
+    @Test void preservaEndpointAutenticado() throws Exception {
+        criar("Ana", 2, 7);
+        http.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("/api/ranking")
+                .header("Authorization", "Basic YWRtaW46MTIzNDU2"))
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.status().isOk())
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath("$[0].nome").value("Ana"))
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath("$[0].pontos").value(207))
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath("$[0].cursosConcluidos").value(2))
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath("$[0].moedas").value(7))
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath("$[0].usuarioId").isNumber());
+    }
+
+    @Test void retornaListaVaziaSemUsuarios() {
+        assertThat(ranking.listar()).isEmpty();
+    }
+}

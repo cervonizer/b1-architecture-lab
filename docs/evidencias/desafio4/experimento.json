@@ -1,36 +1,36 @@
 [
   {
     "etapa": "sincrono_consumidor_indisponivel",
-    "instante_utc": "2026-10-27T22:34:39Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:50Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 503,
-    "duracao_ms": 114.52
+    "duracao_ms": 117.71
   },
   {
     "etapa": "conclusao_assincrona_com_consumidor_fora",
-    "instante_utc": "2026-10-27T22:34:39Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:50Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 200,
     "resposta": {
       "id": 1,
       "usuarioId": 1,
       "usuarioNome": "Aluno Laboratorio",
       "cursoId": 1,
-      "cursoTitulo": "Arquitetura B1",
+      "cursoTitulo": "Java e arquitetura modular",
       "status": "CONCLUIDO",
       "notaFinal": 8.0,
       "bonus": false
     },
-    "duracao_ms": 139.05
+    "duracao_ms": 152.88
   },
   {
     "etapa": "repeticao_idempotente",
-    "instante_utc": "2026-10-27T22:34:39Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:51Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "usuario": {
       "id": 1,
       "nome": "Aluno Laboratorio",
-      "email": "lab-7f4ec76c-8303-46f9-8469-92d71e9b152b@example.com",
+      "email": "lab-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2@example.com",
       "plano": "BASICO",
       "creditosCursos": 3,
       "cursosConcluidosComSucesso": 1,
@@ -39,16 +39,16 @@
   },
   {
     "etapa": "evento_retido_apos_falha",
-    "instante_utc": "2026-10-27T22:34:39Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:51Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "resposta": {
       "pendentes": 1
     }
   },
   {
     "etapa": "recuperacao_e_entrega",
-    "instante_utc": "2026-10-27T22:34:40Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:51Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "pendentes": {
       "pendentes": 0
     },

@@ -1,0 +1,43 @@
+{
+  "versao": "logistic-relevance-v1",
+  "tipo": "LogisticRegression supervisionada com TFIDF e atributos de perfil",
+  "dados": "270 pares sinteticos, 18 perfis e 15 cursos; sem dados de alunos reais",
+  "treino": 195,
+  "teste": 75,
+  "perfis_treino": [
+    "p03",
+    "p05",
+    "p07",
+    "p08",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18"
+  ],
+  "perfis_teste": [
+    "p01",
+    "p02",
+    "p04",
+    "p06",
+    "p09"
+  ],
+  "seed": 42,
+  "metricas_teste": {
+    "accuracy": 0.92,
+    "precision": 0.7142857142857143,
+    "recall": 0.8333333333333334,
+    "f1": 0.7692307692307693,
+    "roc_auc": 0.9345238095238095,
+    "baseline_accuracy_sempre_negativo": 0.84
+  },
+  "sklearn": "1.6.1",
+  "sha256_dataset": "cbd1f6caff89b75e50a22424f4ee212eced73e8b1cefe80a8d01444155061a34",
+  "sha256_modelo": "4d6cd4fe837d25f89da0f94f3742da155871ba56e19c91de0b04a6bb5f266f2b",
+  "instante_utc": "2026-10-27T23:24:00.353662+00:00",
+  "limite": "Avaliacao pequena e sintetica; nao comprova qualidade em producao."
+}

@@ -12,3 +12,6 @@ state/
 *.pyc
 .pytest_cache/
 python-tests.xml
+
+*.safetensors
+.cache/modelos/

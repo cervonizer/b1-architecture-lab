@@ -1,54 +1,131 @@
 [
   {
     "etapa": "python_disponivel",
-    "instante_utc": "2026-10-27T22:34:38Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:43Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 200,
     "resposta": {
-      "fonte": "python-simulacao",
+      "fonte": "modelo-supervisionado",
       "degradado": false,
       "cursos": [
-        "Arquitetura de Software B1",
-        "Testes e qualidade"
+        {
+          "id": 1,
+          "titulo": "Java e arquitetura modular",
+          "relevancia_estimada": 1.0
+        },
+        {
+          "id": 2,
+          "titulo": "IoT e MQTT",
+          "relevancia_estimada": 0.060071
+        },
+        {
+          "id": 3,
+          "titulo": "Python e aprendizado de maquina",
+          "relevancia_estimada": 0.060071
+        }
       ],
-      "nota": "Catalogo fixo para testar fronteira e falha; nao e modelo ML treinado."
+      "perfil": {
+        "interesses": [
+          "java",
+          "arquitetura"
+        ],
+        "nivel": 2
+      },
+      "modelo": "logistic-relevance-v1",
+      "modelo_sha256": "4d6cd4fe837d25f89da0f94f3742da155871ba56e19c91de0b04a6bb5f266f2b",
+      "treinamento": "dados-sinteticos-de-laboratorio"
     },
-    "duracao_ms": 144.04
+    "duracao_ms": 171.27
   },
   {
-    "etapa": "recuperacao_lexical_sem_llm",
-    "instante_utc": "2026-10-27T22:34:38Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "etapa": "personalizacao_com_modelo_treinado",
+    "instante_utc": "2026-10-27T23:35:43Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "resposta": {
-      "fonte": "recuperacao-lexical-local",
+      "fonte": "modelo-supervisionado",
       "degradado": false,
-      "modo": "sem-LLM",
-      "resposta": "O Ranking soma 100 pontos por curso concluido e as moedas da assinatura.",
+      "cursos": [
+        {
+          "id": 2,
+          "titulo": "IoT e MQTT",
+          "relevancia_estimada": 1.0
+        },
+        {
+          "id": 1,
+          "titulo": "Java e arquitetura modular",
+          "relevancia_estimada": 0.060071
+        },
+        {
+          "id": 3,
+          "titulo": "Python e aprendizado de maquina",
+          "relevancia_estimada": 0.060071
+        }
+      ],
+      "perfil": {
+        "interesses": [
+          "iot",
+          "mqtt"
+        ],
+        "nivel": 2
+      },
+      "modelo": "logistic-relevance-v1",
+      "modelo_sha256": "4d6cd4fe837d25f89da0f94f3742da155871ba56e19c91de0b04a6bb5f266f2b",
+      "treinamento": "dados-sinteticos-de-laboratorio"
+    }
+  },
+  {
+    "etapa": "rag_com_llm_real_e_fontes",
+    "instante_utc": "2026-10-27T23:35:44Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
+    "resposta": {
+      "fonte": "rag-com-llm-local",
+      "modo": "rag-llm",
+      "degradado": false,
+      "abstencao": false,
+      "resposta": "3 creditos",
       "fontes": [
-        "ranking"
-      ]
+        {
+          "id": "creditos",
+          "titulo": "Creditos e assinatura",
+          "arquivo": "src/main/java/com/exemplo/usuario/usuario/domain/Assinatura.java",
+          "documento": "creditos.md",
+          "score": 0.297368,
+          "trecho": "# Creditos e assinatura\n\nUma conclusao de curso com aproveitamento concede 3 (tres) creditos de cursos e aumenta em um o contador de cursos concluidos com sucesso. A assinatura comeca no plano BASICO, com zero creditos, conclusoes e moedas. Ao atingir 12 conclusoes com sucesso, a assinatura passa a PREMIUM. A matricula em curso bonus consome um credito e exige saldo positivo. Concluir curso nao acrescenta moedas automaticamente.\n"
+        }
+      ],
+      "geracao": {
+        "executada": true,
+        "modelo": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "pesos_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+        "classe": "Qwen2ForCausalLM",
+        "parametros": 494032768,
+        "device": "mps",
+        "tokens_gerados": 4,
+        "duracao_ms": 994.5
+      }
     }
   },
   {
     "etapa": "processo_python_interrompido",
-    "instante_utc": "2026-10-27T22:34:38Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:45Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 200,
     "resposta": {
+      "degradado": true,
       "resposta": "Assistente temporariamente indisponível. Consulte os cursos e materiais cadastrados.",
       "cursos": [
         "Catálogo geral disponível no Core"
       ],
-      "fonte": "fallback-estatico",
-      "degradado": true
+      "fonte": "fallback-estatico"
     },
-    "duracao_ms": 110.0
+    "duracao_ms": 111.13
   },
   {
     "etapa": "core_essencial_continua",
-    "instante_utc": "2026-10-27T22:34:38Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:45Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 200,
-    "cursos": 1
+    "cursos": 3
   }
 ]

@@ -5,10 +5,13 @@ pipeline {
     parameters {
         string(name: 'SOURCE_DIR', defaultValue: '', description: 'Somente laboratorio sem remoto: pasta local do projeto. Vazio usa checkout scm.')
         string(name: 'PYTHON_BIN', defaultValue: 'python3', description: 'Python 3.12 para preparar o ambiente isolado')
+        string(name: 'LLM_DIR', defaultValue: '', description: 'Cache local dos pesos Qwen; vazio usa .cache/modelos no workspace')
         string(name: 'MAVEN_REPO', defaultValue: '.cache/m2', description: 'Cache Maven do agente')
         booleanParam(name: 'EXECUTAR_MICROLABS', defaultValue: true, description: 'Requer Docker Desktop e portas 18080/18081/18883/19091/13001 livres')
     }
     environment {
+        B1_LLM_DIR = "${params.LLM_DIR?.trim() ?: '.cache/modelos/qwen2.5-0.5b'}"
+        B1_TESTAR_LLM = '1'
         PATH = "/usr/local/bin:/opt/homebrew/bin:/Applications/Docker.app/Contents/Resources/bin:${env.PATH}"
     }
     stages {
@@ -32,6 +35,7 @@ pipeline {
                 sh '''
                     "$PYTHON_BIN" -m venv .venv
                     .venv/bin/python -m pip install -r services/python/requirements.lock.txt
+                    .venv/bin/python scripts/preparar_llm.py
                     PYTHONPATH=services/python .venv/bin/python -m pytest services/python/tests -q --junitxml=python-tests.xml
                 '''
             }

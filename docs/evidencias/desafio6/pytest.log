@@ -1,8 +1,9 @@
-......                                                                   [100%]
+............                                                             [100%]
 =============================== warnings summary ===============================
-work/b1-python/starlette/testclient.py:37
-  /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/b1-python/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+work/b1-ia-python/starlette/testclient.py:37
+  /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/b1-ia-python/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
     _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-6 passed, 1 warning in 0.27s
+- generated xml file: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/ia-real/python-tests.xml -
+12 passed, 1 warning in 8.62s

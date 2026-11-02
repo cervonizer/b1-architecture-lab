@@ -82,7 +82,7 @@ C4Container
  System_Boundary(plataforma, "Plataforma de educação continuada") {
   Container(core, "Core modular e interface web", "Java 17 e Spring Boot", "Usuário, Curso, Matrícula, Ranking, outbox e inbox IoT")
   ContainerDb(db, "Banco Core", "PostgreSQL", "Dados essenciais e eventos outbox/inbox na mesma base")
-  Container(python, "Serviço Python", "FastAPI", "Contratos de recomendação e assistente; consumidor de notificação no lab")
+  Container(python, "Serviço Python", "FastAPI", "Modelo treinado e RAG com Qwen local; consumidor de notificação no lab")
   ContainerDb(notificacoes, "Deduplicação do consumidor", "SQLite no laboratório", "event_id já recebido")
   Container(mqtt, "Broker da borda IoT", "Mosquitto MQTT", "QoS 1, sessão persistente e ACL")
   Container(gateway, "Gateway IoT", "Python e Paho", "Valida, transforma e entrega ao Core com retry")
@@ -99,7 +99,7 @@ C4Container
  Rel(gateway, core, "Encaminha evento transformado", "HTTP JSON autenticado")
 ```
 
-Na arquitetura com PostgreSQL a outbox compartilha o banco transacional do Core. No laboratório H2 é embutido na JVM e não é container separado. Python hospeda o consumidor de notificação apenas como recurso de teste; separar seu ciclo do de IA será uma evolução se houver justificativa. Os contratos de IA são simulados explicitamente, sem LLM externo ou modelo treinado.
+Na arquitetura com PostgreSQL a outbox compartilha o banco transacional do Core. No laboratório H2 é embutido na JVM e não é container separado. Python hospeda o consumidor de notificação apenas como recurso de teste; separar seu ciclo do de IA será uma evolução se houver justificativa. A recomendação usa artefato treinado e o assistente gera respostas com LLM local; os pesos não ficam no Git.
 
 ## C4 Component do Ranking
 
@@ -195,14 +195,14 @@ A implantação observada combina processos Java/Python e containers de broker/p
 - [Desafio 5](../evidencias/desafio5/README.md)
 - [Desafio 6](../evidencias/desafio6/README.md)
 
-Os resultados automatizados atuais são 22 testes Java e 6 testes Python, todos aprovados. A confirmação de execução Jenkins e seus artefatos estão na evidência D6. As métricas/falhas são observadas no laboratório, não inferidas de um diagrama.
+Os resultados automatizados atuais são 24 testes Java e 12 testes Python, todos aprovados. A confirmação de execução Jenkins e seus artefatos estão na evidência D6. As métricas/falhas são observadas no laboratório, não inferidas de um diagrama.
 
 ## Síntese das decisões levadas à PoC da AF
 
 1. Manter Core modular e regra de Ranking protegida por porta e adapters; validar paginação antes de carga maior.
-2. Manter fronteira Python independente e funcionamento degradado; substituir simulação por ML/LLM somente com corpus, modelo, custo e qualidade definidos.
+2. Manter fronteira Python independente e funcionamento degradado; evoluir os dados sintéticos para dados reais e ampliar a avaliação de recomendação e RAG.
 3. Levar conclusão transacional com outbox e consumidor idempotente; evoluir workers, backoff e retenção se necessário.
 4. Levar MQTT/gateway com sessão e spool; validar identidade/TLS, capacidade de armazenamento e autorização por instituição em implantação remota.
 5. Levar pipeline e métricas que ligam falha observada aos ASRs; separar pipelines quando os ciclos realmente justificarem.
 
-Permanecem limites explícitos: sem benchmark de 100 mil usuários, sem hardware IoT físico, sem LLM externo, sem validação PostgreSQL neste conjunto de experimentos, sem deploy de produção e sem submissão automática no Canvas. Repositório privado: https://github.com/cervonizer/b1-architecture-lab. O acesso da professora e a submissão no Canvas ainda precisam ser concluídos.
+Permanecem limites explícitos: sem benchmark de 100 mil usuários, sem hardware IoT físico, sem avaliação com alunos reais ou fine tuning do LLM, sem validação PostgreSQL neste conjunto de experimentos, sem deploy de produção e sem submissão automática no Canvas. Repositório público: https://github.com/cervonizer/b1-architecture-lab. A submissão no Canvas ainda precisa ser concluída.

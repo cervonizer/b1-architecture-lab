@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B1 — Recomendações e assistente</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#172936;background:#f3f6f8}body{margin:0}main{max-width:1050px;margin:auto;padding:32px 24px 50px}h1{font-size:30px;margin:16px 0 8px}h2{font-size:22px;margin:0 0 12px}p{line-height:1.55}a{color:#176a75}.intro{color:#536574;max-width:850px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}.card{background:white;border:1px solid #dae3e8;border-radius:12px;padding:24px}label{display:block;font-weight:600;margin:18px 0 7px}input,select,textarea,button{font:inherit;box-sizing:border-box}input,select,textarea{width:100%;padding:11px;border:1px solid #aabdc8;border-radius:6px}textarea{min-height:108px;resize:vertical}button{margin-top:18px;background:#176a75;border:0;border-radius:6px;color:white;padding:12px 16px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.hint{font-size:14px;color:#536574}.status{min-height:24px;color:#176a75;line-height:1.5}.answer{white-space:pre-wrap;line-height:1.65}.result{border-top:1px solid #dae3e8;padding:14px 0}.result strong{display:block}.source{font-size:13px;overflow-wrap:anywhere;color:#536574}#fontes{padding-left:20px;line-height:1.6}.model{font-size:13px;color:#536574;overflow-wrap:anywhere}@media(max-width:760px){.grid{grid-template-columns:1fr}main{padding:22px 16px}.card{padding:20px}}
+</style>
+</head>
+<body><main>
+<a href="/index.html">← Plataforma de cursos</a>
+<h1>Recomendações e assistente educacional</h1>
+<p class="intro">O recomendador usa um classificador treinado. O assistente recupera documentos deste projeto e gera a resposta com um LLM executado no próprio Mac.</p>
+<div class="grid">
+<section class="card"><h2>Encontre um curso</h2><p class="hint">O modelo pontua os cursos cadastrados na plataforma. Seu treinamento usa perfis e avaliações fictícios de laboratório.</p>
+<form id="recomendar"><label for="interesses">Assuntos de interesse</label><input id="interesses" value="java, arquitetura" required maxlength="500">
+<label for="nivel">Seu nível</label><select id="nivel"><option value="1">Iniciante</option><option value="2" selected>Intermediário</option><option value="3">Avançado</option></select>
+<button id="botao-recomendar">Recomendar cursos</button></form><p id="status-rec" class="status" role="status"></p><div id="cursos"></div><p id="modelo-rec" class="model"></p></section>
+<section class="card"><h2>Pergunte sobre a plataforma</h2><p class="hint">As respostas usam as regras e decisões registradas no projeto. Perguntas sem fonte suficiente recebem uma indicação de que não há informação.</p>
+<form id="assistente"><label for="pergunta">Sua pergunta</label><textarea id="pergunta" required maxlength="2000">Quantos créditos recebo ao concluir um curso com aproveitamento?</textarea>
+<button id="botao-perguntar">Perguntar ao assistente</button></form><p id="status-rag" class="status" role="status"></p><div id="resposta" class="answer"></div><ul id="fontes"></ul><p id="modelo-rag" class="model"></p></section>
+</div>
+</main>
+<script>
+const auth='Basic '+btoa('admin:123456');
+async function chamar(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:{Authorization:auth,'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const d=await r.json();if(!r.ok)throw new Error(d.erro||'Não foi possível concluir a consulta.');return d;}
+const el=id=>document.getElementById(id);
+el('recomendar').addEventListener('submit',async e=>{e.preventDefault();el('botao-recomendar').disabled=true;el('status-rec').textContent='Consultando o modelo treinado…';el('cursos').replaceChildren();try{const params=new URLSearchParams({interesses:el('interesses').value,nivel:el('nivel').value});const d=await chamar('/api/ia/recomendacoes?'+params);if(d.degradado){el('status-rec').textContent='A IA está indisponível. A plataforma de cursos continua disponível.';return;}for(const c of d.cursos){const item=document.createElement('div');item.className='result';const title=document.createElement('strong');title.textContent=c.titulo;const score=document.createElement('span');score.className='hint';score.textContent='Pontuação de relevância: '+c.relevancia_estimada.toFixed(3)+' (0 a 1)';item.append(title,score);el('cursos').append(item);}el('status-rec').textContent=d.cursos.length?'Recomendação calculada para o seu perfil.':'Cadastre cursos na plataforma para receber recomendações.';el('modelo-rec').textContent='Modelo: '+d.modelo+' · dados de treinamento sintéticos';}catch(err){el('status-rec').textContent=err.message;}finally{el('botao-recomendar').disabled=false;}});
+el('assistente').addEventListener('submit',async e=>{e.preventDefault();el('botao-perguntar').disabled=true;el('status-rag').textContent='Recuperando fontes e gerando a resposta localmente…';el('resposta').textContent='';el('fontes').replaceChildren();try{const d=await chamar('/api/ia/assistente',{pergunta:el('pergunta').value});el('resposta').textContent=d.resposta;el('status-rag').textContent=d.degradado?'Assistente temporariamente indisponível.':d.abstencao?'Não há fonte suficiente nos documentos.':'Resposta gerada com os materiais recuperados.';for(const f of d.fontes||[]){const item=document.createElement('li');item.className='source';item.textContent='['+f.id+'] '+f.titulo+' — '+f.arquivo;el('fontes').append(item);}el('modelo-rag').textContent=d.geracao?.executada?'LLM: '+d.geracao.modelo+' · '+d.geracao.device+' · '+(d.geracao.duracao_ms/1000).toFixed(1)+' s':d.geracao?.motivo||'';}catch(err){el('status-rag').textContent=err.message;}finally{el('botao-perguntar').disabled=false;}});
+</script></body></html>

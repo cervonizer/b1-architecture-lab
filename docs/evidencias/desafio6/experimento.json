@@ -1,8 +1,8 @@
 [
   {
     "etapa": "prometheus_observa_fallback_real",
-    "instante_utc": "2026-10-27T22:34:45Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:56Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 200,
     "resposta": {
       "status": "success",
@@ -17,7 +17,7 @@
               "outcome": "fallback"
             },
             "value": [
-              1793140485.518,
+              1793144156.847,
               "1"
             ]
           },
@@ -29,8 +29,8 @@
               "outcome": "success"
             },
             "value": [
-              1793140485.518,
-              "2"
+              1793144156.847,
+              "3"
             ]
           }
         ]
@@ -39,8 +39,8 @@
   },
   {
     "etapa": "alvo_prometheus_up",
-    "instante_utc": "2026-10-27T22:34:45Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:56Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "http": 200,
     "resposta": {
       "status": "success",
@@ -66,8 +66,8 @@
             "scrapeUrl": "http://host.docker.internal:18080/actuator/prometheus",
             "globalUrl": "http://host.docker.internal:18080/actuator/prometheus",
             "lastError": "",
-            "lastScrape": "2026-10-27T22:34:43.425085169Z",
-            "lastScrapeDuration": 0.135172959,
+            "lastScrape": "2026-10-27T23:35:55.852392552Z",
+            "lastScrapeDuration": 0.114687166,
             "health": "up",
             "scrapeInterval": "2s",
             "scrapeTimeout": "2s"
@@ -82,8 +82,8 @@
   },
   {
     "etapa": "fila_pendente_observada",
-    "instante_utc": "2026-10-27T22:34:47Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:58Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "resposta": {
       "status": "success",
       "data": {
@@ -96,7 +96,7 @@
               "job": "b1-core"
             },
             "value": [
-              1793140487.707,
+              1793144158.115,
               "1"
             ]
           }

@@ -1,6 +1,6 @@
 # B1 Architecture Lab completo
 
-Seis desafios de decisão arquitetural, com Core Java/Spring Boot, laboratório Python/FastAPI, eventos com outbox, MQTT e Jenkins/Prometheus/Grafana. A suíte passou com 22 testes Java e 6 testes Python. Os experimentos executam falhas e recuperação de processos reais.
+Seis desafios de decisão arquitetural, com Core Java/Spring Boot, laboratório Python/FastAPI, eventos com outbox, MQTT e Jenkins/Prometheus/Grafana. A suíte passou com 24 testes Java e 12 testes Python. Os experimentos executam falhas e recuperação de processos reais.
 
 ## Leitura principal
 
@@ -20,7 +20,8 @@ Com JDK 17 e Maven:
 mvn verify
 python3 -m venv .venv
 .venv/bin/python -m pip install -r services/python/requirements.lock.txt
-PYTHONPATH=services/python .venv/bin/python -m pytest services/python/tests -q
+.venv/bin/python scripts/preparar_llm.py
+B1_TESTAR_LLM=1 PYTHONPATH=services/python .venv/bin/python -m pytest services/python/tests -q
 python3 scripts/verificar_fronteira.py
 ```
 
@@ -45,6 +46,10 @@ Painéis locais: Grafana http://localhost:13001 e Prometheus http://localhost:19
 
 ## Escopo e limites
 
-É uma entrega de arquitetura com microsoluções. Recomendação é simulação e assistente é recuperação lexical sem LLM. O Core mantém entidades JPA existentes e a conversão completa de todos os módulos para Hexagonal não foi realizada. Ordenação do Ranking em memória, filas e banco precisam de validação de capacidade antes de produção. Credenciais didáticas não são destinadas a ambientes remotos.
+É uma entrega de arquitetura com microsoluções. A recomendação usa modelo supervisionado treinado em dados sintéticos; o assistente usa recuperação de documentos e um LLM local real. O Core mantém entidades JPA existentes e a conversão completa de todos os módulos para Hexagonal não foi realizada. Ordenação do Ranking em memória, filas e banco precisam de validação de capacidade antes de produção. Credenciais didáticas não são destinadas a ambientes remotos.
 
-A pasta `fontes/` preserva materiais originais, e `baseline-camadas/` é somente comparação. O mock_spring foi identificado como apoio do A3. Repositório privado de entrega: https://github.com/cervonizer/b1-architecture-lab. A professora precisará de acesso antes do envio do link no Canvas.
+A pasta `fontes/` preserva materiais originais, e `baseline-camadas/` é somente comparação. O mock_spring foi identificado como apoio do A3. Repositório público de entrega: https://github.com/cervonizer/b1-architecture-lab. O envio no Canvas ainda precisa ser concluído.
+
+## IA real
+
+Abra http://localhost:18080/ia.html durante o laboratório para usar o recomendador e o assistente. O modelo de recomendação e seus metadados são versionados. O LLM Qwen2.5 0.5B roda localmente; os pesos de aproximadamente 1 GB são baixados com revisão fixa e ficam fora do Git. O corpus possui fontes do próprio projeto. Ver o ADR 003 para métricas e limites.

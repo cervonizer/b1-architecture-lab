@@ -16,6 +16,7 @@ public class AiGateway {
     private final MeterRegistry metrics;
     private final HttpClient http = HttpClient.newBuilder().connectTimeout(Duration.ofMillis(300)).build();
     private final long timeoutMs;
+    @Value("${b1.ia.assistente-timeout-ms:45000}") private long assistenteTimeoutMs = 45000;
 
     public AiGateway(@Value("${b1.ia.url:http://localhost:18081}") String baseUrl,
                      ObjectMapper json, MeterRegistry metrics,
@@ -25,7 +26,7 @@ public class AiGateway {
 
     public Map<String, Object> consultar(String path, Map<String, Object> payload) {
         try {
-            var builder = HttpRequest.newBuilder(URI.create(baseUrl + path)).timeout(Duration.ofMillis(timeoutMs));
+            var builder = HttpRequest.newBuilder(URI.create(baseUrl + path)).timeout(Duration.ofMillis(path.equals("/assistente") ? assistenteTimeoutMs : timeoutMs));
             if (payload == null) builder.GET();
             else builder.header("Content-Type", "application/json").POST(HttpRequest.BodyPublishers.ofString(json.writeValueAsString(payload)));
             var resposta = http.send(builder.build(), HttpResponse.BodyHandlers.ofString());

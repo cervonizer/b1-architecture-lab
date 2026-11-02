@@ -1,0 +1,935 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1434.vde2d24df0c4c">
+  <suites>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.AiCatalogoTest.xml</file>
+      <name>com.exemplo.usuario.AiCatalogoTest</name>
+      <duration>1.066</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>1.066</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.338</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.AiCatalogoTest</className>
+          <testName>enviaPerfilECatalogoCadastradoAoPython</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>2026-10-27T20:34:32.271-03:00  INFO 78612 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.AiCatalogoTest]: AiCatalogoTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-27T20:34:32.273-03:00  INFO 78612 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.exe
+...[truncated 4681 chars]...
+n] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-27T20:34:32.885-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.AiCatalogoTest       : Started AiCatalogoTest in 0.61 seconds (process running for 5.197)
+Hibernate: 
+    insert 
+    into
+        cursos
+        (descricao, titulo, id) 
+    values
+        (?, ?, default)
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.descricao,
+        c1_0.titulo 
+    from
+        cursos c1_0
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.111</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.AiCatalogoTest</className>
+          <testName>rejeitaNivelInvalidoAntesDeChamarIA</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.AiGatewayTest.xml</file>
+      <name>com.exemplo.usuario.AiGatewayTest</name>
+      <duration>0.068</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>0.068</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.061</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.AiGatewayTest</className>
+          <testName>usaRespostaPythonQuandoDisponivel</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.003</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.AiGatewayTest</className>
+          <testName>erroHttpTambemAtivaFallback</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.AiGatewayTest</className>
+          <testName>falhaDeConexaoAtivaFallbackEMetrica</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.EventosEIotTest.xml</file>
+      <name>com.exemplo.usuario.EventosEIotTest</name>
+      <duration>1.408</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>1.408</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.045</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.EventosEIotTest</className>
+          <testName>conclusaoNaoDependeDoConsumidorERepeticaoNaoDuplicaCredito</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>2026-10-27T20:34:33.583-03:00  INFO 78612 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.EventosEIotTest]: EventosEIotTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-27T20:34:33.585-03:00  INFO 78612 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.e
+...[truncated 6987 chars]...
+      matriculas 
+    set
+        bonus=?,
+        curso_id=?,
+        nota_final=?,
+        status=?,
+        usuario_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.bonus,
+        m1_0.curso_id,
+        m1_0.nota_final,
+        m1_0.status,
+        m1_0.usuario_id 
+    from
+        matriculas m1_0 
+    where
+        m1_0.id=? for update
+Hibernate: 
+    select
+        count(ep1_0.id) 
+    from
+        outbox_eventos ep1_0 
+    where
+        not(ep1_0.entregue)
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.014</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.EventosEIotTest</className>
+          <testName>eventoPendenteSobreviveAFalhaERecuperaDepois</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    select
+        ep1_0.id,
+        ep1_0.criado_em,
+        ep1_0.entregue,
+        ep1_0.payload,
+        ep1_0.tentativas 
+    from
+        outbox_eventos ep1_0 
+    where
+        ep1_0.id=?
+Hibernate: 
+    insert 
+    into
+        outbox_eventos
+        (criado_em, entregue, payload, tentativas, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        ep1_0.id,
+        ep1_0.criado_em,
+        ep1_0.entregue,
+        ep1_0.payload,
+        ep1_0.tentativas 
+    fro
+...[truncated 506 chars]...
+1_0.entregue,
+        ep1_0.payload,
+        ep1_0.tentativas 
+    from
+        outbox_eventos ep1_0 
+    where
+        not(ep1_0.entregue) 
+    order by
+        ep1_0.criado_em 
+    fetch
+        first ? rows only
+Hibernate: 
+    update
+        outbox_eventos 
+    set
+        criado_em=?,
+        entregue=?,
+        payload=?,
+        tentativas=? 
+    where
+        id=?
+Hibernate: 
+    select
+        count(ep1_0.id) 
+    from
+        outbox_eventos ep1_0 
+    where
+        not(ep1_0.entregue)
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.238</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.EventosEIotTest</className>
+          <testName>metricasProtegidasDisponiveisParaColetor</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    select
+        count(ep1_0.id) 
+    from
+        outbox_eventos ep1_0 
+    where
+        not(ep1_0.entregue)
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.351</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.EventosEIotTest</className>
+          <testName>iotDeduplicaERejeitaConflito</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    select
+        ie1_0.id,
+        ie1_0.payload 
+    from
+        iot_inbox ie1_0 
+    where
+        ie1_0.id=?
+Hibernate: 
+    select
+        ie1_0.id,
+        ie1_0.payload 
+    from
+        iot_inbox ie1_0 
+    where
+        ie1_0.id=?
+Hibernate: 
+    insert 
+    into
+        iot_inbox
+        (payload, id) 
+    values
+        (?, ?)
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.107</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.EventosEIotTest</className>
+          <testName>interacaoSincronaPropagaIndisponibilidade</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.RankingAdaptersTest.xml</file>
+      <name>com.exemplo.usuario.RankingAdaptersTest</name>
+      <duration>4.163</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>4.163</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.353</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingAdaptersTest</className>
+          <testName>trocaAdapterMantendoCasoDeUsoEResultados(Adapter)[1]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>20:34:28.119 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.exemplo.usuario.RankingAdaptersTest]: RankingAdaptersTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:34:28.209 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication fo
+...[truncated 7861 chars]...
+ault)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.045</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingAdaptersTest</className>
+          <testName>trocaAdapterMantendoCasoDeUsoEResultados(Adapter)[2]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.003</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingAdaptersTest</className>
+          <testName>trocaAdapterMantendoResultadoVazio(Adapter)[1]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingAdaptersTest</className>
+          <testName>trocaAdapterMantendoResultadoVazio(Adapter)[2]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.RankingArchitectureTest.xml</file>
+      <name>com.exemplo.usuario.RankingArchitectureTest</name>
+      <duration>0.002</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>0.002</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.001</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingArchitectureTest</className>
+          <testName>dominioSoDependeDeJavaEDoProprioDominio</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.RankingDomainTest.xml</file>
+      <name>com.exemplo.usuario.RankingDomainTest</name>
+      <duration>0.023</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>0.023</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.004</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingDomainTest</className>
+          <testName>aplicaRegraExistenteDeCursosEMoedas(int, int, int)[1]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingDomainTest</className>
+          <testName>aplicaRegraExistenteDeCursosEMoedas(int, int, int)[2]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingDomainTest</className>
+          <testName>aplicaRegraExistenteDeCursosEMoedas(int, int, int)[3]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingDomainTest</className>
+          <testName>aplicaRegraExistenteDeCursosEMoedas(int, int, int)[4]</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingDomainTest</className>
+          <testName>ordenaPorPontosSemAlterarListaDeEntrada</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.001</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingDomainTest</className>
+          <testName>aceitaRankingVazio</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/surefire-reports/TEST-com.exemplo.usuario.RankingIntegrationTest.xml</file>
+      <name>com.exemplo.usuario.RankingIntegrationTest</name>
+      <duration>0.244</duration>
+      <startTime>-1</startTime>
+      <properties/>
+      <time>0.244</time>
+      <nodeId>49</nodeId>
+      <enclosingBlocks>
+        <string>41</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>2 Core testes e artefato</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>0.224</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingIntegrationTest</className>
+          <testName>preservaEndpointAutenticado</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>2026-10-27T20:34:33.338-03:00  INFO 78612 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.RankingIntegrationTest]: RankingIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-27T20:34:33.340-03:00  INFO 78612 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfi
+...[truncated 276 chars]...
+uras
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingIntegrationTest</className>
+          <testName>retornaListaVaziaSemUsuarios</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.008</duration>
+          <startTime>-1</startTime>
+          <className>com.exemplo.usuario.RankingIntegrationTest</className>
+          <testName>preservaFormulaOrdenacaoEDadosNaFronteira</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <stdout>Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        usuarios
+        (email, nome, senha, id) 
+    values
+        (?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        assinaturas
+        (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.creditos_cursos,
+        a1_0.cursos_concluidos_com_sucesso,
+        a1_0.moedas,
+        a1_0.plano,
+        a1_0.usuario_id,
+        u1_0.id,
+        u1_0.email,
+        u1_0.nome,
+        u1_0.senha 
+    from
+        assinaturas a1_0 
+    join
+        usuarios u1_0 
+            on u1_0.id=a1_0.usuario_id
+</stdout>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/python-tests.xml</file>
+      <name>pytest</name>
+      <duration>21.087</duration>
+      <startTime>1793144107723</startTime>
+      <properties/>
+      <timestamp>2026-10-27T20:35:07.723419-03:00</timestamp>
+      <time>21.087</time>
+      <nodeId>63</nodeId>
+      <enclosingBlocks>
+        <string>55</string>
+      </enclosingBlocks>
+      <enclosingBlockNames>
+        <string>3 Python testes</string>
+      </enclosingBlockNames>
+      <cases>
+        <case>
+          <duration>4.384</duration>
+          <startTime>1793144107723</startTime>
+          <className>services.python.tests.test_labs</className>
+          <testName>test_recomendacao_usa_artefato_treinado</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.008</duration>
+          <startTime>1793144112107</startTime>
+          <className>services.python.tests.test_labs</className>
+          <testName>test_assistente_abstem_quando_nao_ha_material</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.013</duration>
+          <startTime>1793144112115</startTime>
+          <className>services.python.tests.test_labs</className>
+          <testName>test_notificacao_idempotente_e_recuperacao</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <startTime>1793144112128</startTime>
+          <className>services.python.tests.test_labs</className>
+          <testName>test_gateway_transforma_e_deduplica_duravelmente</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <startTime>1793144112132</startTime>
+          <className>services.python.tests.test_labs</className>
+          <testName>test_gateway_rejeita_topico_incompativel</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <startTime>1793144112132</startTime>
+          <className>services.python.tests.test_labs</className>
+          <testName>test_dispositivo_preserva_saida_ate_confirmacao</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>8.771</duration>
+          <startTime>1793144112137</startTime>
+          <className>services.python.tests.test_llm_real</className>
+          <testName>test_llm_real_gera_resposta_com_creditos_e_fonte</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.8</duration>
+          <startTime>1793144120908</startTime>
+          <className>services.python.tests.test_llm_real</className>
+          <testName>test_llm_real_responde_exemplo_de_pontuacao</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <startTime>1793144121708</startTime>
+          <className>services.python.tests.test_modelo_e_rag</className>
+          <testName>test_treino_e_teste_nao_compartilham_perfis</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.011</duration>
+          <startTime>1793144121708</startTime>
+          <className>services.python.tests.test_modelo_e_rag</className>
+          <testName>test_modelo_muda_ranking_conforme_interesse</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.001</duration>
+          <startTime>1793144121719</startTime>
+          <className>services.python.tests.test_modelo_e_rag</className>
+          <testName>test_modelo_usa_catalogo_recebido_e_nao_lista_fixa</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <startTime>1793144121720</startTime>
+          <className>services.python.tests.test_modelo_e_rag</className>
+          <testName>test_recuperacao_aponta_para_regra_versionada</testName>
+          <isProperFailure>false</isProperFailure>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>28.060999</duration>
+  <skipOldReports>false</skipOldReports>
+  <startTime>1793144107723</startTime>
+  <stdioRetention>NONE</stdioRetention>
+  <keepTestNames>false</keepTestNames>
+  <keepProperties>false</keepProperties>
+</result>

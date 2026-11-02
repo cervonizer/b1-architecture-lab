@@ -5,9 +5,10 @@
   "jenkins": "2.580.1",
   "grafana": "13.2.4",
   "repositorio": "https://github.com/cervonizer/b1-architecture-lab",
-  "validacao": "Jenkins fonte local, build 1 SUCCESS",
+  "validacao": "Jenkins fonte local, build 2 SUCCESS",
   "testes": {
-    "Java": 22,
-    "Python": 6
-  }
+    "Java": 24,
+    "Python": 12
+  },
+  "visibilidade_repositorio": "public"
 }

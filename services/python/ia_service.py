@@ -1,42 +1,63 @@
-"""Contrato de IA e consumidor de notificacoes para os mini labs. Sem LLM externo."""
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
+"""IA real: recomendador supervisionado e RAG com LLM local; consumidor do laboratorio."""
+from fastapi import FastAPI,HTTPException,Query
+from pydantic import BaseModel,Field
 from pathlib import Path
-import sqlite3
-import os
+from contextlib import asynccontextmanager
+import sqlite3,os,json
+from recomendador import recomendar,carregar_modelo
+from rag_engine import get_engine
 
-app = FastAPI(title="B1 IA e consumidor do laboratorio")
-MATERIAIS = {
-    "ranking": "O Ranking soma 100 pontos por curso concluido e as moedas da assinatura.",
-    "creditos": "Uma conclusao com aproveitamento concede tres creditos de cursos.",
-    "arquitetura": "O Core e um monolito modular Java; IA possui uma fronteira HTTP em Python.",
-}
+@asynccontextmanager
+async def lifespan(app):
+    carregar_modelo()
+    get_engine().carregar_llm()
+    yield
 
-def connect():
-    path = Path(os.getenv("B1_PYTHON_DB", "state/python.db"))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    db = sqlite3.connect(path)
-    db.execute("CREATE TABLE IF NOT EXISTS notificacoes (event_id TEXT PRIMARY KEY, payload TEXT NOT NULL)")
-    return db
+app=FastAPI(title="B1 IA real e consumidor do laboratorio",lifespan=lifespan)
 
-@app.get("/health")
-def health(): return {"status": "UP", "modo": "simulacao-do-contrato"}
+@app.get('/health')
+def health():
+    _,meta=carregar_modelo();engine=get_engine()
+    return {'status':'UP','modo':'ml-treinado-e-rag-llm','recomendador':meta['versao'],
+            'llm_carregado':engine.model is not None,'llm_modelo':engine.manifest['model_id'] if engine.manifest else None}
 
-@app.get("/recomendacoes")
-def recomendar():
-    return {"fonte": "python-simulacao", "degradado": False,
-            "cursos": ["Arquitetura de Software B1", "Testes e qualidade"],
-            "nota": "Catalogo fixo para testar fronteira e falha; nao e modelo ML treinado."}
+class CursoEntrada(BaseModel):
+    id:int
+    titulo:str=Field(min_length=1,max_length=300)
+    descricao:str=Field(default='',max_length=4000)
+    nivel:int=Field(default=1,ge=1,le=3)
+    tags:list[str]=Field(default_factory=list,max_length=30)
+
+class PerfilRecomendacao(BaseModel):
+    interesses:list[str]=Field(default_factory=lambda:['java','arquitetura'],min_length=1,max_length=20)
+    nivel:int=Field(default=1,ge=1,le=3)
+    cursos:list[CursoEntrada]=Field(max_length=1000)
+
+@app.post('/recomendacoes')
+def recomendar_catalogo(perfil:PerfilRecomendacao):
+    return recomendar(perfil.interesses,perfil.nivel,[c.model_dump() for c in perfil.cursos])
+
+@app.get('/recomendacoes')
+def recomendar_demo(interesses:str=Query(default='java,arquitetura',max_length=500),nivel:int=Query(default=1,ge=1,le=3)):
+    catalogo=json.loads((Path(__file__).parent/'dados/catalogo_laboratorio.json').read_text())
+    dados=recomendar(interesses.split(','),nivel,catalogo);dados['catalogo']='ficticio-de-laboratorio'
+    return dados
 
 class Pergunta(BaseModel):
-    pergunta: str = Field(min_length=1, max_length=2000)
+    pergunta:str=Field(min_length=1,max_length=2000)
 
-@app.post("/assistente")
-def assistente(pergunta: Pergunta):
-    encontrados = [(chave, texto) for chave, texto in MATERIAIS.items() if chave in pergunta.pergunta.lower()]
-    return {"fonte": "recuperacao-lexical-local", "degradado": False, "modo": "sem-LLM",
-            "resposta": " ".join(texto for _, texto in encontrados) or "Consulte os materiais cadastrados no Core.",
-            "fontes": [chave for chave, _ in encontrados]}
+@app.post('/assistente')
+def assistente(pergunta:Pergunta):
+    try:return get_engine().responder(pergunta.pergunta)
+    except Exception as erro:
+        # Falha real e propagada ao gateway, que aplica fallback; nao se apresenta texto fixo como LLM.
+        raise HTTPException(503,'Geracao local indisponivel') from erro
+
+def connect():
+    path=Path(os.getenv('B1_PYTHON_DB','state/python.db'));path.parent.mkdir(parents=True,exist_ok=True)
+    db=sqlite3.connect(path)
+    db.execute('CREATE TABLE IF NOT EXISTS notificacoes (event_id TEXT PRIMARY KEY,payload TEXT NOT NULL)')
+    return db
 
 class Notificacao(BaseModel):
     event_id: str = Field(min_length=1, max_length=100)

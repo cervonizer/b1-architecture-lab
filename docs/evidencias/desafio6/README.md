@@ -1,28 +1,34 @@
 # Evidências do Desafio 6
 
-O [ADR 006](../../adr/ADR-006.md) justifica pipeline coordenado, métricas e bloqueadores. O Jenkinsfile foi executado de verdade no job local `B1_Architecture_Lab`, build 1, em 27 de outubro de 2026.
+O [ADR 006](../../adr/ADR-006.md) justifica a esteira coordenada, as métricas e os bloqueadores. A validação final foi executada no job local `B1_Architecture_Lab`, build **2**, em **27 de outubro de 2026**. Estes resultados são daquela execução; a preparação da entrega em 2 de novembro não representa uma nova execução dos experimentos.
 
-## Resultado
+## Resultado final
 
-- Resultado final SUCCESS, duração de 45,86 segundos.
-- 22 testes Java e 6 testes Python publicados pelo Jenkins, todos aprovados, sem ignorados.
-- Estágio de fronteiras aprovado.
-- Estágio de implantação e experimentos aprovado, incluindo FastAPI interrompido, consumidor indisponível, replay de gateway e dispositivo MQTT e coleta Prometheus.
+- Jenkins **SUCCESS**, duração de **101,32 segundos**.
+- **24 testes Java + 12 testes Python = 36 aprovados**, sem falhas ou ignorados.
+- Os dois testes de geração usam o Qwen local de verdade, habilitados por `B1_TESTAR_LLM=1`.
+- Verificação de fronteiras arquiteturais aprovada.
+- Experimentos integrados aprovados: recomendador treinado, LLM com fontes, interrupção do Python e continuidade do Core, consumidor indisponível e recuperação, replay MQTT e consultas Prometheus.
+- Identificador da execução integrada: `c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2`.
 
-`jenkins-build.json` contém metadados e lista de artefatos arquivados; `jenkins-console.log` contém o console integral; `jenkins-tests.json` contém o relatório publicado. As capturas `jenkins-success.png` e `jenkins-28-testes.png` permitem conferir visualmente o resultado.
+## Como conferir
+
+`jenkins-build.json` contém o resultado, o instante e a duração extraídos de `build.xml`. `jenkins-console.log` contém o console do build 2, removidas somente as anotações binárias de apresentação do Jenkins. `jenkins-junit-result.xml` preserva o relatório consolidado; os arquivos `TEST-*.xml` e `python-tests.xml` detalham as suítes. `jenkins-tests.json` resume a contagem.
+
+Os JSONs `experimento.json` dos desafios 3 a 6 foram copiados dos artefatos arquivados pelo build 2. Os arquivos `*-build2.log` são logs dos processos dessa execução. `maven-verify.log` e `pytest.log` preservam a validação local anterior com os mesmos 24 testes Java e 12 Python, identificável pelos próprios caminhos e timestamps.
 
 ## Observabilidade
 
-`experimento.json` registra as consultas Prometheus: fallback real de IA, alvo b1-core UP e fila pendente depois de falhar o consumidor. `metricas.prom` preserva a exposição do Core. `grafana-falhas.png` mostra o dashboard com os contadores e a pendência, em uma execução manual anterior do mesmo laboratório; a captura não é apresentada como print do build Jenkins.
+`experimento.json` registra as consultas ao Prometheus no build 2: fallback real de IA, alvo Core UP e fila pendente após falha do consumidor. `metricas.prom` e `grafana-falhas.png` preservam uma execução anterior do laboratório; a imagem comprova a visualização no Grafana e não é apresentada como captura do build 2. Os arquivos sem sufixo `build2` de execução de processos também pertencem à validação anterior.
 
-Os JSONs D3 a D6 foram atualizados com a execução Jenkins de run_id 7f4ec76c-8303-46f9-8469-92d71e9b152b. Os logs dos processos e os XMLs de testes publicados foram copiados do workspace dessa execução. Os logs maven-verify.log e pytest.log preservam também a validação local anterior, identificada pelos próprios timestamps.
+`historico-build1/` preserva a primeira execução, com 28 testes e IA simulada. Seus resultados e imagens são históricos e não representam a versão final.
 
-## Fonte e ambiente
+## Ambiente e limites
 
-O build usou SOURCE_DIR local porque o repositório privado foi criado depois da validação. Não houve checkout remoto ou webhook GitHub demonstrado. O mesmo Jenkinsfile pode usar checkout scm quando o job for configurado para o repositório.
+A esteira usou `SOURCE_DIR` local. Não foi demonstrado checkout remoto nem webhook GitHub. O Jenkinsfile permite `checkout scm` quando o job é configurado para o repositório.
 
-Core, IA e gateway foram processos locais em portas próprias; Mosquitto, Prometheus e Grafana foram containers. O laboratório Jenkins é uma instância separada no loopback 19090, sem copiar usuários/segredos do Jenkins anterior. Ele não representa uma configuração de segurança de produção.
+Core Java, IA e gateway foram processos nativos; Mosquitto, Prometheus e Grafana foram containers. O Jenkins local isolado usou porta 19090. A inferência do LLM foi validada no Mac; a imagem Docker Python não foi executada nesta validação.
 
-## Limites
+O recomendador foi treinado com dados sintéticos. O Qwen é pré-treinado, sem ajuste pela equipe. A amostra de laboratório não comprova SLA ou capacidade para 100 mil usuários. O experimento usa H2; existe perfil PostgreSQL, mas este conjunto não o valida. A instância local não representa configuração de produção.
 
-Amostra curta não é SLA nem teste de 100 mil usuários. Recomendação é simulação e assistente não usa LLM. H2 é o banco do experimento; a base mantém perfil PostgreSQL. O envio no Canvas e o acesso da professora ao repositório privado não foram executados.
+O repositório é público. O envio da tarefa no Canvas ainda precisa ser concluído.

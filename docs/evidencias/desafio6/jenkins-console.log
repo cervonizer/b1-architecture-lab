@@ -30,7 +30,7 @@ Running on Jenkins in /Users/brunoromicervone/Documents/Codex/2026-10-26/referen
 [Pipeline] withEnv
 [Pipeline] {
 [Pipeline] sh
-[2026-10-27T22:34:08.552Z] + cp -R /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/outputs/B1_Completo/. .
+[2026-10-27T23:34:22.556Z] + cp -R /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/outputs/B1_Completo/. .
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -48,664 +48,717 @@ Running on Jenkins in /Users/brunoromicervone/Documents/Codex/2026-10-26/referen
 [Pipeline] withEnv
 [Pipeline] {
 [Pipeline] sh
-[2026-10-27T22:34:10.060Z] + mvn -B -Dmaven.repo.local=/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/m2 clean verify
-[2026-10-27T22:34:10.986Z] [INFO] Scanning for projects...
-[2026-10-27T22:34:11.241Z] [INFO] 
-[2026-10-27T22:34:11.241Z] [INFO] ------------------< com.exemplo:b1-monolito-modular >-------------------
-[2026-10-27T22:34:11.241Z] [INFO] Building b1-monolito-modular 0.0.1-SNAPSHOT
-[2026-10-27T22:34:11.241Z] [INFO]   from pom.xml
-[2026-10-27T22:34:11.241Z] [INFO] --------------------------------[ jar ]---------------------------------
-[2026-10-27T22:34:11.494Z] [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.1/maven-clean-plugin-3.4.1.pom
-[2026-10-27T22:34:11.750Z] [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.1/maven-clean-plugin-3.4.1.pom (5.6 kB at 19 kB/s)
-[2026-10-27T22:34:11.750Z] [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.1/maven-clean-plugin-3.4.1.jar
-[2026-10-27T22:34:11.750Z] [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.4.1/maven-clean-plugin-3.4.1.jar (36 kB at 790 kB/s)
-[2026-10-27T22:34:12.311Z] [INFO] 
-[2026-10-27T22:34:12.311Z] [INFO] --- clean:3.4.1:clean (default-clean) @ b1-monolito-modular ---
-[2026-10-27T22:34:12.311Z] [INFO] Deleting /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target
-[2026-10-27T22:34:12.311Z] [INFO] 
-[2026-10-27T22:34:12.311Z] [INFO] --- resources:3.3.1:resources (default-resources) @ b1-monolito-modular ---
-[2026-10-27T22:34:12.311Z] [INFO] Copying 3 resources from src/main/resources to target/classes
-[2026-10-27T22:34:12.311Z] [INFO] Copying 4 resources from src/main/resources to target/classes
-[2026-10-27T22:34:12.311Z] [INFO] 
-[2026-10-27T22:34:12.311Z] [INFO] --- compiler:3.14.0:compile (default-compile) @ b1-monolito-modular ---
-[2026-10-27T22:34:12.311Z] [INFO] Recompiling the module because of changed source code.
-[2026-10-27T22:34:12.311Z] [INFO] Compiling 59 source files with javac [debug parameters release 17] to target/classes
-[2026-10-27T22:34:13.231Z] [INFO] 
-[2026-10-27T22:34:13.231Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ b1-monolito-modular ---
-[2026-10-27T22:34:13.231Z] [INFO] skip non existing resourceDirectory /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/src/test/resources
-[2026-10-27T22:34:13.231Z] [INFO] 
-[2026-10-27T22:34:13.231Z] [INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ b1-monolito-modular ---
-[2026-10-27T22:34:13.231Z] [INFO] Recompiling the module because of changed dependency.
-[2026-10-27T22:34:13.231Z] [INFO] Compiling 7 source files with javac [debug parameters release 17] to target/test-classes
-[2026-10-27T22:34:13.791Z] [INFO] 
-[2026-10-27T22:34:13.791Z] [INFO] --- surefire:3.5.3:test (default-test) @ b1-monolito-modular ---
-[2026-10-27T22:34:13.792Z] [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
-[2026-10-27T22:34:13.792Z] [INFO] 
-[2026-10-27T22:34:13.792Z] [INFO] -------------------------------------------------------
-[2026-10-27T22:34:13.792Z] [INFO]  T E S T S
-[2026-10-27T22:34:13.792Z] [INFO] -------------------------------------------------------
-[2026-10-27T22:34:14.353Z] [INFO] Running com.exemplo.usuario.RankingAdaptersTest
-[2026-10-27T22:34:14.604Z] 19:34:14.288 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.exemplo.usuario.RankingAdaptersTest]: RankingAdaptersTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-[2026-10-27T22:34:14.604Z] 19:34:14.381 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.RankingAdaptersTest
-[2026-10-27T22:34:14.860Z] 
-[2026-10-27T22:34:14.860Z]   .   ____          _            __ _ _
-[2026-10-27T22:34:14.860Z]  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-[2026-10-27T22:34:14.860Z] ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-[2026-10-27T22:34:14.860Z]  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-[2026-10-27T22:34:14.860Z]   '  |____| .__|_| |_|_| |_\__, | / / / /
-[2026-10-27T22:34:14.860Z]  =========|_|==============|___/=/_/_/_/
-[2026-10-27T22:34:14.860Z] 
-[2026-10-27T22:34:14.860Z]  :: Spring Boot ::                (v3.5.5)
-[2026-10-27T22:34:14.860Z] 
-[2026-10-27T22:34:14.860Z] 2026-10-27T19:34:14.638-03:00  INFO 69820 --- [usuario-api-v2] [           main] c.exemplo.usuario.RankingAdaptersTest    : Starting RankingAdaptersTest using Java 17.0.20.1 with PID 69820 (started by brunoromicervone in /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab)
-[2026-10-27T22:34:14.860Z] 2026-10-27T19:34:14.639-03:00  INFO 69820 --- [usuario-api-v2] [           main] c.exemplo.usuario.RankingAdaptersTest    : The following 1 profile is active: "h2"
-[2026-10-27T22:34:15.421Z] 2026-10-27T19:34:15.264-03:00  INFO 69820 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2026-10-27T22:34:15.421Z] 2026-10-27T19:34:15.303-03:00  INFO 69820 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 7 JPA repository interfaces.
-[2026-10-27T22:34:15.978Z] 2026-10-27T19:34:15.635-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-[2026-10-27T22:34:15.978Z] 2026-10-27T19:34:15.671-03:00  INFO 69820 --- [usuario-api-v2] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-[2026-10-27T22:34:15.978Z] 2026-10-27T19:34:15.692-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-[2026-10-27T22:34:15.978Z] 2026-10-27T19:34:15.878-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-[2026-10-27T22:34:15.978Z] 2026-10-27T19:34:15.902-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-[2026-10-27T22:34:16.234Z] 2026-10-27T19:34:16.013-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usuariodb user=SA
-[2026-10-27T22:34:16.234Z] 2026-10-27T19:34:16.014-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-[2026-10-27T22:34:16.234Z] 2026-10-27T19:34:16.051-03:00  INFO 69820 --- [usuario-api-v2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-[2026-10-27T22:34:16.234Z] 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-[2026-10-27T22:34:16.234Z] 	Database driver: undefined/unknown
-[2026-10-27T22:34:16.234Z] 	Database version: 2.3.232
-[2026-10-27T22:34:16.234Z] 	Autocommit mode: undefined/unknown
-[2026-10-27T22:34:16.234Z] 	Isolation level: undefined/unknown
-[2026-10-27T22:34:16.234Z] 	Minimum pool size: undefined/unknown
-[2026-10-27T22:34:16.234Z] 	Maximum pool size: undefined/unknown
-[2026-10-27T22:34:16.789Z] 2026-10-27T19:34:16.603-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     create table assinaturas (
-[2026-10-27T22:34:16.789Z]         id bigint generated by default as identity,
-[2026-10-27T22:34:16.789Z]         creditos_cursos integer not null,
-[2026-10-27T22:34:16.789Z]         cursos_concluidos_com_sucesso integer not null,
-[2026-10-27T22:34:16.789Z]         moedas integer not null,
-[2026-10-27T22:34:16.789Z]         plano enum ('BASICO','PREMIUM') not null,
-[2026-10-27T22:34:16.789Z]         usuario_id bigint not null,
-[2026-10-27T22:34:16.789Z]         primary key (id)
-[2026-10-27T22:34:16.789Z]     )
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     create table cursos (
-[2026-10-27T22:34:16.789Z]         id bigint generated by default as identity,
-[2026-10-27T22:34:16.789Z]         descricao varchar(1000),
-[2026-10-27T22:34:16.789Z]         titulo varchar(255) not null,
-[2026-10-27T22:34:16.789Z]         primary key (id)
-[2026-10-27T22:34:16.789Z]     )
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     create table iot_inbox (
-[2026-10-27T22:34:16.789Z]         id varchar(255) not null,
-[2026-10-27T22:34:16.789Z]         payload varchar(4000) not null,
-[2026-10-27T22:34:16.789Z]         primary key (id)
-[2026-10-27T22:34:16.789Z]     )
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     create table matriculas (
-[2026-10-27T22:34:16.789Z]         id bigint generated by default as identity,
-[2026-10-27T22:34:16.789Z]         bonus boolean not null,
-[2026-10-27T22:34:16.789Z]         nota_final float(53),
-[2026-10-27T22:34:16.789Z]         status enum ('CANCELADO','CONCLUIDO','EM_ANDAMENTO') not null,
-[2026-10-27T22:34:16.789Z]         curso_id bigint not null,
-[2026-10-27T22:34:16.789Z]         usuario_id bigint not null,
-[2026-10-27T22:34:16.789Z]         primary key (id)
-[2026-10-27T22:34:16.789Z]     )
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     create table outbox_eventos (
-[2026-10-27T22:34:16.789Z]         id varchar(255) not null,
-[2026-10-27T22:34:16.789Z]         criado_em timestamp(6) with time zone,
-[2026-10-27T22:34:16.789Z]         entregue boolean not null,
-[2026-10-27T22:34:16.789Z]         payload varchar(4000) not null,
-[2026-10-27T22:34:16.789Z]         tentativas integer not null,
-[2026-10-27T22:34:16.789Z]         primary key (id)
-[2026-10-27T22:34:16.789Z]     )
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     create table usuarios (
-[2026-10-27T22:34:16.789Z]         id bigint generated by default as identity,
-[2026-10-27T22:34:16.789Z]         email varchar(255) not null,
-[2026-10-27T22:34:16.789Z]         nome varchar(255) not null,
-[2026-10-27T22:34:16.789Z]         senha varchar(255) not null,
-[2026-10-27T22:34:16.789Z]         primary key (id)
-[2026-10-27T22:34:16.789Z]     )
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists assinaturas 
-[2026-10-27T22:34:16.789Z]        drop constraint if exists UK1vch30tw8efi1mvvagarlperk
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists assinaturas 
-[2026-10-27T22:34:16.789Z]        add constraint UK1vch30tw8efi1mvvagarlperk unique (usuario_id)
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists usuarios 
-[2026-10-27T22:34:16.789Z]        drop constraint if exists UKkfsp0s1tflm1cwlj8idhqsad0
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists usuarios 
-[2026-10-27T22:34:16.789Z]        add constraint UKkfsp0s1tflm1cwlj8idhqsad0 unique (email)
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists assinaturas 
-[2026-10-27T22:34:16.789Z]        add constraint FKkgmjwfa68xtip3lf7yicrtprk 
-[2026-10-27T22:34:16.789Z]        foreign key (usuario_id) 
-[2026-10-27T22:34:16.789Z]        references usuarios
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists matriculas 
-[2026-10-27T22:34:16.789Z]        add constraint FKtgxnkauqy13npoi9q2t9n0ol5 
-[2026-10-27T22:34:16.789Z]        foreign key (curso_id) 
-[2026-10-27T22:34:16.789Z]        references cursos
-[2026-10-27T22:34:16.789Z] Hibernate: 
-[2026-10-27T22:34:16.789Z]     alter table if exists matriculas 
-[2026-10-27T22:34:16.789Z]        add constraint FKil5paxcpkrf9viik9jbb439qs 
-[2026-10-27T22:34:16.789Z]        foreign key (usuario_id) 
-[2026-10-27T22:34:16.789Z]        references usuarios
-[2026-10-27T22:34:16.789Z] 2026-10-27T19:34:16.648-03:00  INFO 69820 --- [usuario-api-v2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2026-10-27T22:34:17.350Z] 2026-10-27T19:34:17.039-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-[2026-10-27T22:34:17.606Z] 2026-10-27T19:34:17.421-03:00  WARN 69820 --- [usuario-api-v2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2026-10-27T22:34:17.606Z] 2026-10-27T19:34:17.566-03:00  INFO 69820 --- [usuario-api-v2] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
-[2026-10-27T22:34:17.857Z] 2026-10-27T19:34:17.616-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-[2026-10-27T22:34:17.857Z] 2026-10-27T19:34:17.783-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-[2026-10-27T22:34:18.111Z] 2026-10-27T19:34:18.050-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usuariodb'
-[2026-10-27T22:34:18.111Z] 2026-10-27T19:34:18.090-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-[2026-10-27T22:34:18.111Z] 2026-10-27T19:34:18.090-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-[2026-10-27T22:34:18.111Z] 2026-10-27T19:34:18.091-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-[2026-10-27T22:34:18.366Z] 2026-10-27T19:34:18.140-03:00  INFO 69820 --- [usuario-api-v2] [           main] c.exemplo.usuario.RankingAdaptersTest    : Started RankingAdaptersTest in 3.667 seconds (process running for 4.307)
-[2026-10-27T22:34:18.622Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         usuarios
-[2026-10-27T22:34:18.622Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         assinaturas
-[2026-10-27T22:34:18.622Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         usuarios
-[2026-10-27T22:34:18.622Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         assinaturas
-[2026-10-27T22:34:18.622Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         usuarios
-[2026-10-27T22:34:18.622Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         assinaturas
-[2026-10-27T22:34:18.622Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         usuarios
-[2026-10-27T22:34:18.622Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     insert 
-[2026-10-27T22:34:18.622Z]     into
-[2026-10-27T22:34:18.622Z]         assinaturas
-[2026-10-27T22:34:18.622Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:18.622Z]     values
-[2026-10-27T22:34:18.622Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     select
-[2026-10-27T22:34:18.622Z]         a1_0.id,
-[2026-10-27T22:34:18.622Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:18.622Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:18.622Z]         a1_0.moedas,
-[2026-10-27T22:34:18.622Z]         a1_0.plano,
-[2026-10-27T22:34:18.622Z]         a1_0.usuario_id,
-[2026-10-27T22:34:18.622Z]         u1_0.id,
-[2026-10-27T22:34:18.622Z]         u1_0.email,
-[2026-10-27T22:34:18.622Z]         u1_0.nome,
-[2026-10-27T22:34:18.622Z]         u1_0.senha 
-[2026-10-27T22:34:18.622Z]     from
-[2026-10-27T22:34:18.622Z]         assinaturas a1_0 
-[2026-10-27T22:34:18.622Z]     join
-[2026-10-27T22:34:18.622Z]         usuarios u1_0 
-[2026-10-27T22:34:18.622Z]             on u1_0.id=a1_0.usuario_id
-[2026-10-27T22:34:18.622Z] Hibernate: 
-[2026-10-27T22:34:18.622Z]     select
-[2026-10-27T22:34:18.622Z]         a1_0.id,
-[2026-10-27T22:34:18.622Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:18.622Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:18.622Z]         a1_0.moedas,
-[2026-10-27T22:34:18.622Z]         a1_0.plano,
-[2026-10-27T22:34:18.622Z]         a1_0.usuario_id,
-[2026-10-27T22:34:18.622Z]         u1_0.id,
-[2026-10-27T22:34:18.622Z]         u1_0.email,
-[2026-10-27T22:34:18.622Z]         u1_0.nome,
-[2026-10-27T22:34:18.622Z]         u1_0.senha 
-[2026-10-27T22:34:18.622Z]     from
-[2026-10-27T22:34:18.622Z]         assinaturas a1_0 
-[2026-10-27T22:34:18.622Z]     join
-[2026-10-27T22:34:18.622Z]         usuarios u1_0 
-[2026-10-27T22:34:18.622Z]             on u1_0.id=a1_0.usuario_id
-[2026-10-27T22:34:18.878Z] [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.411 s -- in com.exemplo.usuario.RankingAdaptersTest
-[2026-10-27T22:34:18.878Z] [INFO] Running com.exemplo.usuario.AiGatewayTest
-[2026-10-27T22:34:18.878Z] [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s -- in com.exemplo.usuario.AiGatewayTest
-[2026-10-27T22:34:18.878Z] [INFO] Running com.exemplo.usuario.RankingIntegrationTest
-[2026-10-27T22:34:18.878Z] 2026-10-27T19:34:18.679-03:00  INFO 69820 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.RankingIntegrationTest]: RankingIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-[2026-10-27T22:34:18.878Z] 2026-10-27T19:34:18.681-03:00  INFO 69820 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.RankingIntegrationTest
-[2026-10-27T22:34:18.878Z] Hibernate: 
-[2026-10-27T22:34:18.878Z]     insert 
-[2026-10-27T22:34:18.878Z]     into
-[2026-10-27T22:34:18.878Z]         usuarios
-[2026-10-27T22:34:18.878Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:18.878Z]     values
-[2026-10-27T22:34:18.878Z]         (?, ?, ?, default)
-[2026-10-27T22:34:18.878Z] Hibernate: 
-[2026-10-27T22:34:18.878Z]     insert 
-[2026-10-27T22:34:18.878Z]     into
-[2026-10-27T22:34:18.878Z]         assinaturas
-[2026-10-27T22:34:18.878Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:18.878Z]     values
-[2026-10-27T22:34:18.878Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     select
-[2026-10-27T22:34:19.134Z]         a1_0.id,
-[2026-10-27T22:34:19.134Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:19.134Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:19.134Z]         a1_0.moedas,
-[2026-10-27T22:34:19.134Z]         a1_0.plano,
-[2026-10-27T22:34:19.134Z]         a1_0.usuario_id,
-[2026-10-27T22:34:19.134Z]         u1_0.id,
-[2026-10-27T22:34:19.134Z]         u1_0.email,
-[2026-10-27T22:34:19.134Z]         u1_0.nome,
-[2026-10-27T22:34:19.134Z]         u1_0.senha 
-[2026-10-27T22:34:19.134Z]     from
-[2026-10-27T22:34:19.134Z]         assinaturas a1_0 
-[2026-10-27T22:34:19.134Z]     join
-[2026-10-27T22:34:19.134Z]         usuarios u1_0 
-[2026-10-27T22:34:19.134Z]             on u1_0.id=a1_0.usuario_id
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     select
-[2026-10-27T22:34:19.134Z]         a1_0.id,
-[2026-10-27T22:34:19.134Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:19.134Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:19.134Z]         a1_0.moedas,
-[2026-10-27T22:34:19.134Z]         a1_0.plano,
-[2026-10-27T22:34:19.134Z]         a1_0.usuario_id,
-[2026-10-27T22:34:19.134Z]         u1_0.id,
-[2026-10-27T22:34:19.134Z]         u1_0.email,
-[2026-10-27T22:34:19.134Z]         u1_0.nome,
-[2026-10-27T22:34:19.134Z]         u1_0.senha 
-[2026-10-27T22:34:19.134Z]     from
-[2026-10-27T22:34:19.134Z]         assinaturas a1_0 
-[2026-10-27T22:34:19.134Z]     join
-[2026-10-27T22:34:19.134Z]         usuarios u1_0 
-[2026-10-27T22:34:19.134Z]             on u1_0.id=a1_0.usuario_id
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     insert 
-[2026-10-27T22:34:19.134Z]     into
-[2026-10-27T22:34:19.134Z]         usuarios
-[2026-10-27T22:34:19.134Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:19.134Z]     values
-[2026-10-27T22:34:19.134Z]         (?, ?, ?, default)
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     insert 
-[2026-10-27T22:34:19.134Z]     into
-[2026-10-27T22:34:19.134Z]         assinaturas
-[2026-10-27T22:34:19.134Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:19.134Z]     values
-[2026-10-27T22:34:19.134Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     insert 
-[2026-10-27T22:34:19.134Z]     into
-[2026-10-27T22:34:19.134Z]         usuarios
-[2026-10-27T22:34:19.134Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:19.134Z]     values
-[2026-10-27T22:34:19.134Z]         (?, ?, ?, default)
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     insert 
-[2026-10-27T22:34:19.134Z]     into
-[2026-10-27T22:34:19.134Z]         assinaturas
-[2026-10-27T22:34:19.134Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:19.134Z]     values
-[2026-10-27T22:34:19.134Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:19.134Z] Hibernate: 
-[2026-10-27T22:34:19.134Z]     select
-[2026-10-27T22:34:19.134Z]         a1_0.id,
-[2026-10-27T22:34:19.134Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:19.134Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:19.134Z]         a1_0.moedas,
-[2026-10-27T22:34:19.134Z]         a1_0.plano,
-[2026-10-27T22:34:19.134Z]         a1_0.usuario_id,
-[2026-10-27T22:34:19.134Z]         u1_0.id,
-[2026-10-27T22:34:19.134Z]         u1_0.email,
-[2026-10-27T22:34:19.134Z]         u1_0.nome,
-[2026-10-27T22:34:19.134Z]         u1_0.senha 
-[2026-10-27T22:34:19.134Z]     from
-[2026-10-27T22:34:19.134Z]         assinaturas a1_0 
-[2026-10-27T22:34:19.134Z]     join
-[2026-10-27T22:34:19.134Z]         usuarios u1_0 
-[2026-10-27T22:34:19.134Z]             on u1_0.id=a1_0.usuario_id
-[2026-10-27T22:34:19.134Z] [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.320 s -- in com.exemplo.usuario.RankingIntegrationTest
-[2026-10-27T22:34:19.134Z] [INFO] Running com.exemplo.usuario.EventosEIotTest
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.002-03:00  INFO 69820 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.EventosEIotTest]: EventosEIotTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.004-03:00  INFO 69820 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.EventosEIotTest
-[2026-10-27T22:34:19.387Z] 
-[2026-10-27T22:34:19.387Z]   .   ____          _            __ _ _
-[2026-10-27T22:34:19.387Z]  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-[2026-10-27T22:34:19.387Z] ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-[2026-10-27T22:34:19.387Z]  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-[2026-10-27T22:34:19.387Z]   '  |____| .__|_| |_|_| |_\__, | / / / /
-[2026-10-27T22:34:19.387Z]  =========|_|==============|___/=/_/_/_/
-[2026-10-27T22:34:19.387Z] 
-[2026-10-27T22:34:19.387Z]  :: Spring Boot ::                (v3.5.5)
-[2026-10-27T22:34:19.387Z] 
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.019-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.exemplo.usuario.EventosEIotTest      : Starting EventosEIotTest using Java 17.0.20.1 with PID 69820 (started by brunoromicervone in /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab)
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.020-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.exemplo.usuario.EventosEIotTest      : The following 1 profile is active: "h2"
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.193-03:00  INFO 69820 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.206-03:00  INFO 69820 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces.
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.262-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.264-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.270-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.271-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.271-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:usuariodb user=SA
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.271-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-[2026-10-27T22:34:19.387Z] 2026-10-27T19:34:19.272-03:00  INFO 69820 --- [usuario-api-v2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-[2026-10-27T22:34:19.387Z] 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
-[2026-10-27T22:34:19.387Z] 	Database driver: undefined/unknown
-[2026-10-27T22:34:19.387Z] 	Database version: 2.3.232
-[2026-10-27T22:34:19.387Z] 	Autocommit mode: undefined/unknown
-[2026-10-27T22:34:19.387Z] 	Isolation level: undefined/unknown
-[2026-10-27T22:34:19.388Z] 	Minimum pool size: undefined/unknown
-[2026-10-27T22:34:19.388Z] 	Maximum pool size: undefined/unknown
-[2026-10-27T22:34:19.388Z] 2026-10-27T19:34:19.306-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2026-10-27T22:34:19.388Z] 2026-10-27T19:34:19.312-03:00  INFO 69820 --- [usuario-api-v2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2026-10-27T22:34:19.643Z] 2026-10-27T19:34:19.413-03:00  WARN 69820 --- [usuario-api-v2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2026-10-27T22:34:19.643Z] 2026-10-27T19:34:19.520-03:00  INFO 69820 --- [usuario-api-v2] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
-[2026-10-27T22:34:19.643Z] 2026-10-27T19:34:19.525-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-[2026-10-27T22:34:19.894Z] 2026-10-27T19:34:19.575-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-[2026-10-27T22:34:19.894Z] 2026-10-27T19:34:19.643-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usuariodb'
-[2026-10-27T22:34:19.894Z] 2026-10-27T19:34:19.655-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-[2026-10-27T22:34:19.894Z] 2026-10-27T19:34:19.655-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-[2026-10-27T22:34:19.894Z] 2026-10-27T19:34:19.656-03:00  INFO 69820 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-[2026-10-27T22:34:19.894Z] 2026-10-27T19:34:19.672-03:00  INFO 69820 --- [usuario-api-v2] [           main] com.exemplo.usuario.EventosEIotTest      : Started EventosEIotTest in 0.665 seconds (process running for 5.84)
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     insert 
-[2026-10-27T22:34:19.894Z]     into
-[2026-10-27T22:34:19.894Z]         usuarios
-[2026-10-27T22:34:19.894Z]         (email, nome, senha, id) 
-[2026-10-27T22:34:19.894Z]     values
-[2026-10-27T22:34:19.894Z]         (?, ?, ?, default)
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     insert 
-[2026-10-27T22:34:19.894Z]     into
-[2026-10-27T22:34:19.894Z]         assinaturas
-[2026-10-27T22:34:19.894Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
-[2026-10-27T22:34:19.894Z]     values
-[2026-10-27T22:34:19.894Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     insert 
-[2026-10-27T22:34:19.894Z]     into
-[2026-10-27T22:34:19.894Z]         cursos
-[2026-10-27T22:34:19.894Z]         (descricao, titulo, id) 
-[2026-10-27T22:34:19.894Z]     values
-[2026-10-27T22:34:19.894Z]         (?, ?, default)
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     select
-[2026-10-27T22:34:19.894Z]         a1_0.id,
-[2026-10-27T22:34:19.894Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:19.894Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:19.894Z]         a1_0.moedas,
-[2026-10-27T22:34:19.894Z]         a1_0.plano,
-[2026-10-27T22:34:19.894Z]         a1_0.usuario_id 
-[2026-10-27T22:34:19.894Z]     from
-[2026-10-27T22:34:19.894Z]         assinaturas a1_0 
-[2026-10-27T22:34:19.894Z]     left join
-[2026-10-27T22:34:19.894Z]         usuarios u1_0 
-[2026-10-27T22:34:19.894Z]             on u1_0.id=a1_0.usuario_id 
-[2026-10-27T22:34:19.894Z]     where
-[2026-10-27T22:34:19.894Z]         u1_0.id=?
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     insert 
-[2026-10-27T22:34:19.894Z]     into
-[2026-10-27T22:34:19.894Z]         matriculas
-[2026-10-27T22:34:19.894Z]         (bonus, curso_id, nota_final, status, usuario_id, id) 
-[2026-10-27T22:34:19.894Z]     values
-[2026-10-27T22:34:19.894Z]         (?, ?, ?, ?, ?, default)
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     select
-[2026-10-27T22:34:19.894Z]         m1_0.id,
-[2026-10-27T22:34:19.894Z]         m1_0.bonus,
-[2026-10-27T22:34:19.894Z]         m1_0.curso_id,
-[2026-10-27T22:34:19.894Z]         m1_0.nota_final,
-[2026-10-27T22:34:19.894Z]         m1_0.status,
-[2026-10-27T22:34:19.894Z]         m1_0.usuario_id 
-[2026-10-27T22:34:19.894Z]     from
-[2026-10-27T22:34:19.894Z]         matriculas m1_0 
-[2026-10-27T22:34:19.894Z]     where
-[2026-10-27T22:34:19.894Z]         m1_0.id=? for update
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     select
-[2026-10-27T22:34:19.894Z]         a1_0.id,
-[2026-10-27T22:34:19.894Z]         a1_0.creditos_cursos,
-[2026-10-27T22:34:19.894Z]         a1_0.cursos_concluidos_com_sucesso,
-[2026-10-27T22:34:19.894Z]         a1_0.moedas,
-[2026-10-27T22:34:19.894Z]         a1_0.plano,
-[2026-10-27T22:34:19.894Z]         a1_0.usuario_id 
-[2026-10-27T22:34:19.894Z]     from
-[2026-10-27T22:34:19.894Z]         assinaturas a1_0 
-[2026-10-27T22:34:19.894Z]     left join
-[2026-10-27T22:34:19.894Z]         usuarios u1_0 
-[2026-10-27T22:34:19.894Z]             on u1_0.id=a1_0.usuario_id 
-[2026-10-27T22:34:19.894Z]     where
-[2026-10-27T22:34:19.894Z]         u1_0.id=?
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     select
-[2026-10-27T22:34:19.894Z]         ep1_0.id,
-[2026-10-27T22:34:19.894Z]         ep1_0.criado_em,
-[2026-10-27T22:34:19.894Z]         ep1_0.entregue,
-[2026-10-27T22:34:19.894Z]         ep1_0.payload,
-[2026-10-27T22:34:19.894Z]         ep1_0.tentativas 
-[2026-10-27T22:34:19.894Z]     from
-[2026-10-27T22:34:19.894Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.894Z]     where
-[2026-10-27T22:34:19.894Z]         ep1_0.id=?
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     insert 
-[2026-10-27T22:34:19.894Z]     into
-[2026-10-27T22:34:19.894Z]         outbox_eventos
-[2026-10-27T22:34:19.894Z]         (criado_em, entregue, payload, tentativas, id) 
-[2026-10-27T22:34:19.894Z]     values
-[2026-10-27T22:34:19.894Z]         (?, ?, ?, ?, ?)
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     update
-[2026-10-27T22:34:19.894Z]         assinaturas 
-[2026-10-27T22:34:19.894Z]     set
-[2026-10-27T22:34:19.894Z]         creditos_cursos=?,
-[2026-10-27T22:34:19.894Z]         cursos_concluidos_com_sucesso=?,
-[2026-10-27T22:34:19.894Z]         moedas=?,
-[2026-10-27T22:34:19.894Z]         plano=?,
-[2026-10-27T22:34:19.894Z]         usuario_id=? 
-[2026-10-27T22:34:19.894Z]     where
-[2026-10-27T22:34:19.894Z]         id=?
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     update
-[2026-10-27T22:34:19.894Z]         matriculas 
-[2026-10-27T22:34:19.894Z]     set
-[2026-10-27T22:34:19.894Z]         bonus=?,
-[2026-10-27T22:34:19.894Z]         curso_id=?,
-[2026-10-27T22:34:19.894Z]         nota_final=?,
-[2026-10-27T22:34:19.894Z]         status=?,
-[2026-10-27T22:34:19.894Z]         usuario_id=? 
-[2026-10-27T22:34:19.894Z]     where
-[2026-10-27T22:34:19.894Z]         id=?
-[2026-10-27T22:34:19.894Z] Hibernate: 
-[2026-10-27T22:34:19.894Z]     select
-[2026-10-27T22:34:19.894Z]         m1_0.id,
-[2026-10-27T22:34:19.894Z]         m1_0.bonus,
-[2026-10-27T22:34:19.894Z]         m1_0.curso_id,
-[2026-10-27T22:34:19.894Z]         m1_0.nota_final,
-[2026-10-27T22:34:19.894Z]         m1_0.status,
-[2026-10-27T22:34:19.894Z]         m1_0.usuario_id 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         matriculas m1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         m1_0.id=? for update
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     select
-[2026-10-27T22:34:19.895Z]         count(ep1_0.id) 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         not(ep1_0.entregue)
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     select
-[2026-10-27T22:34:19.895Z]         ep1_0.id,
-[2026-10-27T22:34:19.895Z]         ep1_0.criado_em,
-[2026-10-27T22:34:19.895Z]         ep1_0.entregue,
-[2026-10-27T22:34:19.895Z]         ep1_0.payload,
-[2026-10-27T22:34:19.895Z]         ep1_0.tentativas 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         ep1_0.id=?
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     insert 
-[2026-10-27T22:34:19.895Z]     into
-[2026-10-27T22:34:19.895Z]         outbox_eventos
-[2026-10-27T22:34:19.895Z]         (criado_em, entregue, payload, tentativas, id) 
-[2026-10-27T22:34:19.895Z]     values
-[2026-10-27T22:34:19.895Z]         (?, ?, ?, ?, ?)
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     select
-[2026-10-27T22:34:19.895Z]         ep1_0.id,
-[2026-10-27T22:34:19.895Z]         ep1_0.criado_em,
-[2026-10-27T22:34:19.895Z]         ep1_0.entregue,
-[2026-10-27T22:34:19.895Z]         ep1_0.payload,
-[2026-10-27T22:34:19.895Z]         ep1_0.tentativas 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         not(ep1_0.entregue) 
-[2026-10-27T22:34:19.895Z]     order by
-[2026-10-27T22:34:19.895Z]         ep1_0.criado_em 
-[2026-10-27T22:34:19.895Z]     fetch
-[2026-10-27T22:34:19.895Z]         first ? rows only
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     update
-[2026-10-27T22:34:19.895Z]         outbox_eventos 
-[2026-10-27T22:34:19.895Z]     set
-[2026-10-27T22:34:19.895Z]         criado_em=?,
-[2026-10-27T22:34:19.895Z]         entregue=?,
-[2026-10-27T22:34:19.895Z]         payload=?,
-[2026-10-27T22:34:19.895Z]         tentativas=? 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         id=?
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     select
-[2026-10-27T22:34:19.895Z]         count(ep1_0.id) 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         not(ep1_0.entregue)
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     select
-[2026-10-27T22:34:19.895Z]         ep1_0.id,
-[2026-10-27T22:34:19.895Z]         ep1_0.criado_em,
-[2026-10-27T22:34:19.895Z]         ep1_0.entregue,
-[2026-10-27T22:34:19.895Z]         ep1_0.payload,
-[2026-10-27T22:34:19.895Z]         ep1_0.tentativas 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         not(ep1_0.entregue) 
-[2026-10-27T22:34:19.895Z]     order by
-[2026-10-27T22:34:19.895Z]         ep1_0.criado_em 
-[2026-10-27T22:34:19.895Z]     fetch
-[2026-10-27T22:34:19.895Z]         first ? rows only
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     update
-[2026-10-27T22:34:19.895Z]         outbox_eventos 
-[2026-10-27T22:34:19.895Z]     set
-[2026-10-27T22:34:19.895Z]         criado_em=?,
-[2026-10-27T22:34:19.895Z]         entregue=?,
-[2026-10-27T22:34:19.895Z]         payload=?,
-[2026-10-27T22:34:19.895Z]         tentativas=? 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         id=?
-[2026-10-27T22:34:19.895Z] Hibernate: 
-[2026-10-27T22:34:19.895Z]     select
-[2026-10-27T22:34:19.895Z]         count(ep1_0.id) 
-[2026-10-27T22:34:19.895Z]     from
-[2026-10-27T22:34:19.895Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:19.895Z]     where
-[2026-10-27T22:34:19.895Z]         not(ep1_0.entregue)
-[2026-10-27T22:34:20.150Z] Hibernate: 
-[2026-10-27T22:34:20.150Z]     select
-[2026-10-27T22:34:20.150Z]         count(ep1_0.id) 
-[2026-10-27T22:34:20.150Z]     from
-[2026-10-27T22:34:20.150Z]         outbox_eventos ep1_0 
-[2026-10-27T22:34:20.150Z]     where
-[2026-10-27T22:34:20.150Z]         not(ep1_0.entregue)
-[2026-10-27T22:34:20.402Z] Hibernate: 
-[2026-10-27T22:34:20.402Z]     select
-[2026-10-27T22:34:20.402Z]         ie1_0.id,
-[2026-10-27T22:34:20.402Z]         ie1_0.payload 
-[2026-10-27T22:34:20.402Z]     from
-[2026-10-27T22:34:20.402Z]         iot_inbox ie1_0 
-[2026-10-27T22:34:20.402Z]     where
-[2026-10-27T22:34:20.402Z]         ie1_0.id=?
-[2026-10-27T22:34:20.402Z] Hibernate: 
-[2026-10-27T22:34:20.402Z]     select
-[2026-10-27T22:34:20.402Z]         ie1_0.id,
-[2026-10-27T22:34:20.402Z]         ie1_0.payload 
-[2026-10-27T22:34:20.402Z]     from
-[2026-10-27T22:34:20.402Z]         iot_inbox ie1_0 
-[2026-10-27T22:34:20.402Z]     where
-[2026-10-27T22:34:20.402Z]         ie1_0.id=?
-[2026-10-27T22:34:20.402Z] Hibernate: 
-[2026-10-27T22:34:20.402Z]     insert 
-[2026-10-27T22:34:20.402Z]     into
-[2026-10-27T22:34:20.402Z]         iot_inbox
-[2026-10-27T22:34:20.402Z]         (payload, id) 
-[2026-10-27T22:34:20.402Z]     values
-[2026-10-27T22:34:20.402Z]         (?, ?)
-[2026-10-27T22:34:20.658Z] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.459 s -- in com.exemplo.usuario.EventosEIotTest
-[2026-10-27T22:34:20.658Z] [INFO] Running com.exemplo.usuario.RankingDomainTest
-[2026-10-27T22:34:20.658Z] [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.exemplo.usuario.RankingDomainTest
-[2026-10-27T22:34:20.658Z] [INFO] Running com.exemplo.usuario.RankingArchitectureTest
-[2026-10-27T22:34:20.658Z] [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.exemplo.usuario.RankingArchitectureTest
-[2026-10-27T22:34:21.219Z] [INFO] 
-[2026-10-27T22:34:21.219Z] [INFO] Results:
-[2026-10-27T22:34:21.219Z] [INFO] 
-[2026-10-27T22:34:21.219Z] [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0
-[2026-10-27T22:34:21.219Z] [INFO] 
-[2026-10-27T22:34:21.219Z] [INFO] 
-[2026-10-27T22:34:21.219Z] [INFO] --- jar:3.4.2:jar (default-jar) @ b1-monolito-modular ---
-[2026-10-27T22:34:21.219Z] [INFO] Building jar: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/b1-monolito-modular-0.0.1-SNAPSHOT.jar
-[2026-10-27T22:34:21.219Z] [INFO] 
-[2026-10-27T22:34:21.219Z] [INFO] --- spring-boot:3.5.5:repackage (repackage) @ b1-monolito-modular ---
-[2026-10-27T22:34:21.778Z] [INFO] Replacing main artifact /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/b1-monolito-modular-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
-[2026-10-27T22:34:21.778Z] [INFO] The original artifact has been renamed to /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/b1-monolito-modular-0.0.1-SNAPSHOT.jar.original
-[2026-10-27T22:34:21.778Z] [INFO] ------------------------------------------------------------------------
-[2026-10-27T22:34:21.778Z] [INFO] BUILD SUCCESS
-[2026-10-27T22:34:21.778Z] [INFO] ------------------------------------------------------------------------
-[2026-10-27T22:34:21.778Z] [INFO] Total time:  10.570 s
-[2026-10-27T22:34:21.778Z] [INFO] Finished at: 2026-10-27T19:34:21-03:00
-[2026-10-27T22:34:21.778Z] [INFO] ------------------------------------------------------------------------
+[2026-10-27T23:34:24.399Z] + mvn -B -Dmaven.repo.local=/Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/m2 clean verify
+[2026-10-27T23:34:25.754Z] [INFO] Scanning for projects...
+[2026-10-27T23:34:25.754Z] [INFO] 
+[2026-10-27T23:34:25.754Z] [INFO] ------------------< com.exemplo:b1-monolito-modular >-------------------
+[2026-10-27T23:34:25.754Z] [INFO] Building b1-monolito-modular 0.0.1-SNAPSHOT
+[2026-10-27T23:34:25.754Z] [INFO]   from pom.xml
+[2026-10-27T23:34:25.754Z] [INFO] --------------------------------[ jar ]---------------------------------
+[2026-10-27T23:34:26.009Z] [INFO] 
+[2026-10-27T23:34:26.009Z] [INFO] --- clean:3.4.1:clean (default-clean) @ b1-monolito-modular ---
+[2026-10-27T23:34:26.009Z] [INFO] Deleting /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target
+[2026-10-27T23:34:26.009Z] [INFO] 
+[2026-10-27T23:34:26.009Z] [INFO] --- resources:3.3.1:resources (default-resources) @ b1-monolito-modular ---
+[2026-10-27T23:34:26.265Z] [INFO] Copying 3 resources from src/main/resources to target/classes
+[2026-10-27T23:34:26.265Z] [INFO] Copying 5 resources from src/main/resources to target/classes
+[2026-10-27T23:34:26.265Z] [INFO] 
+[2026-10-27T23:34:26.265Z] [INFO] --- compiler:3.14.0:compile (default-compile) @ b1-monolito-modular ---
+[2026-10-27T23:34:26.265Z] [INFO] Recompiling the module because of changed source code.
+[2026-10-27T23:34:26.265Z] [INFO] Compiling 59 source files with javac [debug parameters release 17] to target/classes
+[2026-10-27T23:34:27.189Z] [INFO] 
+[2026-10-27T23:34:27.189Z] [INFO] --- resources:3.3.1:testResources (default-testResources) @ b1-monolito-modular ---
+[2026-10-27T23:34:27.189Z] [INFO] skip non existing resourceDirectory /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/src/test/resources
+[2026-10-27T23:34:27.189Z] [INFO] 
+[2026-10-27T23:34:27.189Z] [INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ b1-monolito-modular ---
+[2026-10-27T23:34:27.189Z] [INFO] Recompiling the module because of changed dependency.
+[2026-10-27T23:34:27.189Z] [INFO] Compiling 8 source files with javac [debug parameters release 17] to target/test-classes
+[2026-10-27T23:34:27.750Z] [INFO] 
+[2026-10-27T23:34:27.750Z] [INFO] --- surefire:3.5.3:test (default-test) @ b1-monolito-modular ---
+[2026-10-27T23:34:27.750Z] [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[2026-10-27T23:34:27.750Z] [INFO] 
+[2026-10-27T23:34:27.750Z] [INFO] -------------------------------------------------------
+[2026-10-27T23:34:27.750Z] [INFO]  T E S T S
+[2026-10-27T23:34:27.750Z] [INFO] -------------------------------------------------------
+[2026-10-27T23:34:28.311Z] [INFO] Running com.exemplo.usuario.RankingAdaptersTest
+[2026-10-27T23:34:28.311Z] 20:34:28.119 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.exemplo.usuario.RankingAdaptersTest]: RankingAdaptersTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2026-10-27T23:34:28.311Z] 20:34:28.209 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.RankingAdaptersTest
+[2026-10-27T23:34:28.566Z] 
+[2026-10-27T23:34:28.566Z]   .   ____          _            __ _ _
+[2026-10-27T23:34:28.566Z]  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[2026-10-27T23:34:28.566Z] ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[2026-10-27T23:34:28.566Z]  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[2026-10-27T23:34:28.566Z]   '  |____| .__|_| |_|_| |_\__, | / / / /
+[2026-10-27T23:34:28.566Z]  =========|_|==============|___/=/_/_/_/
+[2026-10-27T23:34:28.566Z] 
+[2026-10-27T23:34:28.566Z]  :: Spring Boot ::                (v3.5.5)
+[2026-10-27T23:34:28.566Z] 
+[2026-10-27T23:34:28.566Z] 2026-10-27T20:34:28.448-03:00  INFO 78612 --- [usuario-api-v2] [           main] c.exemplo.usuario.RankingAdaptersTest    : Starting RankingAdaptersTest using Java 17.0.20.1 with PID 78612 (started by brunoromicervone in /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab)
+[2026-10-27T23:34:28.566Z] 2026-10-27T20:34:28.449-03:00  INFO 78612 --- [usuario-api-v2] [           main] c.exemplo.usuario.RankingAdaptersTest    : The following 1 profile is active: "h2"
+[2026-10-27T23:34:29.127Z] 2026-10-27T20:34:29.042-03:00  INFO 78612 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-10-27T23:34:29.382Z] 2026-10-27T20:34:29.081-03:00  INFO 78612 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 7 JPA repository interfaces.
+[2026-10-27T23:34:29.638Z] 2026-10-27T20:34:29.438-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2026-10-27T23:34:29.638Z] 2026-10-27T20:34:29.472-03:00  INFO 78612 --- [usuario-api-v2] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+[2026-10-27T23:34:29.638Z] 2026-10-27T20:34:29.491-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+[2026-10-27T23:34:29.890Z] 2026-10-27T20:34:29.644-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-10-27T23:34:29.890Z] 2026-10-27T20:34:29.667-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+[2026-10-27T23:34:29.890Z] 2026-10-27T20:34:29.767-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:usuariodb user=SA
+[2026-10-27T23:34:29.890Z] 2026-10-27T20:34:29.768-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+[2026-10-27T23:34:29.890Z] 2026-10-27T20:34:29.802-03:00  INFO 78612 --- [usuario-api-v2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+[2026-10-27T23:34:29.890Z] 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+[2026-10-27T23:34:29.890Z] 	Database driver: undefined/unknown
+[2026-10-27T23:34:29.890Z] 	Database version: 2.3.232
+[2026-10-27T23:34:29.890Z] 	Autocommit mode: undefined/unknown
+[2026-10-27T23:34:29.890Z] 	Isolation level: undefined/unknown
+[2026-10-27T23:34:29.890Z] 	Minimum pool size: undefined/unknown
+[2026-10-27T23:34:29.890Z] 	Maximum pool size: undefined/unknown
+[2026-10-27T23:34:30.446Z] 2026-10-27T20:34:30.320-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-10-27T23:34:30.446Z] Hibernate: 
+[2026-10-27T23:34:30.446Z]     create table assinaturas (
+[2026-10-27T23:34:30.446Z]         id bigint generated by default as identity,
+[2026-10-27T23:34:30.446Z]         creditos_cursos integer not null,
+[2026-10-27T23:34:30.446Z]         cursos_concluidos_com_sucesso integer not null,
+[2026-10-27T23:34:30.446Z]         moedas integer not null,
+[2026-10-27T23:34:30.446Z]         plano enum ('BASICO','PREMIUM') not null,
+[2026-10-27T23:34:30.446Z]         usuario_id bigint not null,
+[2026-10-27T23:34:30.446Z]         primary key (id)
+[2026-10-27T23:34:30.446Z]     )
+[2026-10-27T23:34:30.446Z] Hibernate: 
+[2026-10-27T23:34:30.446Z]     create table cursos (
+[2026-10-27T23:34:30.447Z]         id bigint generated by default as identity,
+[2026-10-27T23:34:30.447Z]         descricao varchar(1000),
+[2026-10-27T23:34:30.447Z]         titulo varchar(255) not null,
+[2026-10-27T23:34:30.447Z]         primary key (id)
+[2026-10-27T23:34:30.447Z]     )
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     create table iot_inbox (
+[2026-10-27T23:34:30.447Z]         id varchar(255) not null,
+[2026-10-27T23:34:30.447Z]         payload varchar(4000) not null,
+[2026-10-27T23:34:30.447Z]         primary key (id)
+[2026-10-27T23:34:30.447Z]     )
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     create table matriculas (
+[2026-10-27T23:34:30.447Z]         id bigint generated by default as identity,
+[2026-10-27T23:34:30.447Z]         bonus boolean not null,
+[2026-10-27T23:34:30.447Z]         nota_final float(53),
+[2026-10-27T23:34:30.447Z]         status enum ('CANCELADO','CONCLUIDO','EM_ANDAMENTO') not null,
+[2026-10-27T23:34:30.447Z]         curso_id bigint not null,
+[2026-10-27T23:34:30.447Z]         usuario_id bigint not null,
+[2026-10-27T23:34:30.447Z]         primary key (id)
+[2026-10-27T23:34:30.447Z]     )
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     create table outbox_eventos (
+[2026-10-27T23:34:30.447Z]         id varchar(255) not null,
+[2026-10-27T23:34:30.447Z]         criado_em timestamp(6) with time zone,
+[2026-10-27T23:34:30.447Z]         entregue boolean not null,
+[2026-10-27T23:34:30.447Z]         payload varchar(4000) not null,
+[2026-10-27T23:34:30.447Z]         tentativas integer not null,
+[2026-10-27T23:34:30.447Z]         primary key (id)
+[2026-10-27T23:34:30.447Z]     )
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     create table usuarios (
+[2026-10-27T23:34:30.447Z]         id bigint generated by default as identity,
+[2026-10-27T23:34:30.447Z]         email varchar(255) not null,
+[2026-10-27T23:34:30.447Z]         nome varchar(255) not null,
+[2026-10-27T23:34:30.447Z]         senha varchar(255) not null,
+[2026-10-27T23:34:30.447Z]         primary key (id)
+[2026-10-27T23:34:30.447Z]     )
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists assinaturas 
+[2026-10-27T23:34:30.447Z]        drop constraint if exists UK1vch30tw8efi1mvvagarlperk
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists assinaturas 
+[2026-10-27T23:34:30.447Z]        add constraint UK1vch30tw8efi1mvvagarlperk unique (usuario_id)
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists usuarios 
+[2026-10-27T23:34:30.447Z]        drop constraint if exists UKkfsp0s1tflm1cwlj8idhqsad0
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists usuarios 
+[2026-10-27T23:34:30.447Z]        add constraint UKkfsp0s1tflm1cwlj8idhqsad0 unique (email)
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists assinaturas 
+[2026-10-27T23:34:30.447Z]        add constraint FKkgmjwfa68xtip3lf7yicrtprk 
+[2026-10-27T23:34:30.447Z]        foreign key (usuario_id) 
+[2026-10-27T23:34:30.447Z]        references usuarios
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists matriculas 
+[2026-10-27T23:34:30.447Z]        add constraint FKtgxnkauqy13npoi9q2t9n0ol5 
+[2026-10-27T23:34:30.447Z]        foreign key (curso_id) 
+[2026-10-27T23:34:30.447Z]        references cursos
+[2026-10-27T23:34:30.447Z] Hibernate: 
+[2026-10-27T23:34:30.447Z]     alter table if exists matriculas 
+[2026-10-27T23:34:30.447Z]        add constraint FKil5paxcpkrf9viik9jbb439qs 
+[2026-10-27T23:34:30.447Z]        foreign key (usuario_id) 
+[2026-10-27T23:34:30.447Z]        references usuarios
+[2026-10-27T23:34:30.447Z] 2026-10-27T20:34:30.363-03:00  INFO 78612 --- [usuario-api-v2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-27T23:34:31.004Z] 2026-10-27T20:34:30.738-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-10-27T23:34:31.259Z] 2026-10-27T20:34:31.083-03:00  WARN 78612 --- [usuario-api-v2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-10-27T23:34:31.259Z] 2026-10-27T20:34:31.222-03:00  INFO 78612 --- [usuario-api-v2] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
+[2026-10-27T23:34:31.514Z] 2026-10-27T20:34:31.267-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+[2026-10-27T23:34:31.514Z] 2026-10-27T20:34:31.414-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+[2026-10-27T23:34:31.770Z] 2026-10-27T20:34:31.667-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usuariodb'
+[2026-10-27T23:34:31.770Z] 2026-10-27T20:34:31.702-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+[2026-10-27T23:34:31.770Z] 2026-10-27T20:34:31.702-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+[2026-10-27T23:34:31.770Z] 2026-10-27T20:34:31.702-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[2026-10-27T23:34:31.770Z] 2026-10-27T20:34:31.751-03:00  INFO 78612 --- [usuario-api-v2] [           main] c.exemplo.usuario.RankingAdaptersTest    : Started RankingAdaptersTest in 3.453 seconds (process running for 4.062)
+[2026-10-27T23:34:32.026Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         usuarios
+[2026-10-27T23:34:32.278Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         assinaturas
+[2026-10-27T23:34:32.278Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         usuarios
+[2026-10-27T23:34:32.278Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         assinaturas
+[2026-10-27T23:34:32.278Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         usuarios
+[2026-10-27T23:34:32.278Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         assinaturas
+[2026-10-27T23:34:32.278Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         usuarios
+[2026-10-27T23:34:32.278Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     insert 
+[2026-10-27T23:34:32.278Z]     into
+[2026-10-27T23:34:32.278Z]         assinaturas
+[2026-10-27T23:34:32.278Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:32.278Z]     values
+[2026-10-27T23:34:32.278Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     select
+[2026-10-27T23:34:32.278Z]         a1_0.id,
+[2026-10-27T23:34:32.278Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:32.278Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:32.278Z]         a1_0.moedas,
+[2026-10-27T23:34:32.278Z]         a1_0.plano,
+[2026-10-27T23:34:32.278Z]         a1_0.usuario_id,
+[2026-10-27T23:34:32.278Z]         u1_0.id,
+[2026-10-27T23:34:32.278Z]         u1_0.email,
+[2026-10-27T23:34:32.278Z]         u1_0.nome,
+[2026-10-27T23:34:32.278Z]         u1_0.senha 
+[2026-10-27T23:34:32.278Z]     from
+[2026-10-27T23:34:32.278Z]         assinaturas a1_0 
+[2026-10-27T23:34:32.278Z]     join
+[2026-10-27T23:34:32.278Z]         usuarios u1_0 
+[2026-10-27T23:34:32.278Z]             on u1_0.id=a1_0.usuario_id
+[2026-10-27T23:34:32.278Z] Hibernate: 
+[2026-10-27T23:34:32.278Z]     select
+[2026-10-27T23:34:32.278Z]         a1_0.id,
+[2026-10-27T23:34:32.278Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:32.278Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:32.278Z]         a1_0.moedas,
+[2026-10-27T23:34:32.278Z]         a1_0.plano,
+[2026-10-27T23:34:32.278Z]         a1_0.usuario_id,
+[2026-10-27T23:34:32.278Z]         u1_0.id,
+[2026-10-27T23:34:32.278Z]         u1_0.email,
+[2026-10-27T23:34:32.278Z]         u1_0.nome,
+[2026-10-27T23:34:32.278Z]         u1_0.senha 
+[2026-10-27T23:34:32.278Z]     from
+[2026-10-27T23:34:32.278Z]         assinaturas a1_0 
+[2026-10-27T23:34:32.278Z]     join
+[2026-10-27T23:34:32.278Z]         usuarios u1_0 
+[2026-10-27T23:34:32.278Z]             on u1_0.id=a1_0.usuario_id
+[2026-10-27T23:34:32.278Z] [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.163 s -- in com.exemplo.usuario.RankingAdaptersTest
+[2026-10-27T23:34:32.278Z] [INFO] Running com.exemplo.usuario.AiGatewayTest
+[2026-10-27T23:34:32.533Z] [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s -- in com.exemplo.usuario.AiGatewayTest
+[2026-10-27T23:34:32.533Z] [INFO] Running com.exemplo.usuario.AiCatalogoTest
+[2026-10-27T23:34:32.533Z] 2026-10-27T20:34:32.271-03:00  INFO 78612 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.AiCatalogoTest]: AiCatalogoTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2026-10-27T23:34:32.533Z] 2026-10-27T20:34:32.273-03:00  INFO 78612 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.AiCatalogoTest
+[2026-10-27T23:34:32.533Z] 
+[2026-10-27T23:34:32.533Z]   .   ____          _            __ _ _
+[2026-10-27T23:34:32.533Z]  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[2026-10-27T23:34:32.533Z] ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[2026-10-27T23:34:32.533Z]  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[2026-10-27T23:34:32.533Z]   '  |____| .__|_| |_|_| |_\__, | / / / /
+[2026-10-27T23:34:32.533Z]  =========|_|==============|___/=/_/_/_/
+[2026-10-27T23:34:32.533Z] 
+[2026-10-27T23:34:32.533Z]  :: Spring Boot ::                (v3.5.5)
+[2026-10-27T23:34:32.533Z] 
+[2026-10-27T23:34:32.533Z] 2026-10-27T20:34:32.288-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.AiCatalogoTest       : Starting AiCatalogoTest using Java 17.0.20.1 with PID 78612 (started by brunoromicervone in /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab)
+[2026-10-27T23:34:32.533Z] 2026-10-27T20:34:32.288-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.AiCatalogoTest       : The following 1 profile is active: "h2"
+[2026-10-27T23:34:32.533Z] 2026-10-27T20:34:32.450-03:00  INFO 78612 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-10-27T23:34:32.533Z] 2026-10-27T20:34:32.464-03:00  INFO 78612 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 7 JPA repository interfaces.
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.523-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.524-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.530-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.531-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.531-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:usuariodb user=SA
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.531-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.532-03:00  INFO 78612 --- [usuario-api-v2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+[2026-10-27T23:34:32.789Z] 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+[2026-10-27T23:34:32.789Z] 	Database driver: undefined/unknown
+[2026-10-27T23:34:32.789Z] 	Database version: 2.3.232
+[2026-10-27T23:34:32.789Z] 	Autocommit mode: undefined/unknown
+[2026-10-27T23:34:32.789Z] 	Isolation level: undefined/unknown
+[2026-10-27T23:34:32.789Z] 	Minimum pool size: undefined/unknown
+[2026-10-27T23:34:32.789Z] 	Maximum pool size: undefined/unknown
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.565-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.571-03:00  INFO 78612 --- [usuario-api-v2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-27T23:34:32.789Z] 2026-10-27T20:34:32.643-03:00  WARN 78612 --- [usuario-api-v2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.748-03:00  INFO 78612 --- [usuario-api-v2] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.752-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.792-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.859-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usuariodb'
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.871-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.871-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.871-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[2026-10-27T23:34:33.044Z] 2026-10-27T20:34:32.885-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.AiCatalogoTest       : Started AiCatalogoTest in 0.61 seconds (process running for 5.197)
+[2026-10-27T23:34:33.044Z] Hibernate: 
+[2026-10-27T23:34:33.044Z]     insert 
+[2026-10-27T23:34:33.044Z]     into
+[2026-10-27T23:34:33.044Z]         cursos
+[2026-10-27T23:34:33.044Z]         (descricao, titulo, id) 
+[2026-10-27T23:34:33.044Z]     values
+[2026-10-27T23:34:33.044Z]         (?, ?, default)
+[2026-10-27T23:34:33.300Z] Hibernate: 
+[2026-10-27T23:34:33.300Z]     select
+[2026-10-27T23:34:33.300Z]         c1_0.id,
+[2026-10-27T23:34:33.300Z]         c1_0.descricao,
+[2026-10-27T23:34:33.300Z]         c1_0.titulo 
+[2026-10-27T23:34:33.300Z]     from
+[2026-10-27T23:34:33.300Z]         cursos c1_0
+[2026-10-27T23:34:33.555Z] [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.066 s -- in com.exemplo.usuario.AiCatalogoTest
+[2026-10-27T23:34:33.555Z] [INFO] Running com.exemplo.usuario.RankingIntegrationTest
+[2026-10-27T23:34:33.555Z] 2026-10-27T20:34:33.338-03:00  INFO 78612 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.RankingIntegrationTest]: RankingIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2026-10-27T23:34:33.555Z] 2026-10-27T20:34:33.340-03:00  INFO 78612 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.RankingIntegrationTest
+[2026-10-27T23:34:33.555Z] Hibernate: 
+[2026-10-27T23:34:33.555Z]     insert 
+[2026-10-27T23:34:33.555Z]     into
+[2026-10-27T23:34:33.555Z]         usuarios
+[2026-10-27T23:34:33.555Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:33.555Z]     values
+[2026-10-27T23:34:33.555Z]         (?, ?, ?, default)
+[2026-10-27T23:34:33.555Z] Hibernate: 
+[2026-10-27T23:34:33.555Z]     insert 
+[2026-10-27T23:34:33.555Z]     into
+[2026-10-27T23:34:33.555Z]         assinaturas
+[2026-10-27T23:34:33.555Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:33.555Z]     values
+[2026-10-27T23:34:33.555Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     select
+[2026-10-27T23:34:33.808Z]         a1_0.id,
+[2026-10-27T23:34:33.808Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:33.808Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:33.808Z]         a1_0.moedas,
+[2026-10-27T23:34:33.808Z]         a1_0.plano,
+[2026-10-27T23:34:33.808Z]         a1_0.usuario_id,
+[2026-10-27T23:34:33.808Z]         u1_0.id,
+[2026-10-27T23:34:33.808Z]         u1_0.email,
+[2026-10-27T23:34:33.808Z]         u1_0.nome,
+[2026-10-27T23:34:33.808Z]         u1_0.senha 
+[2026-10-27T23:34:33.808Z]     from
+[2026-10-27T23:34:33.808Z]         assinaturas a1_0 
+[2026-10-27T23:34:33.808Z]     join
+[2026-10-27T23:34:33.808Z]         usuarios u1_0 
+[2026-10-27T23:34:33.808Z]             on u1_0.id=a1_0.usuario_id
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     select
+[2026-10-27T23:34:33.808Z]         a1_0.id,
+[2026-10-27T23:34:33.808Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:33.808Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:33.808Z]         a1_0.moedas,
+[2026-10-27T23:34:33.808Z]         a1_0.plano,
+[2026-10-27T23:34:33.808Z]         a1_0.usuario_id,
+[2026-10-27T23:34:33.808Z]         u1_0.id,
+[2026-10-27T23:34:33.808Z]         u1_0.email,
+[2026-10-27T23:34:33.808Z]         u1_0.nome,
+[2026-10-27T23:34:33.808Z]         u1_0.senha 
+[2026-10-27T23:34:33.808Z]     from
+[2026-10-27T23:34:33.808Z]         assinaturas a1_0 
+[2026-10-27T23:34:33.808Z]     join
+[2026-10-27T23:34:33.808Z]         usuarios u1_0 
+[2026-10-27T23:34:33.808Z]             on u1_0.id=a1_0.usuario_id
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     insert 
+[2026-10-27T23:34:33.808Z]     into
+[2026-10-27T23:34:33.808Z]         usuarios
+[2026-10-27T23:34:33.808Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:33.808Z]     values
+[2026-10-27T23:34:33.808Z]         (?, ?, ?, default)
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     insert 
+[2026-10-27T23:34:33.808Z]     into
+[2026-10-27T23:34:33.808Z]         assinaturas
+[2026-10-27T23:34:33.808Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:33.808Z]     values
+[2026-10-27T23:34:33.808Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     insert 
+[2026-10-27T23:34:33.808Z]     into
+[2026-10-27T23:34:33.808Z]         usuarios
+[2026-10-27T23:34:33.808Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:33.808Z]     values
+[2026-10-27T23:34:33.808Z]         (?, ?, ?, default)
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     insert 
+[2026-10-27T23:34:33.808Z]     into
+[2026-10-27T23:34:33.808Z]         assinaturas
+[2026-10-27T23:34:33.808Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:33.808Z]     values
+[2026-10-27T23:34:33.808Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:33.808Z] Hibernate: 
+[2026-10-27T23:34:33.808Z]     select
+[2026-10-27T23:34:33.808Z]         a1_0.id,
+[2026-10-27T23:34:33.808Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:33.808Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:33.808Z]         a1_0.moedas,
+[2026-10-27T23:34:33.808Z]         a1_0.plano,
+[2026-10-27T23:34:33.808Z]         a1_0.usuario_id,
+[2026-10-27T23:34:33.808Z]         u1_0.id,
+[2026-10-27T23:34:33.808Z]         u1_0.email,
+[2026-10-27T23:34:33.808Z]         u1_0.nome,
+[2026-10-27T23:34:33.808Z]         u1_0.senha 
+[2026-10-27T23:34:33.808Z]     from
+[2026-10-27T23:34:33.808Z]         assinaturas a1_0 
+[2026-10-27T23:34:33.808Z]     join
+[2026-10-27T23:34:33.808Z]         usuarios u1_0 
+[2026-10-27T23:34:33.808Z]             on u1_0.id=a1_0.usuario_id
+[2026-10-27T23:34:33.808Z] [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 s -- in com.exemplo.usuario.RankingIntegrationTest
+[2026-10-27T23:34:33.808Z] [INFO] Running com.exemplo.usuario.EventosEIotTest
+[2026-10-27T23:34:33.808Z] 2026-10-27T20:34:33.583-03:00  INFO 78612 --- [usuario-api-v2] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.exemplo.usuario.EventosEIotTest]: EventosEIotTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2026-10-27T23:34:33.808Z] 2026-10-27T20:34:33.585-03:00  INFO 78612 --- [usuario-api-v2] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.exemplo.usuario.UsuarioApplication for test class com.exemplo.usuario.EventosEIotTest
+[2026-10-27T23:34:33.808Z] 
+[2026-10-27T23:34:33.808Z]   .   ____          _            __ _ _
+[2026-10-27T23:34:33.808Z]  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[2026-10-27T23:34:33.808Z] ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[2026-10-27T23:34:33.808Z]  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[2026-10-27T23:34:33.808Z]   '  |____| .__|_| |_|_| |_\__, | / / / /
+[2026-10-27T23:34:33.808Z]  =========|_|==============|___/=/_/_/_/
+[2026-10-27T23:34:33.808Z] 
+[2026-10-27T23:34:33.808Z]  :: Spring Boot ::                (v3.5.5)
+[2026-10-27T23:34:33.808Z] 
+[2026-10-27T23:34:33.808Z] 2026-10-27T20:34:33.597-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.EventosEIotTest      : Starting EventosEIotTest using Java 17.0.20.1 with PID 78612 (started by brunoromicervone in /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab)
+[2026-10-27T23:34:33.808Z] 2026-10-27T20:34:33.597-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.EventosEIotTest      : The following 1 profile is active: "h2"
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.810-03:00  INFO 78612 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.822-03:00  INFO 78612 --- [usuario-api-v2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 7 JPA repository interfaces.
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.873-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.875-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.880-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.880-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.881-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:usuariodb user=SA
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.881-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.881-03:00  INFO 78612 --- [usuario-api-v2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+[2026-10-27T23:34:34.064Z] 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+[2026-10-27T23:34:34.064Z] 	Database driver: undefined/unknown
+[2026-10-27T23:34:34.064Z] 	Database version: 2.3.232
+[2026-10-27T23:34:34.064Z] 	Autocommit mode: undefined/unknown
+[2026-10-27T23:34:34.064Z] 	Isolation level: undefined/unknown
+[2026-10-27T23:34:34.064Z] 	Minimum pool size: undefined/unknown
+[2026-10-27T23:34:34.064Z] 	Maximum pool size: undefined/unknown
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.914-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.917-03:00  INFO 78612 --- [usuario-api-v2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-27T23:34:34.064Z] 2026-10-27T20:34:33.999-03:00  WARN 78612 --- [usuario-api-v2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.104-03:00  INFO 78612 --- [usuario-api-v2] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name users
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.108-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.145-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.205-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:usuariodb'
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.214-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.214-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.214-03:00  INFO 78612 --- [usuario-api-v2] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[2026-10-27T23:34:34.319Z] 2026-10-27T20:34:34.229-03:00  INFO 78612 --- [usuario-api-v2] [           main] com.exemplo.usuario.EventosEIotTest      : Started EventosEIotTest in 0.642 seconds (process running for 6.541)
+[2026-10-27T23:34:34.319Z] Hibernate: 
+[2026-10-27T23:34:34.319Z]     insert 
+[2026-10-27T23:34:34.319Z]     into
+[2026-10-27T23:34:34.319Z]         usuarios
+[2026-10-27T23:34:34.319Z]         (email, nome, senha, id) 
+[2026-10-27T23:34:34.319Z]     values
+[2026-10-27T23:34:34.319Z]         (?, ?, ?, default)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     insert 
+[2026-10-27T23:34:34.320Z]     into
+[2026-10-27T23:34:34.320Z]         assinaturas
+[2026-10-27T23:34:34.320Z]         (creditos_cursos, cursos_concluidos_com_sucesso, moedas, plano, usuario_id, id) 
+[2026-10-27T23:34:34.320Z]     values
+[2026-10-27T23:34:34.320Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     insert 
+[2026-10-27T23:34:34.320Z]     into
+[2026-10-27T23:34:34.320Z]         cursos
+[2026-10-27T23:34:34.320Z]         (descricao, titulo, id) 
+[2026-10-27T23:34:34.320Z]     values
+[2026-10-27T23:34:34.320Z]         (?, ?, default)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         a1_0.id,
+[2026-10-27T23:34:34.320Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:34.320Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:34.320Z]         a1_0.moedas,
+[2026-10-27T23:34:34.320Z]         a1_0.plano,
+[2026-10-27T23:34:34.320Z]         a1_0.usuario_id 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         assinaturas a1_0 
+[2026-10-27T23:34:34.320Z]     left join
+[2026-10-27T23:34:34.320Z]         usuarios u1_0 
+[2026-10-27T23:34:34.320Z]             on u1_0.id=a1_0.usuario_id 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         u1_0.id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     insert 
+[2026-10-27T23:34:34.320Z]     into
+[2026-10-27T23:34:34.320Z]         matriculas
+[2026-10-27T23:34:34.320Z]         (bonus, curso_id, nota_final, status, usuario_id, id) 
+[2026-10-27T23:34:34.320Z]     values
+[2026-10-27T23:34:34.320Z]         (?, ?, ?, ?, ?, default)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         m1_0.id,
+[2026-10-27T23:34:34.320Z]         m1_0.bonus,
+[2026-10-27T23:34:34.320Z]         m1_0.curso_id,
+[2026-10-27T23:34:34.320Z]         m1_0.nota_final,
+[2026-10-27T23:34:34.320Z]         m1_0.status,
+[2026-10-27T23:34:34.320Z]         m1_0.usuario_id 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         matriculas m1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         m1_0.id=? for update
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         a1_0.id,
+[2026-10-27T23:34:34.320Z]         a1_0.creditos_cursos,
+[2026-10-27T23:34:34.320Z]         a1_0.cursos_concluidos_com_sucesso,
+[2026-10-27T23:34:34.320Z]         a1_0.moedas,
+[2026-10-27T23:34:34.320Z]         a1_0.plano,
+[2026-10-27T23:34:34.320Z]         a1_0.usuario_id 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         assinaturas a1_0 
+[2026-10-27T23:34:34.320Z]     left join
+[2026-10-27T23:34:34.320Z]         usuarios u1_0 
+[2026-10-27T23:34:34.320Z]             on u1_0.id=a1_0.usuario_id 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         u1_0.id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         ep1_0.id,
+[2026-10-27T23:34:34.320Z]         ep1_0.criado_em,
+[2026-10-27T23:34:34.320Z]         ep1_0.entregue,
+[2026-10-27T23:34:34.320Z]         ep1_0.payload,
+[2026-10-27T23:34:34.320Z]         ep1_0.tentativas 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         ep1_0.id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     insert 
+[2026-10-27T23:34:34.320Z]     into
+[2026-10-27T23:34:34.320Z]         outbox_eventos
+[2026-10-27T23:34:34.320Z]         (criado_em, entregue, payload, tentativas, id) 
+[2026-10-27T23:34:34.320Z]     values
+[2026-10-27T23:34:34.320Z]         (?, ?, ?, ?, ?)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     update
+[2026-10-27T23:34:34.320Z]         assinaturas 
+[2026-10-27T23:34:34.320Z]     set
+[2026-10-27T23:34:34.320Z]         creditos_cursos=?,
+[2026-10-27T23:34:34.320Z]         cursos_concluidos_com_sucesso=?,
+[2026-10-27T23:34:34.320Z]         moedas=?,
+[2026-10-27T23:34:34.320Z]         plano=?,
+[2026-10-27T23:34:34.320Z]         usuario_id=? 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     update
+[2026-10-27T23:34:34.320Z]         matriculas 
+[2026-10-27T23:34:34.320Z]     set
+[2026-10-27T23:34:34.320Z]         bonus=?,
+[2026-10-27T23:34:34.320Z]         curso_id=?,
+[2026-10-27T23:34:34.320Z]         nota_final=?,
+[2026-10-27T23:34:34.320Z]         status=?,
+[2026-10-27T23:34:34.320Z]         usuario_id=? 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         m1_0.id,
+[2026-10-27T23:34:34.320Z]         m1_0.bonus,
+[2026-10-27T23:34:34.320Z]         m1_0.curso_id,
+[2026-10-27T23:34:34.320Z]         m1_0.nota_final,
+[2026-10-27T23:34:34.320Z]         m1_0.status,
+[2026-10-27T23:34:34.320Z]         m1_0.usuario_id 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         matriculas m1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         m1_0.id=? for update
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         count(ep1_0.id) 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         not(ep1_0.entregue)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         ep1_0.id,
+[2026-10-27T23:34:34.320Z]         ep1_0.criado_em,
+[2026-10-27T23:34:34.320Z]         ep1_0.entregue,
+[2026-10-27T23:34:34.320Z]         ep1_0.payload,
+[2026-10-27T23:34:34.320Z]         ep1_0.tentativas 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         ep1_0.id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     insert 
+[2026-10-27T23:34:34.320Z]     into
+[2026-10-27T23:34:34.320Z]         outbox_eventos
+[2026-10-27T23:34:34.320Z]         (criado_em, entregue, payload, tentativas, id) 
+[2026-10-27T23:34:34.320Z]     values
+[2026-10-27T23:34:34.320Z]         (?, ?, ?, ?, ?)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         ep1_0.id,
+[2026-10-27T23:34:34.320Z]         ep1_0.criado_em,
+[2026-10-27T23:34:34.320Z]         ep1_0.entregue,
+[2026-10-27T23:34:34.320Z]         ep1_0.payload,
+[2026-10-27T23:34:34.320Z]         ep1_0.tentativas 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         not(ep1_0.entregue) 
+[2026-10-27T23:34:34.320Z]     order by
+[2026-10-27T23:34:34.320Z]         ep1_0.criado_em 
+[2026-10-27T23:34:34.320Z]     fetch
+[2026-10-27T23:34:34.320Z]         first ? rows only
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     update
+[2026-10-27T23:34:34.320Z]         outbox_eventos 
+[2026-10-27T23:34:34.320Z]     set
+[2026-10-27T23:34:34.320Z]         criado_em=?,
+[2026-10-27T23:34:34.320Z]         entregue=?,
+[2026-10-27T23:34:34.320Z]         payload=?,
+[2026-10-27T23:34:34.320Z]         tentativas=? 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         count(ep1_0.id) 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         not(ep1_0.entregue)
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         ep1_0.id,
+[2026-10-27T23:34:34.320Z]         ep1_0.criado_em,
+[2026-10-27T23:34:34.320Z]         ep1_0.entregue,
+[2026-10-27T23:34:34.320Z]         ep1_0.payload,
+[2026-10-27T23:34:34.320Z]         ep1_0.tentativas 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         not(ep1_0.entregue) 
+[2026-10-27T23:34:34.320Z]     order by
+[2026-10-27T23:34:34.320Z]         ep1_0.criado_em 
+[2026-10-27T23:34:34.320Z]     fetch
+[2026-10-27T23:34:34.320Z]         first ? rows only
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     update
+[2026-10-27T23:34:34.320Z]         outbox_eventos 
+[2026-10-27T23:34:34.320Z]     set
+[2026-10-27T23:34:34.320Z]         criado_em=?,
+[2026-10-27T23:34:34.320Z]         entregue=?,
+[2026-10-27T23:34:34.320Z]         payload=?,
+[2026-10-27T23:34:34.320Z]         tentativas=? 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         id=?
+[2026-10-27T23:34:34.320Z] Hibernate: 
+[2026-10-27T23:34:34.320Z]     select
+[2026-10-27T23:34:34.320Z]         count(ep1_0.id) 
+[2026-10-27T23:34:34.320Z]     from
+[2026-10-27T23:34:34.320Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.320Z]     where
+[2026-10-27T23:34:34.320Z]         not(ep1_0.entregue)
+[2026-10-27T23:34:34.575Z] Hibernate: 
+[2026-10-27T23:34:34.575Z]     select
+[2026-10-27T23:34:34.575Z]         count(ep1_0.id) 
+[2026-10-27T23:34:34.575Z]     from
+[2026-10-27T23:34:34.575Z]         outbox_eventos ep1_0 
+[2026-10-27T23:34:34.575Z]     where
+[2026-10-27T23:34:34.575Z]         not(ep1_0.entregue)
+[2026-10-27T23:34:34.831Z] Hibernate: 
+[2026-10-27T23:34:34.831Z]     select
+[2026-10-27T23:34:34.831Z]         ie1_0.id,
+[2026-10-27T23:34:34.831Z]         ie1_0.payload 
+[2026-10-27T23:34:34.831Z]     from
+[2026-10-27T23:34:34.831Z]         iot_inbox ie1_0 
+[2026-10-27T23:34:34.831Z]     where
+[2026-10-27T23:34:34.831Z]         ie1_0.id=?
+[2026-10-27T23:34:34.831Z] Hibernate: 
+[2026-10-27T23:34:34.831Z]     select
+[2026-10-27T23:34:34.831Z]         ie1_0.id,
+[2026-10-27T23:34:34.831Z]         ie1_0.payload 
+[2026-10-27T23:34:34.831Z]     from
+[2026-10-27T23:34:34.831Z]         iot_inbox ie1_0 
+[2026-10-27T23:34:34.831Z]     where
+[2026-10-27T23:34:34.831Z]         ie1_0.id=?
+[2026-10-27T23:34:34.831Z] Hibernate: 
+[2026-10-27T23:34:34.831Z]     insert 
+[2026-10-27T23:34:34.831Z]     into
+[2026-10-27T23:34:34.831Z]         iot_inbox
+[2026-10-27T23:34:34.831Z]         (payload, id) 
+[2026-10-27T23:34:34.831Z]     values
+[2026-10-27T23:34:34.831Z]         (?, ?)
+[2026-10-27T23:34:35.081Z] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.408 s -- in com.exemplo.usuario.EventosEIotTest
+[2026-10-27T23:34:35.081Z] [INFO] Running com.exemplo.usuario.RankingDomainTest
+[2026-10-27T23:34:35.081Z] [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in com.exemplo.usuario.RankingDomainTest
+[2026-10-27T23:34:35.081Z] [INFO] Running com.exemplo.usuario.RankingArchitectureTest
+[2026-10-27T23:34:35.081Z] [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.exemplo.usuario.RankingArchitectureTest
+[2026-10-27T23:34:35.639Z] [INFO] 
+[2026-10-27T23:34:35.639Z] [INFO] Results:
+[2026-10-27T23:34:35.639Z] [INFO] 
+[2026-10-27T23:34:35.639Z] [INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0
+[2026-10-27T23:34:35.639Z] [INFO] 
+[2026-10-27T23:34:35.639Z] [INFO] 
+[2026-10-27T23:34:35.639Z] [INFO] --- jar:3.4.2:jar (default-jar) @ b1-monolito-modular ---
+[2026-10-27T23:34:35.639Z] [INFO] Building jar: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/b1-monolito-modular-0.0.1-SNAPSHOT.jar
+[2026-10-27T23:34:35.891Z] [INFO] 
+[2026-10-27T23:34:35.891Z] [INFO] --- spring-boot:3.5.5:repackage (repackage) @ b1-monolito-modular ---
+[2026-10-27T23:34:36.142Z] [INFO] Replacing main artifact /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/b1-monolito-modular-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[2026-10-27T23:34:36.142Z] [INFO] The original artifact has been renamed to /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/target/b1-monolito-modular-0.0.1-SNAPSHOT.jar.original
+[2026-10-27T23:34:36.142Z] [INFO] ------------------------------------------------------------------------
+[2026-10-27T23:34:36.142Z] [INFO] BUILD SUCCESS
+[2026-10-27T23:34:36.142Z] [INFO] ------------------------------------------------------------------------
+[2026-10-27T23:34:36.142Z] [INFO] Total time:  10.714 s
+[2026-10-27T23:34:36.142Z] [INFO] Finished at: 2026-10-27T20:34:36-03:00
+[2026-10-27T23:34:36.142Z] [INFO] ------------------------------------------------------------------------
 Post stage
 [Pipeline] junit
-[2026-10-27T22:34:21.919Z] Recording test results
-[2026-10-27T22:34:22.003Z] [Checks API] No suitable checks publisher found.
+[2026-10-27T23:34:36.189Z] Recording test results
+[2026-10-27T23:34:36.213Z] [Checks API] No suitable checks publisher found.
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -719,88 +772,133 @@ Post stage
 [Pipeline] withEnv
 [Pipeline] {
 [Pipeline] sh
-[2026-10-27T22:34:22.769Z] + /Users/brunoromicervone/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m venv .venv
-[2026-10-27T22:34:24.653Z] + .venv/bin/python -m pip install -r services/python/requirements.lock.txt
-[2026-10-27T22:34:24.909Z] Collecting fastapi==0.115.12 (from -r services/python/requirements.lock.txt (line 1))
-[2026-10-27T22:34:24.909Z]   Using cached fastapi-0.115.12-py3-none-any.whl.metadata (27 kB)
-[2026-10-27T22:34:24.909Z] Collecting uvicorn==0.34.2 (from -r services/python/requirements.lock.txt (line 2))
-[2026-10-27T22:34:24.909Z]   Using cached uvicorn-0.34.2-py3-none-any.whl.metadata (6.5 kB)
-[2026-10-27T22:34:24.909Z] Collecting paho-mqtt==2.1.0 (from -r services/python/requirements.lock.txt (line 3))
-[2026-10-27T22:34:24.909Z]   Using cached paho_mqtt-2.1.0-py3-none-any.whl.metadata (23 kB)
-[2026-10-27T22:34:25.164Z] Collecting pytest==8.3.5 (from -r services/python/requirements.lock.txt (line 4))
-[2026-10-27T22:34:25.164Z]   Using cached pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
-[2026-10-27T22:34:25.164Z] Collecting httpx==0.28.1 (from -r services/python/requirements.lock.txt (line 5))
-[2026-10-27T22:34:25.164Z]   Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
-[2026-10-27T22:34:25.419Z] Collecting pydantic==2.14.1 (from -r services/python/requirements.lock.txt (line 6))
-[2026-10-27T22:34:25.419Z]   Using cached pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
-[2026-10-27T22:34:25.674Z] Collecting pydantic-core==2.50.1 (from -r services/python/requirements.lock.txt (line 7))
-[2026-10-27T22:34:25.674Z]   Using cached pydantic_core-2.50.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (6.5 kB)
-[2026-10-27T22:34:25.674Z] Collecting starlette==0.46.2 (from -r services/python/requirements.lock.txt (line 8))
-[2026-10-27T22:34:25.674Z]   Using cached starlette-0.46.2-py3-none-any.whl.metadata (6.2 kB)
-[2026-10-27T22:34:25.927Z] Collecting anyio==4.15.1 (from -r services/python/requirements.lock.txt (line 9))
-[2026-10-27T22:34:25.927Z]   Using cached anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
-[2026-10-27T22:34:25.927Z] Collecting typing-extensions==4.16.0 (from -r services/python/requirements.lock.txt (line 10))
-[2026-10-27T22:34:25.927Z]   Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
-[2026-10-27T22:34:25.927Z] Collecting typing-inspection==0.4.4 (from -r services/python/requirements.lock.txt (line 11))
-[2026-10-27T22:34:25.927Z]   Using cached typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
-[2026-10-27T22:34:25.927Z] Collecting annotated-types==0.8.0 (from -r services/python/requirements.lock.txt (line 12))
-[2026-10-27T22:34:25.927Z]   Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
-[2026-10-27T22:34:25.927Z] Collecting h11==0.16.0 (from -r services/python/requirements.lock.txt (line 13))
-[2026-10-27T22:34:25.927Z]   Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
-[2026-10-27T22:34:26.183Z] Collecting httpcore==1.0.9 (from -r services/python/requirements.lock.txt (line 14))
-[2026-10-27T22:34:26.183Z]   Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
-[2026-10-27T22:34:26.183Z] Collecting idna==3.20 (from -r services/python/requirements.lock.txt (line 15))
-[2026-10-27T22:34:26.183Z]   Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
-[2026-10-27T22:34:26.435Z] Collecting certifi==2026.10.23 (from -r services/python/requirements.lock.txt (line 16))
-[2026-10-27T22:34:26.435Z]   Using cached certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
-[2026-10-27T22:34:26.435Z] Collecting click==8.5.0 (from -r services/python/requirements.lock.txt (line 17))
-[2026-10-27T22:34:26.435Z]   Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
-[2026-10-27T22:34:26.435Z] Collecting iniconfig==2.3.1 (from -r services/python/requirements.lock.txt (line 18))
-[2026-10-27T22:34:26.435Z]   Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
-[2026-10-27T22:34:26.691Z] Collecting packaging==26.3 (from -r services/python/requirements.lock.txt (line 19))
-[2026-10-27T22:34:26.691Z]   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
-[2026-10-27T22:34:26.691Z] Collecting pluggy==1.7.0 (from -r services/python/requirements.lock.txt (line 20))
-[2026-10-27T22:34:26.691Z]   Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
-[2026-10-27T22:34:26.691Z] Using cached fastapi-0.115.12-py3-none-any.whl (95 kB)
-[2026-10-27T22:34:26.691Z] Using cached uvicorn-0.34.2-py3-none-any.whl (62 kB)
-[2026-10-27T22:34:26.691Z] Using cached paho_mqtt-2.1.0-py3-none-any.whl (67 kB)
-[2026-10-27T22:34:26.691Z] Using cached pytest-8.3.5-py3-none-any.whl (343 kB)
-[2026-10-27T22:34:26.691Z] Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
-[2026-10-27T22:34:26.691Z] Using cached pydantic-2.14.1-py3-none-any.whl (488 kB)
-[2026-10-27T22:34:26.691Z] Using cached pydantic_core-2.50.1-cp312-cp312-macosx_11_0_arm64.whl (2.0 MB)
-[2026-10-27T22:34:26.691Z] Using cached starlette-0.46.2-py3-none-any.whl (72 kB)
-[2026-10-27T22:34:26.691Z] Using cached anyio-4.15.1-py3-none-any.whl (132 kB)
-[2026-10-27T22:34:26.691Z] Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
-[2026-10-27T22:34:26.691Z] Using cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)
-[2026-10-27T22:34:26.691Z] Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
-[2026-10-27T22:34:26.691Z] Using cached h11-0.16.0-py3-none-any.whl (37 kB)
-[2026-10-27T22:34:26.691Z] Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
-[2026-10-27T22:34:26.691Z] Using cached idna-3.20-py3-none-any.whl (69 kB)
-[2026-10-27T22:34:26.691Z] Using cached certifi-2026.10.23-py3-none-any.whl (135 kB)
-[2026-10-27T22:34:26.691Z] Using cached click-8.5.0-py3-none-any.whl (125 kB)
-[2026-10-27T22:34:26.691Z] Using cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
-[2026-10-27T22:34:26.691Z] Using cached packaging-26.3-py3-none-any.whl (129 kB)
-[2026-10-27T22:34:26.691Z] Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
-[2026-10-27T22:34:26.691Z] Installing collected packages: typing-extensions, pluggy, paho-mqtt, packaging, iniconfig, idna, h11, click, certifi, annotated-types, uvicorn, typing-inspection, pytest, pydantic-core, httpcore, anyio, starlette, pydantic, httpx, fastapi
-[2026-10-27T22:34:28.048Z] Successfully installed annotated-types-0.8.0 anyio-4.15.1 certifi-2026.10.23 click-8.5.0 fastapi-0.115.12 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 iniconfig-2.3.1 packaging-26.3 paho-mqtt-2.1.0 pluggy-1.7.0 pydantic-2.14.1 pydantic-core-2.50.1 pytest-8.3.5 starlette-0.46.2 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.34.2
-[2026-10-27T22:34:28.048Z] 
-[2026-10-27T22:34:28.048Z] [notice] A new release of pip is available: 25.0.1 -> 26.2.2
-[2026-10-27T22:34:28.048Z] [notice] To update, run: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/.venv/bin/python -m pip install --upgrade pip
-[2026-10-27T22:34:28.048Z] + PYTHONPATH=services/python
-[2026-10-27T22:34:28.048Z] + .venv/bin/python -m pytest services/python/tests -q --junitxml=python-tests.xml
-[2026-10-27T22:34:28.858Z] ......                                                                   [100%]
-[2026-10-27T22:34:28.858Z] =============================== warnings summary ===============================
-[2026-10-27T22:34:28.858Z] .venv/lib/python3.12/site-packages/starlette/testclient.py:37
-[2026-10-27T22:34:28.858Z]   /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
-[2026-10-27T22:34:28.858Z]     _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
-[2026-10-27T22:34:28.858Z] 
-[2026-10-27T22:34:28.858Z] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-[2026-10-27T22:34:28.858Z] - generated xml file: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/python-tests.xml -
-[2026-10-27T22:34:28.858Z] 6 passed, 1 warning in 0.34s
+[2026-10-27T23:34:37.078Z] + /Users/brunoromicervone/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m venv .venv
+[2026-10-27T23:34:37.999Z] + .venv/bin/python -m pip install -r services/python/requirements.lock.txt
+[2026-10-27T23:34:38.254Z] Requirement already satisfied: annotated-types==0.8.0 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 1)) (0.8.0)
+[2026-10-27T23:34:38.254Z] Requirement already satisfied: anyio==4.15.1 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 2)) (4.15.1)
+[2026-10-27T23:34:38.254Z] Requirement already satisfied: certifi==2026.10.23 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 3)) (2026.10.23)
+[2026-10-27T23:34:38.510Z] Collecting charset-normalizer==3.5.2 (from -r services/python/requirements.lock.txt (line 4))
+[2026-10-27T23:34:38.510Z]   Using cached charset_normalizer-3.5.2-cp312-cp312-macosx_10_13_universal2.whl.metadata (46 kB)
+[2026-10-27T23:34:38.510Z] Requirement already satisfied: click==8.5.0 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 5)) (8.5.0)
+[2026-10-27T23:34:38.510Z] Requirement already satisfied: fastapi==0.115.12 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 6)) (0.115.12)
+[2026-10-27T23:34:38.510Z] Collecting filelock==4.2.4 (from -r services/python/requirements.lock.txt (line 7))
+[2026-10-27T23:34:38.510Z]   Using cached filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+[2026-10-27T23:34:38.510Z] Collecting fsspec==2026.9.0 (from -r services/python/requirements.lock.txt (line 8))
+[2026-10-27T23:34:38.510Z]   Using cached fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+[2026-10-27T23:34:38.510Z] Requirement already satisfied: h11==0.16.0 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 9)) (0.16.0)
+[2026-10-27T23:34:38.510Z] Requirement already satisfied: httpcore==1.0.9 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 10)) (1.0.9)
+[2026-10-27T23:34:38.510Z] Requirement already satisfied: httpx==0.28.1 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 11)) (0.28.1)
+[2026-10-27T23:34:38.510Z] Collecting huggingface-hub==0.30.2 (from -r services/python/requirements.lock.txt (line 12))
+[2026-10-27T23:34:38.765Z]   Using cached huggingface_hub-0.30.2-py3-none-any.whl.metadata (13 kB)
+[2026-10-27T23:34:38.765Z] Requirement already satisfied: idna==3.20 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 13)) (3.20)
+[2026-10-27T23:34:38.765Z] Requirement already satisfied: iniconfig==2.3.1 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 14)) (2.3.1)
+[2026-10-27T23:34:38.765Z] Collecting jinja2==3.1.6 (from -r services/python/requirements.lock.txt (line 15))
+[2026-10-27T23:34:38.765Z]   Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+[2026-10-27T23:34:38.765Z] Collecting joblib==1.4.2 (from -r services/python/requirements.lock.txt (line 16))
+[2026-10-27T23:34:38.765Z]   Using cached joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+[2026-10-27T23:34:38.765Z] Collecting markupsafe==3.0.4 (from -r services/python/requirements.lock.txt (line 17))
+[2026-10-27T23:34:38.765Z]   Using cached markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.7 kB)
+[2026-10-27T23:34:38.765Z] Collecting mpmath==1.3.0 (from -r services/python/requirements.lock.txt (line 18))
+[2026-10-27T23:34:38.765Z]   Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+[2026-10-27T23:34:38.765Z] Collecting networkx==3.7 (from -r services/python/requirements.lock.txt (line 19))
+[2026-10-27T23:34:38.765Z]   Using cached networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+[2026-10-27T23:34:39.016Z] Collecting numpy==2.2.4 (from -r services/python/requirements.lock.txt (line 20))
+[2026-10-27T23:34:39.016Z]   Using cached numpy-2.2.4-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+[2026-10-27T23:34:39.016Z] Requirement already satisfied: packaging==26.3 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 21)) (26.3)
+[2026-10-27T23:34:39.016Z] Requirement already satisfied: paho-mqtt==2.1.0 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 22)) (2.1.0)
+[2026-10-27T23:34:39.016Z] Requirement already satisfied: pluggy==1.7.0 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 23)) (1.7.0)
+[2026-10-27T23:34:39.016Z] Requirement already satisfied: pydantic==2.14.1 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 24)) (2.14.1)
+[2026-10-27T23:34:39.016Z] Requirement already satisfied: pydantic-core==2.50.1 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 25)) (2.50.1)
+[2026-10-27T23:34:39.016Z] Requirement already satisfied: pytest==8.3.5 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 26)) (8.3.5)
+[2026-10-27T23:34:39.016Z] Collecting pyyaml==6.0.3 (from -r services/python/requirements.lock.txt (line 27))
+[2026-10-27T23:34:39.016Z]   Using cached pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.4 kB)
+[2026-10-27T23:34:39.270Z] Collecting regex==2026.9.29 (from -r services/python/requirements.lock.txt (line 28))
+[2026-10-27T23:34:39.270Z]   Using cached regex-2026.9.29-cp312-cp312-macosx_11_0_arm64.whl.metadata (40 kB)
+[2026-10-27T23:34:39.270Z] Collecting requests==2.34.2 (from -r services/python/requirements.lock.txt (line 29))
+[2026-10-27T23:34:39.270Z]   Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+[2026-10-27T23:34:39.270Z] Collecting safetensors==0.5.3 (from -r services/python/requirements.lock.txt (line 30))
+[2026-10-27T23:34:39.270Z]   Using cached safetensors-0.5.3-cp38-abi3-macosx_11_0_arm64.whl.metadata (3.8 kB)
+[2026-10-27T23:34:39.526Z] Collecting scikit-learn==1.6.1 (from -r services/python/requirements.lock.txt (line 31))
+[2026-10-27T23:34:39.526Z]   Using cached scikit_learn-1.6.1-cp312-cp312-macosx_12_0_arm64.whl.metadata (31 kB)
+[2026-10-27T23:34:39.526Z] Collecting scipy==1.17.0 (from -r services/python/requirements.lock.txt (line 32))
+[2026-10-27T23:34:39.526Z]   Using cached scipy-1.17.0-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+[2026-10-27T23:34:39.526Z] Collecting setuptools==84.2.1 (from -r services/python/requirements.lock.txt (line 33))
+[2026-10-27T23:34:39.526Z]   Using cached setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+[2026-10-27T23:34:39.526Z] Requirement already satisfied: starlette==0.46.2 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 34)) (0.46.2)
+[2026-10-27T23:34:39.526Z] Collecting sympy==1.13.1 (from -r services/python/requirements.lock.txt (line 35))
+[2026-10-27T23:34:39.526Z]   Using cached sympy-1.13.1-py3-none-any.whl.metadata (12 kB)
+[2026-10-27T23:34:39.526Z] Collecting threadpoolctl==3.7.0 (from -r services/python/requirements.lock.txt (line 36))
+[2026-10-27T23:34:39.526Z]   Using cached threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+[2026-10-27T23:34:39.781Z] Collecting tokenizers==0.21.4 (from -r services/python/requirements.lock.txt (line 37))
+[2026-10-27T23:34:39.781Z]   Using cached tokenizers-0.21.4-cp39-abi3-macosx_11_0_arm64.whl.metadata (6.7 kB)
+[2026-10-27T23:34:39.781Z] Collecting torch==2.6.0 (from -r services/python/requirements.lock.txt (line 38))
+[2026-10-27T23:34:39.781Z]   Using cached torch-2.6.0-cp312-none-macosx_11_0_arm64.whl.metadata (28 kB)
+[2026-10-27T23:34:39.781Z] Collecting tqdm==4.70.1 (from -r services/python/requirements.lock.txt (line 39))
+[2026-10-27T23:34:39.781Z]   Using cached tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+[2026-10-27T23:34:39.781Z] Collecting transformers==4.51.3 (from -r services/python/requirements.lock.txt (line 40))
+[2026-10-27T23:34:39.781Z]   Using cached transformers-4.51.3-py3-none-any.whl.metadata (38 kB)
+[2026-10-27T23:34:40.037Z] Requirement already satisfied: typing-extensions==4.16.0 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 41)) (4.16.0)
+[2026-10-27T23:34:40.037Z] Requirement already satisfied: typing-inspection==0.4.4 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 42)) (0.4.4)
+[2026-10-27T23:34:40.037Z] Collecting urllib3==2.8.0 (from -r services/python/requirements.lock.txt (line 43))
+[2026-10-27T23:34:40.037Z]   Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+[2026-10-27T23:34:40.037Z] Requirement already satisfied: uvicorn==0.34.2 in ./.venv/lib/python3.12/site-packages (from -r services/python/requirements.lock.txt (line 44)) (0.34.2)
+[2026-10-27T23:34:40.037Z] Using cached charset_normalizer-3.5.2-cp312-cp312-macosx_10_13_universal2.whl (367 kB)
+[2026-10-27T23:34:40.037Z] Using cached filelock-4.2.4-py3-none-any.whl (162 kB)
+[2026-10-27T23:34:40.037Z] Using cached fsspec-2026.9.0-py3-none-any.whl (221 kB)
+[2026-10-27T23:34:40.037Z] Using cached huggingface_hub-0.30.2-py3-none-any.whl (481 kB)
+[2026-10-27T23:34:40.037Z] Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+[2026-10-27T23:34:40.037Z] Using cached joblib-1.4.2-py3-none-any.whl (301 kB)
+[2026-10-27T23:34:40.037Z] Using cached markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl (12 kB)
+[2026-10-27T23:34:40.037Z] Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+[2026-10-27T23:34:40.037Z] Using cached networkx-3.7-py3-none-any.whl (2.1 MB)
+[2026-10-27T23:34:40.037Z] Using cached numpy-2.2.4-cp312-cp312-macosx_14_0_arm64.whl (5.2 MB)
+[2026-10-27T23:34:40.037Z] Using cached pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl (173 kB)
+[2026-10-27T23:34:40.037Z] Using cached regex-2026.9.29-cp312-cp312-macosx_11_0_arm64.whl (293 kB)
+[2026-10-27T23:34:40.037Z] Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+[2026-10-27T23:34:40.037Z] Using cached safetensors-0.5.3-cp38-abi3-macosx_11_0_arm64.whl (418 kB)
+[2026-10-27T23:34:40.037Z] Using cached scikit_learn-1.6.1-cp312-cp312-macosx_12_0_arm64.whl (11.2 MB)
+[2026-10-27T23:34:40.037Z] Using cached scipy-1.17.0-cp312-cp312-macosx_14_0_arm64.whl (20.1 MB)
+[2026-10-27T23:34:40.037Z] Using cached setuptools-84.2.1-py3-none-any.whl (876 kB)
+[2026-10-27T23:34:40.037Z] Using cached sympy-1.13.1-py3-none-any.whl (6.2 MB)
+[2026-10-27T23:34:40.037Z] Using cached threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+[2026-10-27T23:34:40.037Z] Using cached tokenizers-0.21.4-cp39-abi3-macosx_11_0_arm64.whl (2.7 MB)
+[2026-10-27T23:34:40.037Z] Using cached torch-2.6.0-cp312-none-macosx_11_0_arm64.whl (66.5 MB)
+[2026-10-27T23:34:40.292Z] Using cached tqdm-4.70.1-py3-none-any.whl (80 kB)
+[2026-10-27T23:34:40.292Z] Using cached transformers-4.51.3-py3-none-any.whl (10.4 MB)
+[2026-10-27T23:34:40.292Z] Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+[2026-10-27T23:34:40.548Z] Installing collected packages: mpmath, urllib3, tqdm, threadpoolctl, sympy, setuptools, safetensors, regex, pyyaml, numpy, networkx, markupsafe, joblib, fsspec, filelock, charset-normalizer, scipy, requests, jinja2, torch, scikit-learn, huggingface-hub, tokenizers, transformers
+[2026-10-27T23:35:07.003Z] Successfully installed charset-normalizer-3.5.2 filelock-4.2.4 fsspec-2026.9.0 huggingface-hub-0.30.2 jinja2-3.1.6 joblib-1.4.2 markupsafe-3.0.4 mpmath-1.3.0 networkx-3.7 numpy-2.2.4 pyyaml-6.0.3 regex-2026.9.29 requests-2.34.2 safetensors-0.5.3 scikit-learn-1.6.1 scipy-1.17.0 setuptools-84.2.1 sympy-1.13.1 threadpoolctl-3.7.0 tokenizers-0.21.4 torch-2.6.0 tqdm-4.70.1 transformers-4.51.3 urllib3-2.8.0
+[2026-10-27T23:35:07.003Z] 
+[2026-10-27T23:35:07.003Z] [notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[2026-10-27T23:35:07.003Z] [notice] To update, run: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/.venv/bin/python -m pip install --upgrade pip
+[2026-10-27T23:35:07.003Z] + .venv/bin/python scripts/preparar_llm.py
+[2026-10-27T23:35:07.003Z] 
+[2026-10-27T23:35:07.003Z] Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]
+[2026-10-27T23:35:07.003Z] Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 1181.24it/s]
+[2026-10-27T23:35:07.562Z] {
+[2026-10-27T23:35:07.562Z]   "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+[2026-10-27T23:35:07.562Z]   "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+[2026-10-27T23:35:07.562Z]   "license": "Apache-2.0",
+[2026-10-27T23:35:07.562Z]   "arquivo": "model.safetensors",
+[2026-10-27T23:35:07.562Z]   "bytes": 988097824,
+[2026-10-27T23:35:07.562Z]   "sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+[2026-10-27T23:35:07.562Z] }
+[2026-10-27T23:35:07.562Z] LLM disponivel em /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/b1-modelos/qwen2.5-0.5b
+[2026-10-27T23:35:07.562Z] + PYTHONPATH=services/python
+[2026-10-27T23:35:07.562Z] + .venv/bin/python -m pytest services/python/tests -q --junitxml=python-tests.xml
+[2026-10-27T23:35:29.632Z] ............                                                             [100%]
+[2026-10-27T23:35:29.633Z] =============================== warnings summary ===============================
+[2026-10-27T23:35:29.633Z] .venv/lib/python3.12/site-packages/starlette/testclient.py:37
+[2026-10-27T23:35:29.633Z]   /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+[2026-10-27T23:35:29.633Z]     _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+[2026-10-27T23:35:29.633Z] 
+[2026-10-27T23:35:29.633Z] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[2026-10-27T23:35:29.633Z] - generated xml file: /Users/brunoromicervone/Documents/Codex/2026-10-26/referenced-chatgpt-conversation-this-is-an/work/jenkins-b1/workspace/B1_Architecture_Lab/python-tests.xml -
+[2026-10-27T23:35:29.633Z] 12 passed, 1 warning in 21.09s
 Post stage
 [Pipeline] junit
-[2026-10-27T22:34:28.911Z] Recording test results
-[2026-10-27T22:34:28.944Z] [Checks API] No suitable checks publisher found.
+[2026-10-27T23:35:29.717Z] Recording test results
+[2026-10-27T23:35:29.754Z] [Checks API] No suitable checks publisher found.
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -814,8 +912,8 @@ Post stage
 [Pipeline] withEnv
 [Pipeline] {
 [Pipeline] sh
-[2026-10-27T22:34:29.751Z] + .venv/bin/python scripts/verificar_fronteira.py
-[2026-10-27T22:34:29.752Z] OK: Ranking referencia outros modulos somente por api publica.
+[2026-10-27T23:35:30.597Z] + .venv/bin/python scripts/verificar_fronteira.py
+[2026-10-27T23:35:30.597Z] OK: Ranking referencia outros modulos somente por api publica.
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -829,39 +927,31 @@ Post stage
 [Pipeline] withEnv
 [Pipeline] {
 [Pipeline] sh
-[2026-10-27T22:34:30.631Z] + docker compose -f compose.lab.yml up -d
-[2026-10-27T22:34:30.631Z]  Container b1-lab-mqtt-1 Recreate 
-[2026-10-27T22:34:30.631Z]  Container b1-lab-prometheus-1 Recreate 
-[2026-10-27T22:34:31.187Z]  Container b1-lab-prometheus-1 Recreated 
-[2026-10-27T22:34:31.187Z]  Container b1-lab-grafana-1 Recreate 
-[2026-10-27T22:34:31.187Z]  Container b1-lab-mqtt-1 Recreated 
-[2026-10-27T22:34:31.443Z]  Container b1-lab-grafana-1 Recreated 
-[2026-10-27T22:34:31.443Z]  Container b1-lab-mqtt-1 Starting 
-[2026-10-27T22:34:31.443Z]  Container b1-lab-prometheus-1 Starting 
-[2026-10-27T22:34:31.698Z]  Container b1-lab-mqtt-1 Started 
-[2026-10-27T22:34:31.698Z]  Container b1-lab-prometheus-1 Started 
-[2026-10-27T22:34:31.698Z]  Container b1-lab-grafana-1 Starting 
-[2026-10-27T22:34:31.698Z]  Container b1-lab-grafana-1 Started 
-[2026-10-27T22:34:31.698Z] + B1_JAVA=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin/java
-[2026-10-27T22:34:31.698Z] + .venv/bin/python scripts/rodar_microlabs.py
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio3", "etapa": "python_disponivel", "instante_utc": "2026-10-27T22:34:38Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 200, "resposta": {"fonte": "python-simulacao", "degradado": false, "cursos": ["Arquitetura de Software B1", "Testes e qualidade"], "nota": "Catalogo fixo para testar fronteira e falha; nao e modelo ML treinado."}, "duracao_ms": 144.04}
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio3", "etapa": "recuperacao_lexical_sem_llm", "instante_utc": "2026-10-27T22:34:38Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "resposta": {"fonte": "recuperacao-lexical-local", "degradado": false, "modo": "sem-LLM", "resposta": "O Ranking soma 100 pontos por curso concluido e as moedas da assinatura.", "fontes": ["ranking"]}}
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio3", "etapa": "processo_python_interrompido", "instante_utc": "2026-10-27T22:34:38Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 200, "resposta": {"resposta": "Assistente temporariamente indisponível. Consulte os cursos e materiais cadastrados.", "cursos": ["Catálogo geral disponível no Core"], "fonte": "fallback-estatico", "degradado": true}, "duracao_ms": 110.0}
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio3", "etapa": "core_essencial_continua", "instante_utc": "2026-10-27T22:34:38Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 200, "cursos": 1}
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio4", "etapa": "sincrono_consumidor_indisponivel", "instante_utc": "2026-10-27T22:34:39Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 503, "duracao_ms": 114.52}
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio4", "etapa": "conclusao_assincrona_com_consumidor_fora", "instante_utc": "2026-10-27T22:34:39Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 200, "resposta": {"id": 1, "usuarioId": 1, "usuarioNome": "Aluno Laboratorio", "cursoId": 1, "cursoTitulo": "Arquitetura B1", "status": "CONCLUIDO", "notaFinal": 8.0, "bonus": false}, "duracao_ms": 139.05}
-[2026-10-27T22:34:39.757Z] {"desafio": "desafio4", "etapa": "repeticao_idempotente", "instante_utc": "2026-10-27T22:34:39Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "usuario": {"id": 1, "nome": "Aluno Laboratorio", "email": "lab-7f4ec76c-8303-46f9-8469-92d71e9b152b@example.com", "plano": "BASICO", "creditosCursos": 3, "cursosConcluidosComSucesso": 1, "moedas": 0}}
-[2026-10-27T22:34:40.011Z] {"desafio": "desafio4", "etapa": "evento_retido_apos_falha", "instante_utc": "2026-10-27T22:34:39Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "resposta": {"pendentes": 1}}
-[2026-10-27T22:34:40.265Z] {"desafio": "desafio4", "etapa": "recuperacao_e_entrega", "instante_utc": "2026-10-27T22:34:40Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "pendentes": {"pendentes": 0}, "consumidor": {"recebidas": 1}}
-[2026-10-27T22:34:41.624Z] {"desafio": "desafio5", "etapa": "mqtt_recebido_core_inacessivel", "instante_utc": "2026-10-27T22:34:41Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "pendentes_spool": 1, "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-1"}
-[2026-10-27T22:34:42.540Z] {"desafio": "desafio5", "etapa": "replay_duravel_apos_reinicio", "instante_utc": "2026-10-27T22:34:42Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "eventos_core": 1, "entregues_spool": 1}
-[2026-10-27T22:34:43.096Z] {"desafio": "desafio5", "etapa": "duplicidade_controlada", "instante_utc": "2026-10-27T22:34:42Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "resposta": {"aceito": true, "duplicado": true, "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-1"}}
-[2026-10-27T22:34:44.456Z] {"desafio": "desafio5", "etapa": "sessao_mqtt_entrega_evento_publicado_com_gateway_offline", "instante_utc": "2026-10-27T22:34:44Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "eventos_core": 2, "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-2"}
-[2026-10-27T22:34:45.808Z] {"desafio": "desafio5", "etapa": "dispositivo_offline_enfileira_e_reenvia", "instante_utc": "2026-10-27T22:34:45Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "offline": {"fila_preservada": true, "erro": "[Errno 61] Connection refused"}, "online": {"confirmados": 1}, "eventos_core": 3}
-[2026-10-27T22:34:45.808Z] {"desafio": "desafio6", "etapa": "prometheus_observa_fallback_real", "instante_utc": "2026-10-27T22:34:45Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 200, "resposta": {"status": "success", "data": {"resultType": "vector", "result": [{"metric": {"__name__": "b1_ia_calls_total", "instance": "host.docker.internal:18080", "job": "b1-core", "outcome": "fallback"}, "value": [1793140485.518, "1"]}, {"metric": {"__name__": "b1_ia_calls_total", "instance": "host.docker.internal:18080", "job": "b1-core", "outcome": "success"}, "value": [1793140485.518, "2"]}]}}}
-[2026-10-27T22:34:45.808Z] {"desafio": "desafio6", "etapa": "alvo_prometheus_up", "instante_utc": "2026-10-27T22:34:45Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "http": 200, "resposta": {"status": "success", "data": {"activeTargets": [{"discoveredLabels": {"__address__": "host.docker.internal:18080", "__always_scrape_classic_histograms__": "false", "__convert_classic_histograms_to_nhcb__": "false", "__metrics_path__": "/actuator/prometheus", "__scheme__": "http", "__scrape_interval__": "2s", "__scrape_native_histograms__": "false", "__scrape_timeout__": "2s", "job": "b1-core"}, "labels": {"instance": "host.docker.internal:18080", "job": "b1-core"}, "scrapePool": "b1-core", "scrapeUrl": "http://host.docker.internal:18080/actuator/prometheus", "globalUrl": "http://host.docker.internal:18080/actuator/prometheus", "lastError": "", "lastScrape": "2026-10-27T22:34:43.425085169Z", "lastScrapeDuration": 0.135172959, "health": "up", "scrapeInterval": "2s", "scrapeTimeout": "2s"}], "droppedTargets": [], "droppedTargetCounts": {"b1-core": 0}}}}
-[2026-10-27T22:34:48.319Z] {"desafio": "desafio6", "etapa": "fila_pendente_observada", "instante_utc": "2026-10-27T22:34:47Z", "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b", "resposta": {"status": "success", "data": {"resultType": "vector", "result": [{"metric": {"__name__": "b1_outbox_pending", "instance": "host.docker.internal:18080", "job": "b1-core"}, "value": [1793140487.707, "1"]}]}}}
-[2026-10-27T22:34:48.319Z] LAB_SUCCESS
+[2026-10-27T23:35:31.482Z] + docker compose -f compose.lab.yml up -d
+[2026-10-27T23:35:31.738Z]  Container b1-lab-mqtt-1 Running 
+[2026-10-27T23:35:31.738Z]  Container b1-lab-prometheus-1 Running 
+[2026-10-27T23:35:31.738Z]  Container b1-lab-grafana-1 Running 
+[2026-10-27T23:35:31.738Z] + B1_JAVA=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin/java
+[2026-10-27T23:35:31.738Z] + .venv/bin/python scripts/rodar_microlabs.py
+[2026-10-27T23:35:43.884Z] {"desafio": "desafio3", "etapa": "python_disponivel", "instante_utc": "2026-10-27T23:35:43Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 200, "resposta": {"fonte": "modelo-supervisionado", "degradado": false, "cursos": [{"id": 1, "titulo": "Java e arquitetura modular", "relevancia_estimada": 1.0}, {"id": 2, "titulo": "IoT e MQTT", "relevancia_estimada": 0.060071}, {"id": 3, "titulo": "Python e aprendizado de maquina", "relevancia_estimada": 0.060071}], "perfil": {"interesses": ["java", "arquitetura"], "nivel": 2}, "modelo": "logistic-relevance-v1", "modelo_sha256": "4d6cd4fe837d25f89da0f94f3742da155871ba56e19c91de0b04a6bb5f266f2b", "treinamento": "dados-sinteticos-de-laboratorio"}, "duracao_ms": 171.27}
+[2026-10-27T23:35:43.884Z] {"desafio": "desafio3", "etapa": "personalizacao_com_modelo_treinado", "instante_utc": "2026-10-27T23:35:43Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "resposta": {"fonte": "modelo-supervisionado", "degradado": false, "cursos": [{"id": 2, "titulo": "IoT e MQTT", "relevancia_estimada": 1.0}, {"id": 1, "titulo": "Java e arquitetura modular", "relevancia_estimada": 0.060071}, {"id": 3, "titulo": "Python e aprendizado de maquina", "relevancia_estimada": 0.060071}], "perfil": {"interesses": ["iot", "mqtt"], "nivel": 2}, "modelo": "logistic-relevance-v1", "modelo_sha256": "4d6cd4fe837d25f89da0f94f3742da155871ba56e19c91de0b04a6bb5f266f2b", "treinamento": "dados-sinteticos-de-laboratorio"}}
+[2026-10-27T23:35:45.243Z] {"desafio": "desafio3", "etapa": "rag_com_llm_real_e_fontes", "instante_utc": "2026-10-27T23:35:44Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "resposta": {"fonte": "rag-com-llm-local", "modo": "rag-llm", "degradado": false, "abstencao": false, "resposta": "3 creditos", "fontes": [{"id": "creditos", "titulo": "Creditos e assinatura", "arquivo": "src/main/java/com/exemplo/usuario/usuario/domain/Assinatura.java", "documento": "creditos.md", "score": 0.297368, "trecho": "# Creditos e assinatura\n\nUma conclusao de curso com aproveitamento concede 3 (tres) creditos de cursos e aumenta em um o contador de cursos concluidos com sucesso. A assinatura comeca no plano BASICO, com zero creditos, conclusoes e moedas. Ao atingir 12 conclusoes com sucesso, a assinatura passa a PREMIUM. A matricula em curso bonus consome um credito e exige saldo positivo. Concluir curso nao acrescenta moedas automaticamente.\n"}], "geracao": {"executada": true, "modelo": "Qwen/Qwen2.5-0.5B-Instruct", "revision": "7ae557604adf67be50417f59c2c2f167def9a775", "pesos_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe", "classe": "Qwen2ForCausalLM", "parametros": 494032768, "device": "mps", "tokens_gerados": 4, "duracao_ms": 994.5}}}
+[2026-10-27T23:35:45.499Z] {"desafio": "desafio3", "etapa": "processo_python_interrompido", "instante_utc": "2026-10-27T23:35:45Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 200, "resposta": {"degradado": true, "resposta": "Assistente temporariamente indisponível. Consulte os cursos e materiais cadastrados.", "cursos": ["Catálogo geral disponível no Core"], "fonte": "fallback-estatico"}, "duracao_ms": 111.13}
+[2026-10-27T23:35:45.499Z] {"desafio": "desafio3", "etapa": "core_essencial_continua", "instante_utc": "2026-10-27T23:35:45Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 200, "cursos": 3}
+[2026-10-27T23:35:50.721Z] {"desafio": "desafio4", "etapa": "sincrono_consumidor_indisponivel", "instante_utc": "2026-10-27T23:35:50Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 503, "duracao_ms": 117.71}
+[2026-10-27T23:35:50.977Z] {"desafio": "desafio4", "etapa": "conclusao_assincrona_com_consumidor_fora", "instante_utc": "2026-10-27T23:35:50Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 200, "resposta": {"id": 1, "usuarioId": 1, "usuarioNome": "Aluno Laboratorio", "cursoId": 1, "cursoTitulo": "Java e arquitetura modular", "status": "CONCLUIDO", "notaFinal": 8.0, "bonus": false}, "duracao_ms": 152.88}
+[2026-10-27T23:35:51.233Z] {"desafio": "desafio4", "etapa": "repeticao_idempotente", "instante_utc": "2026-10-27T23:35:51Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "usuario": {"id": 1, "nome": "Aluno Laboratorio", "email": "lab-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2@example.com", "plano": "BASICO", "creditosCursos": 3, "cursosConcluidosComSucesso": 1, "moedas": 0}}
+[2026-10-27T23:35:51.484Z] {"desafio": "desafio4", "etapa": "evento_retido_apos_falha", "instante_utc": "2026-10-27T23:35:51Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "resposta": {"pendentes": 1}}
+[2026-10-27T23:35:51.484Z] {"desafio": "desafio4", "etapa": "recuperacao_e_entrega", "instante_utc": "2026-10-27T23:35:51Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "pendentes": {"pendentes": 0}, "consumidor": {"recebidas": 1}}
+[2026-10-27T23:35:52.842Z] {"desafio": "desafio5", "etapa": "mqtt_recebido_core_inacessivel", "instante_utc": "2026-10-27T23:35:52Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "pendentes_spool": 1, "eventId": "iot-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2-1"}
+[2026-10-27T23:35:53.766Z] {"desafio": "desafio5", "etapa": "replay_duravel_apos_reinicio", "instante_utc": "2026-10-27T23:35:53Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "eventos_core": 1, "entregues_spool": 1}
+[2026-10-27T23:35:54.318Z] {"desafio": "desafio5", "etapa": "duplicidade_controlada", "instante_utc": "2026-10-27T23:35:54Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "resposta": {"aceito": true, "duplicado": true, "eventId": "iot-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2-1"}}
+[2026-10-27T23:35:55.680Z] {"desafio": "desafio5", "etapa": "sessao_mqtt_entrega_evento_publicado_com_gateway_offline", "instante_utc": "2026-10-27T23:35:55Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "eventos_core": 2, "eventId": "iot-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2-2"}
+[2026-10-27T23:35:57.042Z] {"desafio": "desafio5", "etapa": "dispositivo_offline_enfileira_e_reenvia", "instante_utc": "2026-10-27T23:35:56Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "offline": {"fila_preservada": true, "erro": "[Errno 61] Connection refused"}, "online": {"confirmados": 1}, "eventos_core": 3}
+[2026-10-27T23:35:57.042Z] {"desafio": "desafio6", "etapa": "prometheus_observa_fallback_real", "instante_utc": "2026-10-27T23:35:56Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 200, "resposta": {"status": "success", "data": {"resultType": "vector", "result": [{"metric": {"__name__": "b1_ia_calls_total", "instance": "host.docker.internal:18080", "job": "b1-core", "outcome": "fallback"}, "value": [1793144156.847, "1"]}, {"metric": {"__name__": "b1_ia_calls_total", "instance": "host.docker.internal:18080", "job": "b1-core", "outcome": "success"}, "value": [1793144156.847, "3"]}]}}}
+[2026-10-27T23:35:57.043Z] {"desafio": "desafio6", "etapa": "alvo_prometheus_up", "instante_utc": "2026-10-27T23:35:56Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "http": 200, "resposta": {"status": "success", "data": {"activeTargets": [{"discoveredLabels": {"__address__": "host.docker.internal:18080", "__always_scrape_classic_histograms__": "false", "__convert_classic_histograms_to_nhcb__": "false", "__metrics_path__": "/actuator/prometheus", "__scheme__": "http", "__scrape_interval__": "2s", "__scrape_native_histograms__": "false", "__scrape_timeout__": "2s", "job": "b1-core"}, "labels": {"instance": "host.docker.internal:18080", "job": "b1-core"}, "scrapePool": "b1-core", "scrapeUrl": "http://host.docker.internal:18080/actuator/prometheus", "globalUrl": "http://host.docker.internal:18080/actuator/prometheus", "lastError": "", "lastScrape": "2026-10-27T23:35:55.852392552Z", "lastScrapeDuration": 0.114687166, "health": "up", "scrapeInterval": "2s", "scrapeTimeout": "2s"}], "droppedTargets": [], "droppedTargetCounts": {"b1-core": 0}}}}
+[2026-10-27T23:35:58.399Z] {"desafio": "desafio6", "etapa": "fila_pendente_observada", "instante_utc": "2026-10-27T23:35:58Z", "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2", "resposta": {"status": "success", "data": {"resultType": "vector", "result": [{"metric": {"__name__": "b1_outbox_pending", "instance": "host.docker.internal:18080", "job": "b1-core"}, "value": [1793144158.115, "1"]}]}}}
+[2026-10-27T23:35:58.399Z] LAB_SUCCESS
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -869,9 +959,9 @@ Post stage
 [Pipeline] stage
 [Pipeline] { (Declarative: Post Actions)
 [Pipeline] archiveArtifacts
-[2026-10-27T22:34:50.477Z] Archiving artifacts
+[2026-10-27T23:36:01.206Z] Archiving artifacts
 [Pipeline] echo
-[2026-10-27T22:34:50.566Z] ASRs verificados pelos testes e experimentos registrados.
+[2026-10-27T23:36:01.317Z] ASRs verificados pelos testes e experimentos registrados.
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] }

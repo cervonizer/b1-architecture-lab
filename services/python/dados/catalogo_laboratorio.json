@@ -1,0 +1,238 @@
+[
+  {
+    "id": 1,
+    "titulo": "Fundamentos de Java",
+    "descricao": "java programacao orientacao objetos fundamentos iniciante",
+    "nivel": 1,
+    "tags": [
+      "java",
+      "programacao",
+      "orientacao",
+      "objetos",
+      "fundamentos",
+      "iniciante"
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "APIs com Spring Boot",
+    "descricao": "java spring api rest persistencia relacional jpa banco integracao",
+    "nivel": 2,
+    "tags": [
+      "java",
+      "spring",
+      "api",
+      "rest",
+      "persistencia",
+      "relacional",
+      "jpa",
+      "banco",
+      "integracao"
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Testes automatizados com JUnit",
+    "descricao": "java junit testes unitarios qualidade tdd mocks",
+    "nivel": 1,
+    "tags": [
+      "java",
+      "junit",
+      "testes",
+      "unitarios",
+      "qualidade",
+      "tdd",
+      "mocks"
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "CI e CD com Jenkins",
+    "descricao": "devops jenkins pipeline integracao entrega continua automacao testes",
+    "nivel": 2,
+    "tags": [
+      "devops",
+      "jenkins",
+      "pipeline",
+      "integracao",
+      "entrega",
+      "continua",
+      "automacao",
+      "testes"
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "Arquitetura de software modular",
+    "descricao": "java arquitetura monolito modular manutencao servicos",
+    "nivel": 2,
+    "tags": [
+      "java",
+      "arquitetura",
+      "monolito",
+      "modular",
+      "manutencao",
+      "servicos"
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "Ports and Adapters na pratica",
+    "descricao": "arquitetura ports adapters dominio testes persistencia java hexagonal",
+    "nivel": 2,
+    "tags": [
+      "arquitetura",
+      "ports",
+      "adapters",
+      "dominio",
+      "testes",
+      "persistencia",
+      "java",
+      "hexagonal"
+    ]
+  },
+  {
+    "id": 7,
+    "titulo": "Introducao ao Python",
+    "descricao": "python programacao dados fundamentos iniciante",
+    "nivel": 1,
+    "tags": [
+      "python",
+      "programacao",
+      "dados",
+      "fundamentos",
+      "iniciante"
+    ]
+  },
+  {
+    "id": 8,
+    "titulo": "Aprendizado de maquina para recomendacao",
+    "descricao": "python dados machine learning aprendizado maquina regressao classificador recomendacao perfis",
+    "nivel": 2,
+    "tags": [
+      "python",
+      "dados",
+      "machine",
+      "learning",
+      "aprendizado",
+      "maquina",
+      "regressao",
+      "classificador",
+      "recomendacao",
+      "perfis"
+    ]
+  },
+  {
+    "id": 9,
+    "titulo": "Fundamentos de Internet das Coisas",
+    "descricao": "iot sensores redes dispositivos conectividade fundamentos iniciante",
+    "nivel": 1,
+    "tags": [
+      "iot",
+      "sensores",
+      "redes",
+      "dispositivos",
+      "conectividade",
+      "fundamentos",
+      "iniciante"
+    ]
+  },
+  {
+    "id": 10,
+    "titulo": "Eventos MQTT e QoS",
+    "descricao": "iot mqtt eventos sensores broker mensagens redes dispositivos",
+    "nivel": 2,
+    "tags": [
+      "iot",
+      "mqtt",
+      "eventos",
+      "sensores",
+      "broker",
+      "mensagens",
+      "redes",
+      "dispositivos"
+    ]
+  },
+  {
+    "id": 11,
+    "titulo": "Observabilidade com Prometheus e Grafana",
+    "descricao": "observabilidade metricas telemetria operacao confiabilidade grafana prometheus devops",
+    "nivel": 2,
+    "tags": [
+      "observabilidade",
+      "metricas",
+      "telemetria",
+      "operacao",
+      "confiabilidade",
+      "grafana",
+      "prometheus",
+      "devops"
+    ]
+  },
+  {
+    "id": 12,
+    "titulo": "Containers Docker para desenvolvimento",
+    "descricao": "devops docker containers deploy implantacao entrega continua redes operacao",
+    "nivel": 1,
+    "tags": [
+      "devops",
+      "docker",
+      "containers",
+      "deploy",
+      "implantacao",
+      "entrega",
+      "continua",
+      "redes",
+      "operacao"
+    ]
+  },
+  {
+    "id": 13,
+    "titulo": "RAG e modelos de linguagem",
+    "descricao": "python rag llm retrieval recuperacao assistente inteligencia artificial modelo linguagem",
+    "nivel": 2,
+    "tags": [
+      "python",
+      "rag",
+      "llm",
+      "retrieval",
+      "recuperacao",
+      "assistente",
+      "inteligencia",
+      "artificial",
+      "modelo",
+      "linguagem"
+    ]
+  },
+  {
+    "id": 14,
+    "titulo": "Seguranca de dispositivos IoT",
+    "descricao": "iot mqtt seguranca dispositivos autenticacao autorizacao topicos tls",
+    "nivel": 3,
+    "tags": [
+      "iot",
+      "mqtt",
+      "seguranca",
+      "dispositivos",
+      "autenticacao",
+      "autorizacao",
+      "topicos",
+      "tls"
+    ]
+  },
+  {
+    "id": 15,
+    "titulo": "Seguranca de APIs Java",
+    "descricao": "java spring seguranca jwt autenticacao autorizacao api",
+    "nivel": 2,
+    "tags": [
+      "java",
+      "spring",
+      "seguranca",
+      "jwt",
+      "autenticacao",
+      "autorizacao",
+      "api"
+    ]
+  }
+]

@@ -1,39 +1,39 @@
 [
   {
     "etapa": "mqtt_recebido_core_inacessivel",
-    "instante_utc": "2026-10-27T22:34:41Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:52Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "pendentes_spool": 1,
-    "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-1"
+    "eventId": "iot-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2-1"
   },
   {
     "etapa": "replay_duravel_apos_reinicio",
-    "instante_utc": "2026-10-27T22:34:42Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:53Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "eventos_core": 1,
     "entregues_spool": 1
   },
   {
     "etapa": "duplicidade_controlada",
-    "instante_utc": "2026-10-27T22:34:42Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:54Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "resposta": {
       "aceito": true,
       "duplicado": true,
-      "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-1"
+      "eventId": "iot-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2-1"
     }
   },
   {
     "etapa": "sessao_mqtt_entrega_evento_publicado_com_gateway_offline",
-    "instante_utc": "2026-10-27T22:34:44Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:55Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "eventos_core": 2,
-    "eventId": "iot-7f4ec76c-8303-46f9-8469-92d71e9b152b-2"
+    "eventId": "iot-c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2-2"
   },
   {
     "etapa": "dispositivo_offline_enfileira_e_reenvia",
-    "instante_utc": "2026-10-27T22:34:45Z",
-    "run_id": "7f4ec76c-8303-46f9-8469-92d71e9b152b",
+    "instante_utc": "2026-10-27T23:35:56Z",
+    "run_id": "c8f6e821-12cf-4d9e-a2dc-1a9ab9f21ba2",
     "offline": {
       "fila_preservada": true,
       "erro": "[Errno 61] Connection refused"

@@ -1,0 +1,271 @@
+perfil_id,interesses,nivel,curso_id,relevante
+p01,java spring arquitetura,2,1,1
+p01,java spring arquitetura,2,2,1
+p01,java spring arquitetura,2,3,0
+p01,java spring arquitetura,2,4,0
+p01,java spring arquitetura,2,5,1
+p01,java spring arquitetura,2,6,1
+p01,java spring arquitetura,2,7,0
+p01,java spring arquitetura,2,8,0
+p01,java spring arquitetura,2,9,0
+p01,java spring arquitetura,2,10,0
+p01,java spring arquitetura,2,11,0
+p01,java spring arquitetura,2,12,0
+p01,java spring arquitetura,2,13,0
+p01,java spring arquitetura,2,14,0
+p01,java spring arquitetura,2,15,0
+p02,java programacao iniciante,1,1,1
+p02,java programacao iniciante,1,2,0
+p02,java programacao iniciante,1,3,1
+p02,java programacao iniciante,1,4,0
+p02,java programacao iniciante,1,5,0
+p02,java programacao iniciante,1,6,0
+p02,java programacao iniciante,1,7,0
+p02,java programacao iniciante,1,8,0
+p02,java programacao iniciante,1,9,0
+p02,java programacao iniciante,1,10,0
+p02,java programacao iniciante,1,11,0
+p02,java programacao iniciante,1,12,0
+p02,java programacao iniciante,1,13,0
+p02,java programacao iniciante,1,14,0
+p02,java programacao iniciante,1,15,0
+p03,iot sensores mqtt dispositivos,1,1,0
+p03,iot sensores mqtt dispositivos,1,2,0
+p03,iot sensores mqtt dispositivos,1,3,0
+p03,iot sensores mqtt dispositivos,1,4,0
+p03,iot sensores mqtt dispositivos,1,5,0
+p03,iot sensores mqtt dispositivos,1,6,0
+p03,iot sensores mqtt dispositivos,1,7,0
+p03,iot sensores mqtt dispositivos,1,8,0
+p03,iot sensores mqtt dispositivos,1,9,1
+p03,iot sensores mqtt dispositivos,1,10,1
+p03,iot sensores mqtt dispositivos,1,11,0
+p03,iot sensores mqtt dispositivos,1,12,0
+p03,iot sensores mqtt dispositivos,1,13,0
+p03,iot sensores mqtt dispositivos,1,14,0
+p03,iot sensores mqtt dispositivos,1,15,0
+p04,python dados aprendizado maquina,1,1,0
+p04,python dados aprendizado maquina,1,2,0
+p04,python dados aprendizado maquina,1,3,0
+p04,python dados aprendizado maquina,1,4,0
+p04,python dados aprendizado maquina,1,5,0
+p04,python dados aprendizado maquina,1,6,0
+p04,python dados aprendizado maquina,1,7,1
+p04,python dados aprendizado maquina,1,8,1
+p04,python dados aprendizado maquina,1,9,0
+p04,python dados aprendizado maquina,1,10,0
+p04,python dados aprendizado maquina,1,11,0
+p04,python dados aprendizado maquina,1,12,0
+p04,python dados aprendizado maquina,1,13,0
+p04,python dados aprendizado maquina,1,14,0
+p04,python dados aprendizado maquina,1,15,0
+p05,devops jenkins grafana docker,2,1,0
+p05,devops jenkins grafana docker,2,2,0
+p05,devops jenkins grafana docker,2,3,0
+p05,devops jenkins grafana docker,2,4,1
+p05,devops jenkins grafana docker,2,5,0
+p05,devops jenkins grafana docker,2,6,0
+p05,devops jenkins grafana docker,2,7,0
+p05,devops jenkins grafana docker,2,8,0
+p05,devops jenkins grafana docker,2,9,0
+p05,devops jenkins grafana docker,2,10,0
+p05,devops jenkins grafana docker,2,11,1
+p05,devops jenkins grafana docker,2,12,1
+p05,devops jenkins grafana docker,2,13,0
+p05,devops jenkins grafana docker,2,14,0
+p05,devops jenkins grafana docker,2,15,0
+p06,qualidade testes tdd junit,1,1,0
+p06,qualidade testes tdd junit,1,2,0
+p06,qualidade testes tdd junit,1,3,1
+p06,qualidade testes tdd junit,1,4,1
+p06,qualidade testes tdd junit,1,5,0
+p06,qualidade testes tdd junit,1,6,0
+p06,qualidade testes tdd junit,1,7,0
+p06,qualidade testes tdd junit,1,8,0
+p06,qualidade testes tdd junit,1,9,0
+p06,qualidade testes tdd junit,1,10,0
+p06,qualidade testes tdd junit,1,11,0
+p06,qualidade testes tdd junit,1,12,0
+p06,qualidade testes tdd junit,1,13,0
+p06,qualidade testes tdd junit,1,14,0
+p06,qualidade testes tdd junit,1,15,0
+p07,arquitetura ports adapters dominio,2,1,0
+p07,arquitetura ports adapters dominio,2,2,0
+p07,arquitetura ports adapters dominio,2,3,0
+p07,arquitetura ports adapters dominio,2,4,0
+p07,arquitetura ports adapters dominio,2,5,1
+p07,arquitetura ports adapters dominio,2,6,1
+p07,arquitetura ports adapters dominio,2,7,0
+p07,arquitetura ports adapters dominio,2,8,0
+p07,arquitetura ports adapters dominio,2,9,0
+p07,arquitetura ports adapters dominio,2,10,0
+p07,arquitetura ports adapters dominio,2,11,0
+p07,arquitetura ports adapters dominio,2,12,0
+p07,arquitetura ports adapters dominio,2,13,0
+p07,arquitetura ports adapters dominio,2,14,0
+p07,arquitetura ports adapters dominio,2,15,0
+p08,python rag llm retrieval,2,1,0
+p08,python rag llm retrieval,2,2,0
+p08,python rag llm retrieval,2,3,0
+p08,python rag llm retrieval,2,4,0
+p08,python rag llm retrieval,2,5,0
+p08,python rag llm retrieval,2,6,0
+p08,python rag llm retrieval,2,7,1
+p08,python rag llm retrieval,2,8,1
+p08,python rag llm retrieval,2,9,0
+p08,python rag llm retrieval,2,10,0
+p08,python rag llm retrieval,2,11,0
+p08,python rag llm retrieval,2,12,0
+p08,python rag llm retrieval,2,13,1
+p08,python rag llm retrieval,2,14,0
+p08,python rag llm retrieval,2,15,0
+p09,observabilidade metricas confiabilidade,2,1,0
+p09,observabilidade metricas confiabilidade,2,2,0
+p09,observabilidade metricas confiabilidade,2,3,0
+p09,observabilidade metricas confiabilidade,2,4,1
+p09,observabilidade metricas confiabilidade,2,5,0
+p09,observabilidade metricas confiabilidade,2,6,0
+p09,observabilidade metricas confiabilidade,2,7,0
+p09,observabilidade metricas confiabilidade,2,8,0
+p09,observabilidade metricas confiabilidade,2,9,0
+p09,observabilidade metricas confiabilidade,2,10,0
+p09,observabilidade metricas confiabilidade,2,11,1
+p09,observabilidade metricas confiabilidade,2,12,0
+p09,observabilidade metricas confiabilidade,2,13,0
+p09,observabilidade metricas confiabilidade,2,14,0
+p09,observabilidade metricas confiabilidade,2,15,0
+p10,mqtt seguranca dispositivos iot,2,1,0
+p10,mqtt seguranca dispositivos iot,2,2,0
+p10,mqtt seguranca dispositivos iot,2,3,0
+p10,mqtt seguranca dispositivos iot,2,4,0
+p10,mqtt seguranca dispositivos iot,2,5,0
+p10,mqtt seguranca dispositivos iot,2,6,0
+p10,mqtt seguranca dispositivos iot,2,7,0
+p10,mqtt seguranca dispositivos iot,2,8,0
+p10,mqtt seguranca dispositivos iot,2,9,1
+p10,mqtt seguranca dispositivos iot,2,10,1
+p10,mqtt seguranca dispositivos iot,2,11,0
+p10,mqtt seguranca dispositivos iot,2,12,0
+p10,mqtt seguranca dispositivos iot,2,13,0
+p10,mqtt seguranca dispositivos iot,2,14,1
+p10,mqtt seguranca dispositivos iot,2,15,0
+p11,java arquitetura servicos modular,3,1,0
+p11,java arquitetura servicos modular,3,2,1
+p11,java arquitetura servicos modular,3,3,0
+p11,java arquitetura servicos modular,3,4,0
+p11,java arquitetura servicos modular,3,5,1
+p11,java arquitetura servicos modular,3,6,1
+p11,java arquitetura servicos modular,3,7,0
+p11,java arquitetura servicos modular,3,8,0
+p11,java arquitetura servicos modular,3,9,0
+p11,java arquitetura servicos modular,3,10,0
+p11,java arquitetura servicos modular,3,11,0
+p11,java arquitetura servicos modular,3,12,0
+p11,java arquitetura servicos modular,3,13,0
+p11,java arquitetura servicos modular,3,14,0
+p11,java arquitetura servicos modular,3,15,0
+p12,integracao entrega continua docker,1,1,0
+p12,integracao entrega continua docker,1,2,0
+p12,integracao entrega continua docker,1,3,0
+p12,integracao entrega continua docker,1,4,1
+p12,integracao entrega continua docker,1,5,0
+p12,integracao entrega continua docker,1,6,0
+p12,integracao entrega continua docker,1,7,0
+p12,integracao entrega continua docker,1,8,0
+p12,integracao entrega continua docker,1,9,0
+p12,integracao entrega continua docker,1,10,0
+p12,integracao entrega continua docker,1,11,0
+p12,integracao entrega continua docker,1,12,1
+p12,integracao entrega continua docker,1,13,0
+p12,integracao entrega continua docker,1,14,0
+p12,integracao entrega continua docker,1,15,0
+p13,dados recomendacao classificador python,2,1,0
+p13,dados recomendacao classificador python,2,2,0
+p13,dados recomendacao classificador python,2,3,0
+p13,dados recomendacao classificador python,2,4,0
+p13,dados recomendacao classificador python,2,5,0
+p13,dados recomendacao classificador python,2,6,0
+p13,dados recomendacao classificador python,2,7,1
+p13,dados recomendacao classificador python,2,8,1
+p13,dados recomendacao classificador python,2,9,0
+p13,dados recomendacao classificador python,2,10,0
+p13,dados recomendacao classificador python,2,11,0
+p13,dados recomendacao classificador python,2,12,0
+p13,dados recomendacao classificador python,2,13,0
+p13,dados recomendacao classificador python,2,14,0
+p13,dados recomendacao classificador python,2,15,0
+p14,testes unitarios junit mocks,2,1,0
+p14,testes unitarios junit mocks,2,2,0
+p14,testes unitarios junit mocks,2,3,1
+p14,testes unitarios junit mocks,2,4,0
+p14,testes unitarios junit mocks,2,5,0
+p14,testes unitarios junit mocks,2,6,1
+p14,testes unitarios junit mocks,2,7,0
+p14,testes unitarios junit mocks,2,8,0
+p14,testes unitarios junit mocks,2,9,0
+p14,testes unitarios junit mocks,2,10,0
+p14,testes unitarios junit mocks,2,11,0
+p14,testes unitarios junit mocks,2,12,0
+p14,testes unitarios junit mocks,2,13,0
+p14,testes unitarios junit mocks,2,14,0
+p14,testes unitarios junit mocks,2,15,0
+p15,seguranca jwt autorizacao api,2,1,0
+p15,seguranca jwt autorizacao api,2,2,0
+p15,seguranca jwt autorizacao api,2,3,0
+p15,seguranca jwt autorizacao api,2,4,0
+p15,seguranca jwt autorizacao api,2,5,0
+p15,seguranca jwt autorizacao api,2,6,0
+p15,seguranca jwt autorizacao api,2,7,0
+p15,seguranca jwt autorizacao api,2,8,0
+p15,seguranca jwt autorizacao api,2,9,0
+p15,seguranca jwt autorizacao api,2,10,0
+p15,seguranca jwt autorizacao api,2,11,0
+p15,seguranca jwt autorizacao api,2,12,0
+p15,seguranca jwt autorizacao api,2,13,0
+p15,seguranca jwt autorizacao api,2,14,1
+p15,seguranca jwt autorizacao api,2,15,1
+p16,spring persistencia relacional java,2,1,1
+p16,spring persistencia relacional java,2,2,1
+p16,spring persistencia relacional java,2,3,0
+p16,spring persistencia relacional java,2,4,0
+p16,spring persistencia relacional java,2,5,0
+p16,spring persistencia relacional java,2,6,1
+p16,spring persistencia relacional java,2,7,0
+p16,spring persistencia relacional java,2,8,0
+p16,spring persistencia relacional java,2,9,0
+p16,spring persistencia relacional java,2,10,0
+p16,spring persistencia relacional java,2,11,0
+p16,spring persistencia relacional java,2,12,0
+p16,spring persistencia relacional java,2,13,0
+p16,spring persistencia relacional java,2,14,0
+p16,spring persistencia relacional java,2,15,0
+p17,sensores redes dispositivos iniciante,1,1,0
+p17,sensores redes dispositivos iniciante,1,2,0
+p17,sensores redes dispositivos iniciante,1,3,0
+p17,sensores redes dispositivos iniciante,1,4,0
+p17,sensores redes dispositivos iniciante,1,5,0
+p17,sensores redes dispositivos iniciante,1,6,0
+p17,sensores redes dispositivos iniciante,1,7,0
+p17,sensores redes dispositivos iniciante,1,8,0
+p17,sensores redes dispositivos iniciante,1,9,1
+p17,sensores redes dispositivos iniciante,1,10,1
+p17,sensores redes dispositivos iniciante,1,11,0
+p17,sensores redes dispositivos iniciante,1,12,0
+p17,sensores redes dispositivos iniciante,1,13,0
+p17,sensores redes dispositivos iniciante,1,14,0
+p17,sensores redes dispositivos iniciante,1,15,0
+p18,telemetria pipeline operacao grafana,3,1,0
+p18,telemetria pipeline operacao grafana,3,2,0
+p18,telemetria pipeline operacao grafana,3,3,0
+p18,telemetria pipeline operacao grafana,3,4,1
+p18,telemetria pipeline operacao grafana,3,5,0
+p18,telemetria pipeline operacao grafana,3,6,0
+p18,telemetria pipeline operacao grafana,3,7,0
+p18,telemetria pipeline operacao grafana,3,8,0
+p18,telemetria pipeline operacao grafana,3,9,0
+p18,telemetria pipeline operacao grafana,3,10,0
+p18,telemetria pipeline operacao grafana,3,11,1
+p18,telemetria pipeline operacao grafana,3,12,1
+p18,telemetria pipeline operacao grafana,3,13,0
+p18,telemetria pipeline operacao grafana,3,14,0
+p18,telemetria pipeline operacao grafana,3,15,0

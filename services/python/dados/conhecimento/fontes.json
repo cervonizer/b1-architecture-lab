@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ranking",
+    "titulo": "Ranking e pontuacao",
+    "arquivo": "src/main/java/com/exemplo/usuario/ranking/domain/ParticipanteRanking.java",
+    "documento": "ranking.md"
+  },
+  {
+    "id": "creditos",
+    "titulo": "Creditos e assinatura",
+    "arquivo": "src/main/java/com/exemplo/usuario/usuario/domain/Assinatura.java",
+    "documento": "creditos.md"
+  },
+  {
+    "id": "matricula",
+    "titulo": "Conclusao da matricula",
+    "arquivo": "src/main/java/com/exemplo/usuario/matricula/application/MatriculaService.java",
+    "documento": "matricula.md"
+  },
+  {
+    "id": "eventos",
+    "titulo": "Notificacoes e eventos",
+    "arquivo": "docs/adr/ADR-004.md",
+    "documento": "eventos.md"
+  },
+  {
+    "id": "ia",
+    "titulo": "Indisponibilidade da IA",
+    "arquivo": "docs/adr/ADR-003.md",
+    "documento": "ia.md"
+  },
+  {
+    "id": "iot",
+    "titulo": "Eventos de dispositivos",
+    "arquivo": "docs/adr/ADR-005.md",
+    "documento": "iot.md"
+  },
+  {
+    "id": "arquitetura",
+    "titulo": "Estrutura do produto",
+    "arquivo": "docs/arquitetura/README.md",
+    "documento": "arquitetura.md"
+  }
+]

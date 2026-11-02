@@ -9,12 +9,16 @@ def client(tmp_path,monkeypatch):
     monkeypatch.setenv("B1_FAILURE_FILE",str(tmp_path/"failure"))
     return TestClient(app)
 
-def test_recomendacao_identifica_simulacao(client):
-    r=client.get("/recomendacoes");assert r.status_code==200;assert r.json()["fonte"]=="python-simulacao"
+def test_recomendacao_usa_artefato_treinado(client):
+    r=client.get("/recomendacoes");assert r.status_code==200
+    assert r.json()["fonte"]=="modelo-supervisionado"
+    assert len(r.json()["modelo_sha256"])==64
+    assert r.json()["cursos"][0]["relevancia_estimada"]>0
 
-def test_assistente_recupera_fonte_sem_fingir_llm(client):
-    r=client.post("/assistente",json={"pergunta":"Como funciona ranking?"})
-    assert r.json()["fontes"]==["ranking"];assert r.json()["modo"]=="sem-LLM"
+def test_assistente_abstem_quando_nao_ha_material(client):
+    r=client.post("/assistente",json={"pergunta":"Quem venceu a Copa do Mundo de 2018?"})
+    assert r.json()["abstencao"] is True
+    assert r.json()["geracao"]["executada"] is False
 
 def test_notificacao_idempotente_e_recuperacao(client):
     evento={"event_id":"curso-1","tipo":"CURSO_CONCLUIDO","matricula_id":1,"usuario_id":1}

@@ -1,0 +1,158 @@
+[
+  {
+    "pergunta": "Quantos creditos recebo ao concluir um curso com aproveitamento?",
+    "verificacao_esperada": "\\b3\\b|\\btres\\b",
+    "aprovado": true,
+    "resposta": {
+      "fonte": "rag-com-llm-local",
+      "modo": "rag-llm",
+      "degradado": false,
+      "abstencao": false,
+      "resposta": "3 creditos",
+      "fontes": [
+        {
+          "id": "creditos",
+          "titulo": "Creditos e assinatura",
+          "arquivo": "src/main/java/com/exemplo/usuario/usuario/domain/Assinatura.java",
+          "documento": "creditos.md",
+          "score": 0.297368,
+          "trecho": "# Creditos e assinatura\n\nUma conclusao de curso com aproveitamento concede 3 (tres) creditos de cursos e aumenta em um o contador de cursos concluidos com sucesso. A assinatura comeca no plano BASICO, com zero creditos, conclusoes e moedas. Ao atingir 12 conclusoes com sucesso, a assinatura passa a PREMIUM. A matricula em curso bonus consome um credito e exige saldo positivo. Concluir curso nao acrescenta moedas automaticamente.\n"
+        }
+      ],
+      "geracao": {
+        "executada": true,
+        "modelo": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "pesos_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+        "classe": "Qwen2ForCausalLM",
+        "parametros": 494032768,
+        "device": "mps",
+        "tokens_gerados": 4,
+        "duracao_ms": 10499.1
+      }
+    }
+  },
+  {
+    "pergunta": "Com dois cursos concluidos e sete moedas, quantos pontos tenho no ranking?",
+    "verificacao_esperada": "207",
+    "aprovado": true,
+    "resposta": {
+      "fonte": "rag-com-llm-local",
+      "modo": "rag-llm",
+      "degradado": false,
+      "abstencao": false,
+      "resposta": "207 pontos",
+      "fontes": [
+        {
+          "id": "ranking",
+          "titulo": "Ranking e pontuacao",
+          "arquivo": "src/main/java/com/exemplo/usuario/ranking/domain/ParticipanteRanking.java",
+          "documento": "ranking.md",
+          "score": 0.533313,
+          "trecho": "# Ranking e pontuacao\n\nA pontuacao do Ranking e calculada como 100 multiplicado pelo numero de cursos concluidos, mais o saldo de moedas. Cada curso concluido corresponde a 100 pontos, alem das moedas existentes. O Ranking e ordenado por pontos em ordem decrescente. Exemplo: dois cursos concluidos e sete moedas resultam em 207 pontos. Creditos de cursos bonus nao sao a mesma coisa que moedas.\n"
+        },
+        {
+          "id": "creditos",
+          "titulo": "Creditos e assinatura",
+          "arquivo": "src/main/java/com/exemplo/usuario/usuario/domain/Assinatura.java",
+          "documento": "creditos.md",
+          "score": 0.131322,
+          "trecho": "# Creditos e assinatura\n\nUma conclusao de curso com aproveitamento concede 3 (tres) creditos de cursos e aumenta em um o contador de cursos concluidos com sucesso. A assinatura comeca no plano BASICO, com zero creditos, conclusoes e moedas. Ao atingir 12 conclusoes com sucesso, a assinatura passa a PREMIUM. A matricula em curso bonus consome um credito e exige saldo positivo. Concluir curso nao acrescenta moedas automaticamente.\n"
+        }
+      ],
+      "geracao": {
+        "executada": true,
+        "modelo": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "pesos_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+        "classe": "Qwen2ForCausalLM",
+        "parametros": 494032768,
+        "device": "mps",
+        "tokens_gerados": 5,
+        "duracao_ms": 1391.0
+      }
+    }
+  },
+  {
+    "pergunta": "Uma notificacao fora do ar impede a conclusao do curso?",
+    "verificacao_esperada": "nao",
+    "aprovado": true,
+    "resposta": {
+      "fonte": "rag-com-llm-local",
+      "modo": "rag-llm",
+      "degradado": false,
+      "abstencao": false,
+      "resposta": "Não.",
+      "fontes": [
+        {
+          "id": "eventos",
+          "titulo": "Notificacoes e eventos",
+          "arquivo": "docs/adr/ADR-004.md",
+          "documento": "eventos.md",
+          "score": 0.365704,
+          "trecho": "# Notificacoes e eventos\n\nUma falha ou indisponibilidade de notificacao nao impede a conclusao do curso. A conclusao grava o evento na outbox, na mesma transacao do estado e dos creditos, e retorna sucesso. Um dispatcher tenta entregar a notificacao posteriormente. Se o consumidor estiver fora, o evento permanece pendente para nova tentativa. O consumidor deduplica pelo event_id para nao repetir a notificacao.\n"
+        }
+      ],
+      "geracao": {
+        "executada": true,
+        "modelo": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "pesos_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+        "classe": "Qwen2ForCausalLM",
+        "parametros": 494032768,
+        "device": "mps",
+        "tokens_gerados": 3,
+        "duracao_ms": 1832.52
+      }
+    }
+  },
+  {
+    "pergunta": "O que acontece se o servico Python de IA ficar indisponivel?",
+    "verificacao_esperada": "fallback|alternativa|temporariamente|degradad",
+    "aprovado": true,
+    "resposta": {
+      "fonte": "rag-com-llm-local",
+      "modo": "rag-llm",
+      "degradado": false,
+      "abstencao": false,
+      "resposta": "O assistente está temporariamente indisponível.",
+      "fontes": [
+        {
+          "id": "ia",
+          "titulo": "Indisponibilidade da IA",
+          "arquivo": "docs/adr/ADR-003.md",
+          "documento": "ia.md",
+          "score": 0.36848,
+          "trecho": "# Indisponibilidade da IA\n\nSe o servico Python de inteligencia artificial ficar indisponivel, o Core usa fallback: devolve catalogo geral e informa que o assistente esta temporariamente indisponivel. Cursos, matriculas e Ranking continuam funcionando. A chamada externa tem timeout. O assistente com LLM possui um prazo maior que a recomendacao porque gerar texto leva mais tempo. As operacoes essenciais nao dependem da IA.\n"
+        }
+      ],
+      "geracao": {
+        "executada": true,
+        "modelo": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "pesos_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+        "classe": "Qwen2ForCausalLM",
+        "parametros": 494032768,
+        "device": "mps",
+        "tokens_gerados": 12,
+        "duracao_ms": 2075.36
+      }
+    }
+  },
+  {
+    "pergunta": "fora de escopo",
+    "aprovado": true,
+    "resposta": {
+      "fonte": "rag-com-llm-local",
+      "modo": "rag-llm",
+      "degradado": false,
+      "abstencao": true,
+      "resposta": "Nao encontrei informacao suficiente nos materiais do projeto para responder.",
+      "fontes": [],
+      "geracao": {
+        "executada": false,
+        "motivo": "sem-evidencia-recuperada"
+      }
+    }
+  }
+]

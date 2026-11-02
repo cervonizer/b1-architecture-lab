@@ -24,7 +24,7 @@ def request(base,path,method='GET',body=None,auth=True):
     req=urllib.request.Request(base+path,data=payload,headers=headers,method=method)
     inicio=time.monotonic()
     try:
-        with urllib.request.urlopen(req,timeout=5) as r:code=r.status;raw=r.read().decode()
+        with urllib.request.urlopen(req,timeout=65 if path=="/api/ia/assistente" else 5) as r:code=r.status;raw=r.read().decode()
     except urllib.error.HTTPError as e:code=e.code;raw=e.read().decode()
     try:data=json.loads(raw)
     except ValueError:data=raw
@@ -55,7 +55,7 @@ def iniciar_python():
     env=os.environ.copy();env['PYTHONPATH']=str(ROOT/'services/python')+os.pathsep+env.get('PYTHONPATH','')
     env['B1_PYTHON_DB']=str(STATE/'python.db');env['B1_FAILURE_FILE']=str(STATE/'notificacoes.off')
     iniciar('python',[sys.executable,'-m','uvicorn','ia_service:app','--host','127.0.0.1','--port','18081'],env)
-    aguardar(lambda:request(PYTHON,'/health',auth=False)[0]==200)
+    aguardar(lambda:request(PYTHON,'/health',auth=False)[0]==200,timeout=180)
 
 def iniciar_gateway(core):
     env=os.environ.copy();env['B1_CORE_URL']=core;env['B1_SPOOL']=str(STATE/'iot.db')
@@ -86,18 +86,28 @@ def executar():
     iniciar_python()
     code,aluno,_=request(CORE,'/api/usuarios','POST',{'nome':'Aluno Laboratorio','email':'lab-'+run_id+'@example.com','senha':'Teste123456'})
     assert code==201,(code,aluno)
-    code,curso,_=request(CORE,'/api/cursos','POST',{'titulo':'Arquitetura B1','descricao':'Curso do experimento'})
+    code,curso,_=request(CORE,'/api/cursos','POST',{'titulo':'Java e arquitetura modular','descricao':'Java Spring arquitetura monolito modular dominio'})
     assert code==201,(code,curso)
+    code,iot_curso,_=request(CORE,'/api/cursos','POST',{'titulo':'IoT e MQTT','descricao':'iot mqtt sensores dispositivos redes eventos'})
+    assert code==201
+    code,python_curso,_=request(CORE,'/api/cursos','POST',{'titulo':'Python e aprendizado de maquina','descricao':'python dados aprendizado maquina recomendacao'})
+    assert code==201
     code,matricula,_=request(CORE,'/api/matriculas','POST',{'usuarioId':aluno['id'],'cursoId':curso['id'],'bonus':False})
     assert code==201,(code,matricula)
-    code,dados,ms=request(CORE,'/api/ia/recomendacoes');assert code==200 and dados['degradado'] is False
+    code,dados,ms=request(CORE,'/api/ia/recomendacoes?interesses=java,arquitetura&nivel=2');assert code==200 and dados['degradado'] is False
+    assert dados['fonte']=='modelo-supervisionado' and dados['cursos'][0]['id']==curso['id']
     registrar('desafio3','python_disponivel',http=code,resposta=dados,duracao_ms=ms)
-    code,dados,_=request(CORE,'/api/ia/assistente','POST',{'pergunta':'Como funciona ranking?'})
-    assert code==200 and dados['fontes']==['ranking'];registrar('desafio3','recuperacao_lexical_sem_llm',resposta=dados)
+    code,iot_recomendado,_=request(CORE,'/api/ia/recomendacoes?interesses=iot,mqtt&nivel=2')
+    assert code==200 and iot_recomendado['cursos'][0]['id']==iot_curso['id']
+    registrar('desafio3','personalizacao_com_modelo_treinado',resposta=iot_recomendado)
+    code,dados,_=request(CORE,'/api/ia/assistente','POST',{'pergunta':'Quantos creditos recebo ao concluir um curso com aproveitamento?'})
+    assert code==200 and dados['geracao']['executada'] is True and dados['geracao']['tokens_gerados']>0
+    assert any(f['id']=='creditos' for f in dados['fontes'])
+    registrar('desafio3','rag_com_llm_real_e_fontes',resposta=dados)
     parar('python')
     code,dados,ms=request(CORE,'/api/ia/recomendacoes');assert code==200 and dados['degradado'] is True
     registrar('desafio3','processo_python_interrompido',http=code,resposta=dados,duracao_ms=ms)
-    code,dados,_=request(CORE,'/api/cursos');assert code==200 and len(dados)==1
+    code,dados,_=request(CORE,'/api/cursos');assert code==200 and len(dados)==3
     registrar('desafio3','core_essencial_continua',http=code,cursos=len(dados))
     iniciar_python()
     request(PYTHON,'/lab/notificacoes/falha','POST',{'ativo':True},auth=False)
